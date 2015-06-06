@@ -1,13 +1,18 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
+var path = require('path');
 var http = require('http').Server(app);
-var io - require('socket.io')(http);
+var io = require('socket.io')(http);
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res){
-  res.send('./public/index.html');
+  res.sendfile('./public/index.html');
 });
 
 io.on('connection', function(socket){
   //this socket is a single user
+  console.log("user connected");
 
   socket.on('disconnect', function(){
     //this user disconnected
@@ -25,9 +30,14 @@ io.on('connection', function(socket){
 
 
 
+  socket.emit('init', {stuff:true});
+
+
+
+
 
 });
 
-http.listen(3000, function(){
+http.listen(process.env.port || 3000, function(){
   console.log('listening on *:3000');
 });
