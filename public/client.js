@@ -1,4 +1,5 @@
-var client = angular.module('theClient',[
+client = angular.module('theClient',[
                             'theClient.controllers',
-                            'theClient.services']);
+                            'theClient.services'
+                            ]);
 

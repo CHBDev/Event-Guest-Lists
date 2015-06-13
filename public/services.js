@@ -1,6 +1,9 @@
-angular.module("theClient.services", []).
+ services = angular.module("theClient.services", []);
 
-  factory('socket', function($rootScope){
+
+ services
+
+  .factory('socket', function($rootScope){
     var socket = io.connect();
 
     var r = {};

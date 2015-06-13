@@ -1,20 +1,15 @@
-
+var userSockets = require("./user_sockets.js");
+var groupSockets = require("./group_sockets.js");
+var eventSockets = require("./event_sockets.js");
+var listSockets = require("./list_sockets.js");
 
 module.exports = function(io, socket){
-  socket.on("some request", function(data){
 
-  });
+  userSockets(io, socket);
+  groupSockets(io, socket);
+  eventSockets(io, socket);
+  listSockets(io, socket);
 
-  // socket.on('user:namechange')
-
-  socket.on('list:show', function(listName){
-
-  });
-
-  socket.on('message', function(msg){
-    io.emit('message', msg);
-    //socket.broadcast.emit(msg) //doesn't go to sender
-  });
 };
 
 

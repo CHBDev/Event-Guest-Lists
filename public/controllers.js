@@ -1,4 +1,6 @@
-angular.module("theClient.controllers", []).
+controllers = angular.module("theClient.controllers", []);
+
+controllers.
 
   controller('ClientController', function($scope, $http, socket){
     socket.on('init', function(data){
@@ -13,12 +15,12 @@ angular.module("theClient.controllers", []).
 
     });
 
-    socket.on('list:updated', function(data){
+    socket.on('list:update', function(data){
 
     });
 
-  }).
+    socket.on('event:update', function(data){
 
-  controller('OTHER', function($scope){
+    });
 
   });
