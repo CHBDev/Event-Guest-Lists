@@ -12,6 +12,7 @@ controllers
     }
 
     s.login = function(form){
+      console.log("client login");
       //could do some client side checking
       socket.emit('user:login', form);
     }.bind(s, s.loginForm);
@@ -21,6 +22,7 @@ controllers
     };
 
     s.create = function(form){
+      console.log('client create');
       socket.emit('user:create', form);
     }.bind(s, s.loginForm);
 
@@ -28,6 +30,17 @@ controllers
     socket.on('user:update', function(data){
 
     });
+
+    socket.on('user:login:result', function(data){
+      if(data.err){
+        console.log("LOGIN FAILED");
+      }else{
+        console.log("LOGIN SUCCESS");
+      }
+
+    })
+
+
 
 
 

@@ -1,88 +1,68 @@
 var wrapper = require("./wrapper_loader.js");
-var q = {};
-var db = wrapper.db;
-var query = db.query;
+var me = {};
 
-var dbUser = require("../database/user.js");
-var dbGroup = require("../database/group.js");
-var dbEvent = require("../database/event.js");
-var dbList = require("../database/list.js");
-
-q.user = {};
-q.group = {};
-q.event = {};
-q.list = {};
-
-q.user.create = function(data){
-  dbUser.create(data, function(resp){
-
-  });
-};
-q.user.modify = function(data){
-  dbUser.modify(data, function(resp){
-
-  });
-};
-q.user.remove = function(data){
-  dbUser.remove(data, function(resp){
-
-  });
+me.user = {};
+me.group = {};
+me.event = {};
+me.list = {};
+me.wrapper = wrapper;
+me.query = function(str, arrOrCb, cb){
+  if(Array.isArray(arrOrCb) === false){
+    me.wrapper.db.query(str, arrOrCb);
+  }else{
+    me.wrapper.db.query(str, arrOrCb, cb);
+  }
 };
 
-q.group.create = function(data){
-  dbGroup.create(data, function(resp){
+var dbUser = require("../database/user.js")(me);
+var dbGroup = require("../database/group.js")(me);
+var dbEvent = require("../database/event.js")(me);
+var dbList = require("../database/list.js")(me);
 
-  });
+me.user.create = function(data, cb){
+  dbUser.create(data, cb);
 };
-q.group.modify = function(data){
-  dbGroup.modify(data, function(resp){
-
-  });
+me.user.modify = function(data,cb){
+  dbUser.modify(data, cb);
 };
-q.group.remove = function(data){
-  dbGroup.remove(data, function(resp){
-
-  });
-};
-
-q.event.create = function(data){
-  dbEvent.create(data, function(resp){
-
-  });
-};
-q.event.modify = function(data){
-  dbEvent.modify(data, function(resp){
-
-  });
-};
-q.event.remove = function(data){
-  dbEvent.remove(data, function(resp){
-
-  });
+me.user.remove = function(data,cb){
+  dbUser.remove(data, cb);
 };
 
-q.list.create = function(data){
-  dbList.create(data, function(resp){
-
-  });
+me.user.login = function(data,cb){
+  dbUser.login(data, cb);
 };
-q.list.modify = function(data){
-  dbList.modify(data, function(resp){
 
-  });
+me.group.create = function(data,cb){
+  dbGroup.create(data, cb);
 };
-q.list.remove = function(data){
-  dbList.remove(data, function(resp){
+me.group.modify = function(data,cb){
+  dbGroup.modify(data, cb);
+};
+me.group.remove = function(data,cb){
+  dbGroup.remove(data, cb);
+};
 
-  });
+me.event.create = function(data,cb){
+  dbEvent.create(data, cb);
+};
+me.event.modify = function(data,cb){
+  dbEvent.modify(data, cb);
+};
+me.event.remove = function(data,cb){
+  dbEvent.remove(data, cb);
+};
+
+me.list.create = function(data,cb){
+  dbList.create(data, cb);
+};
+me.list.modify = function(data,cb){
+  dbList.modify(data, cb);
+};
+me.list.remove = function(data,cb){
+  dbList.remove(data, cb);
 };
 
 
-
-
-
-
-
-
-module.exports = q;
+module.exports = me;
 

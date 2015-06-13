@@ -3,10 +3,11 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 
 var express = require('express');
 var app = express();
+module.exports = app;
 var path = require('path');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-app.query = require("./database/query.js")
+app.query = require("./database/query.js");
 var setupSocket = require('./server/server_socket.js');
 
 //set all files to serve from /public
@@ -34,4 +35,4 @@ http.listen( port, function(){
   console.log('listening on port: ' + port);
 });
 
-module.exports = app;
+

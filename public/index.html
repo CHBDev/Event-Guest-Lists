@@ -7,8 +7,16 @@
   <body ng-controller="ClientController">
 
     <div ng-controller="UserController">
+      <div ng-class="nav">
+        <div ng-class="appTitle">Event Guest Lists</div>
+        <div ng-if="currentUsername !== null">
+          <div>CURRENT USER: {{currentUsername}}</div>
+          <div ng-class="menuButton">MENU</div>
+
+        </div>
+      </div>
       <div ng-if="currentUsername === null">
-        <div>NEED TO LOGIN</div>
+        <div>LOGIN TO CONTINUE</div>
 
           <form novalidate class="simple-form">
             Email: <input type="email" ng-model="loginForm.email" /><br />
@@ -17,21 +25,24 @@
             Confirm: <input type="password" ng-model="loginForm.confirm" /><br />
             </div>
 
-            <input type="button" ng-click="toggleLoginCreate()" value="{{createUserOpen ? 'have account' : 'create new' }}" />
+            <input type="button" ng-click="toggleLoginCreate()" value="{{createUserOpen ? 'already have account' : 'create new account' }}" />
 
-            <input type="submit" ng-click="createUserOpen ? login() : create()" value="{{createUserOpen ? 'create' : 'login'}}" />
+            <input type="submit" ng-click="createUserOpen ? create() : login()" value="{{createUserOpen ? 'create' : 'login'}}" />
           </form>
+
+          createUserOpen:{{createUserOpen}};
 
       </div>
       <div ng-if="currentUsername !== null">
-        <div>CURRENT USER: {{currentUsername}}</div>
+        <div>GROUP</div>
+        <div>EVENTS</div>
+        <div>LISTS</div>
       </div>
+
     </div>
 
 
-    <div>GROUP</div>
-    <div>EVENTS</div>
-    <div>LISTS</div>
+
 
   </body>
 
