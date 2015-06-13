@@ -3,14 +3,13 @@ var app = express();
 var path = require('path');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var wrapper = require('./database.js');
-var db = wrapper.db;
+var query = require("../database/query.js")
 var setupSocket = require('./server_socket.js');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('*', function(req, res){
-  res.sendfile('./public/index.html');
+  res.sendfile('../public/index.html');
 });
 
 io.on('connection', function(socket){
