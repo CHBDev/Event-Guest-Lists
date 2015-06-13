@@ -1,5 +1,4 @@
 var ex = {};
-exports = ex;
 
 var config;
 
@@ -7,7 +6,6 @@ try {
   config = require('./database_config.js');
 } catch (e) {
   console.log("NO DB CONFIG",e);
-  //config = {};
 }
 
 if(!config){
@@ -105,3 +103,4 @@ ex.tellMeWhenDatabaseIsLive = function(callback){
 
 
 
+module.exports = ex;
