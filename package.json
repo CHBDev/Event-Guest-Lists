@@ -1,0 +1,17 @@
+{
+  "name": "EventGuestLists",
+  "version": "0.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "angular": "^1.3.16",
+    "express": "^4.12.4",
+    "mysql": "^2.7.0",
+    "socket.io": "^1.3.5"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {},
+  "private": true
+}
