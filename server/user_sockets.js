@@ -4,10 +4,8 @@ module.exports = function(io, socket){
 
 
   var login = function(socket, data){
-    console.log("inside login func");
     //do password verification stuff, probably bcrypt on the client
      query.user.login(data, function(err, result){
-      console.log("inside final cb to client for login");
       socket.emit("user:login:result", {err: err, result: result});
     });
   };

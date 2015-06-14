@@ -15,7 +15,7 @@ module.exports = function(wrapper){
   };
 
    me.create = function(data, cb){
-    query("SELECT 1", function(err, rows){
+    query("INSERT INTO users (username, email) VALUES(?,?)",[data.username, data.email], function(err, rows){
 
       var response = rows; //TODO will do stuff
       cb(err, response);

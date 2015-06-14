@@ -48,7 +48,7 @@ var connectionLoop = function(){
       db.query("USE " + ex.currDB);
 
       if(true){
-        ex.setupAllTables(function(err, rows){
+        ex.setupAllDefaultTables(function(err, rows){
           if(err){
             console.log(err);
           }

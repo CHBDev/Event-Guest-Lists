@@ -1,9 +1,10 @@
 controllers
 
-  .controller('UserController', function($scope, $http, socket){
+  .controller('UserController', function($scope, $http, socket, users){
     var s = $scope;
 
-    s.currentUsername = null; //or pulled from some token
+    s.users = users;
+
     s.loginForm = {username: null, password: null, confirm: null};
     s.createUserOpen = false;
 
@@ -13,15 +14,18 @@ controllers
 
     s.login = function(form){
       console.log("client login");
+      s.attemptedName = form.username;
       //could do some client side checking
       socket.emit('user:login', form);
     }.bind(s, s.loginForm);
 
     s.logout = function(){
-
+      socket.emit('user:logout', {});
+      users.currentUsername = null;
     };
 
     s.create = function(form){
+      s.attemptedName = loginForm.username;
       console.log('client create');
       socket.emit('user:create', form);
     }.bind(s, s.loginForm);
@@ -36,7 +40,7 @@ controllers
         console.log("LOGIN FAILED");
       }else{
         console.log("LOGIN SUCCESS");
-        s.currentUsername = data.username;
+        users.currentUsername = s.attemptedName;
       }
 
     });
