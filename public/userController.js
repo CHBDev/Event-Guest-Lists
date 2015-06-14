@@ -4,7 +4,7 @@ controllers
     var s = $scope;
 
     s.currentUsername = null; //or pulled from some token
-    s.loginForm = {email: null, password: null, confirm: null};
+    s.loginForm = {username: null, password: null, confirm: null};
     s.createUserOpen = false;
 
     s.toggleLoginCreate = function(){
@@ -36,8 +36,17 @@ controllers
         console.log("LOGIN FAILED");
       }else{
         console.log("LOGIN SUCCESS");
+        s.currentUsername = data.username;
       }
 
+    });
+
+    socket.on('user:create:result', function(data){
+      if(data.err){
+        console.log("CREATE FAILED");
+      }else{
+        console.log("CREATE SUCCESS");
+      }
     })
 
 

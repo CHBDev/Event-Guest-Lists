@@ -23,7 +23,6 @@ config = {
 var mysql = require('mysql');
 
 var db;
-var query;
 
 var connectionLoop = function(){
   ex.db = db = mysql.createConnection(config);
@@ -45,7 +44,16 @@ var connectionLoop = function(){
       ex.currDB =  process.env.NODE_ENV || 'dev'
       console.log("==============CONNECTED as ID ", db.threadId);
       ex.isLive = true;
-      query = db.query;
+
+      db.query("USE " + ex.currDB);
+
+      if(true){
+        ex.setupAllTables(function(err, rows){
+          if(err){
+            console.log(err);
+          }
+        });
+      }
 
 
       db.on('close', function(err) {
@@ -101,6 +109,9 @@ ex.tellMeWhenDatabaseIsLive = function(callback){
   }
 };
 
-
+ex.setupAllDefaultTables = function(cb){
+  db.query("CREATE TABLE IF NOT EXISTS ?? (?? INTEGER PRIMARY KEY AUTO_INCREMENT, ?? VARCHAR(40) UNIQUE KEY, ?? VARCHAR(40) UNIQUE KEY)", ['users', 'id', 'username', 'email'], cb);
+  db.query("CREATE TABLE IF NOT EXISTS `groups` (`id` INTEGER PRIMARY KEY AUTO_INCREMENT, `groupname` VARCHAR(60) UNIQUE KEY, `owner` INTEGER, FOREIGN KEY (`owner`) REFERENCES `users`(`id`) )", cb);
+};
 
 module.exports = ex;

@@ -15,9 +15,11 @@ module.exports = function(io, socket){
   socket.on("user:create", function(data){
     query.user.create(data, function(err, result){
       socket.emit("user:create:result", {err:err, result:result});
-      //auto log in here, maybe only notify client on error
-      //and on success just trigger login
-      login(socket, data);
+
+      if(!err){
+        login(socket, data);
+      }
+
     });
   });
 
@@ -30,7 +32,6 @@ module.exports = function(io, socket){
   });
 
   socket.on("user:login", function(data){
-    console.log("user trying to log in");
     login(socket, data);
 
   });
