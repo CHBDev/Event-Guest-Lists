@@ -45,15 +45,21 @@ var connectionLoop = function(){
       console.log("==============CONNECTED as ID ", db.threadId);
       ex.isLive = true;
 
-      db.query("USE " + ex.currDB);
+      db.query("USE " + ex.currDB, function(err){
+        if(err){
+          console.log(err);
+        }
+        ex.startStayAlive();
 
-      if(true){
         ex.setupAllDefaultTables(function(err, rows){
           if(err){
             console.log(err);
           }
         });
-      }
+
+      });
+
+
 
 
       db.on('close', function(err) {
@@ -80,23 +86,28 @@ var connectionLoop = function(){
   });
 };
 
-connectionLoop();
+if(!ex.isLive){
+  connectionLoop();
+}
+
 
 ex.startStayAlive = function(){
   if(ex.stayAliveId){
-    clearInterval(ex.stayAliveId);
+    clearTimeout(ex.stayAliveId);
   }
 
   ex.stayAliveId = setTimeout(function(){
-    query("SELECT 1", function(err){
+    db.query("SELECT 1", function(err){
       if(err){
         console.log(err);
         connectionLoop();
       }else{
+        console.log("tick");
         ex.startStayAlive();
       }
-    }, 5000);
-  });
+    });
+  }, 5000);
+
 };
 
 ex.tellMeWhenDatabaseIsLive = function(callback){

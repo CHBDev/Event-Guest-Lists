@@ -2,19 +2,34 @@
 <html ng-app="theClient">
   <head>
     <title>Event Guest Lists</title>
+    <link rel="stylesheet" type="text/css" href="./main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
   </head>
   <body ng-controller="ClientController">
 
-    <div ng-controller="UserController">
-      <div ng-class="nav">
-        <div ng-class="appTitle">Event Guest Lists</div>
-        <div ng-if="users.currentUsername !== null">
-          <div>CURRENT USER: {{users.currentUsername}}</div>
-          <div ng-class="menuButton">MENU</div>
+  <div class="nav" ng-controller="NavController">
+    <div class="appTitle">Event Guest Lists</div>
+    <button id="mainMenuButton" ng-click="toggleMainMenu()">{{menuIsOpen ? "CLOSE" : "MENU"}}</button>
 
+    <div ng-if="menuIsOpen">
+      <div id="mainMenu" >
+
+        <div ng-if="users.currentUsername !== null">
+          <div id="mainMenuProfileButton">{{users.currentUsername}}</div>
+          <div id="mainMenuLogoutButton">LOGOUT</div>
         </div>
+
+        <div id="mainMenuHelp">HELP</div>
+        <div id="mainMenuOptions">OPTIONS</div>
+
       </div>
+    </div>
+
+  </div>
+  <div class="navPush"></div>
+
+    <div ng-controller="UserController">
+
       <div ng-if="users.currentUsername === null">
         <div>LOGIN TO CONTINUE</div>
 
@@ -53,7 +68,7 @@
   <script src="./listController.js"></script>
   <script src="./eventController.js"></script>
   <script src="./groupController.js"></script>
-
+  <script src="./navController.js"></script>
 
   <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
 </html>

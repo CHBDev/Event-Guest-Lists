@@ -1,0 +1,44 @@
+
+body{
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+}
+
+
+.nav{
+  display: inline-block;
+  position: fixed;
+  top: 0px;
+  height: 2em;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.navPush{
+  height: 2em;
+  width: 100%;
+  display: inline-block;
+}
+
+.appTitle{
+  display: inline-block;
+  float: left;
+}
+
+#mainMenuButton{
+  display: inline-block;
+  float: right;
+
+}
+
+#mainMenu{
+  background-color: black;
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+  position: fixed;
+  top: 2em;
+  right: 0px;
+}
