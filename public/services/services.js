@@ -28,4 +28,25 @@
         })
       };
       return r;
+  })
+
+  .factory('controllerDispatch', function($rootScope){
+    var r = {};
+
+    r.changePrimaryTab = function(name){
+      $rootScope.$broadcast("primary", {name:name});
+      r.currentPrimaryTab = name;
+    }
+    r.changeSecondaryTab = function(name){
+      $rootScope.$broadcast("secondary", {name:name});
+      r.currentSecondaryTab = name;
+    }
+
+    r.currentPrimaryTab = "events";
+    r.currentSecondaryTab = "lists";
+
+    // r.currentPrimaryTabContent = "DEFAULT TAB";
+    // r.currentSecondaryTabContent = "DEFAULT TAB";
+
+    return r;
   });

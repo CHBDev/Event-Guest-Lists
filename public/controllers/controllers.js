@@ -2,7 +2,10 @@ controllers = angular.module("theClient.controllers", []);
 
 controllers.
 
-  controller('ClientController', function($scope, $http, socket){
+  controller('ClientController', function($scope, $http, socket, controllerDispatch){
+
+    var s = $scope;
+
     socket.on('init', function(data){
       console.log("INIT: ", data.stuff);
     });
@@ -22,5 +25,18 @@ controllers.
     socket.on('event:update', function(data){
 
     });
+
+
+
+    s.dispatch = controllerDispatch;
+
+    s.changePrimaryTab = function(tabName){
+      s.dispatch.changePrimaryTab(tabName);
+    }
+
+    s.changeSecondaryTab = function(tabName){
+      s.dispatch.changeSecondaryTab(tabName);
+    }
+
 
   });
