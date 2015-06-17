@@ -12,6 +12,10 @@ controllers
       s.createUserOpen === false ? s.createUserOpen = true : s.createUserOpen = false;
     }
 
+    s.passwordsMatch = function(){
+      return s.loginFormData.password == s.loginFormData.confirm;
+    }
+
     s.login = function(form){
       console.log("client login");
       s.attemptedName = form.email;
@@ -102,19 +106,40 @@ controllers
   }
 });
 
-// .directive('contentItem', function ($compile, TemplateService) {
-//     //...
 
-//     var linker = function (scope, element, attrs) {
+// .directive('confirmPassword', function() {
+//     return {
+//         require: "ngModel",
+//         scope: {
+//           otherPassword: "=confirmPassword"
+//         },
+
+//         link: function(scope, element, attr, ngModel) {
+
+//             ngModel.$validators.confirmPassword = function() {
+//               console.log("loginOpen", attr.loginOpen);
+//                 if(attr.loginOpen == false || attr.loginOpen == "false"){
+//                   console.log("returning true for validate");
+//                   return true;
+//                 }
+
+//                 console.log("test password since is open");
+
+//                 console.log("pw", attr.loginPassword);
+//                 console.log("cn", attr.loginConfirm);
+
+//                 return attr.loginPassword == attr.loginConfirm;
+//             };
 
 
+//             scope.$watch('otherPassword', function() {
+//                 ngModel.$validate();
+//             });
+//         }
+//     }
+// });
 
 
-//             element.html(getTemplate(templates, scope.content.content_type));
-
-//             $compile(element.contents())(scope);
-
-//     };
 
 
 
