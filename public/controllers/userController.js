@@ -73,6 +73,7 @@ controllers
         console.log("CREATE FAILED");
       }else{
         console.log("CREATE SUCCESS");
+        //server handles sending login response on create also
       }
     })
 

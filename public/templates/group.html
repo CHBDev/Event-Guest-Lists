@@ -1,6 +1,34 @@
-GROUP
+
 <div ng-controller="GroupController" class="group-html">
-this is a custom group html directive insert
-  {{users.currentUserName}}
-  above should be your current username
+CURRENT GROUP: {{groups.currentGroup}}
+<div id="groups-toolbar"> NEW </div>
+
+<!-- <div>
+  <input type="search" ng-model="q" placeholder="filter..." aria-label="filter..." />
+  <ul class="groups-container">
+    <li class="animate-repeat" ng-repeat="group in groups | filter:q as results">
+      [{{$index + 1}}] {{group.name}} who is {{friend.age}} years old.
+    </li>
+    <li class="animate-repeat" ng-if="results.length == 0">
+      <strong>No results found...</strong>
+    </li>
+  </ul>
+</div> -->
+
+  <input type="search" ng-model="groupsFilter" placeholder="filter..." aria-label="filter..." />
+  <table class="group-table">
+    <tr>
+      <th ng-click="groupsTableOrder('name')">Group Name<span ng-show="groupsTableSort ==='name'">^^</span></th>
+      <th ng-click="groupsTableOrder('userCount')">UserCount<span ng-show="groupsTableSort ==='userCount'">^^</span></th>
+      <th ng-click="groupsTableOrder('listCount')">ListCount<span ng-show="groupsTableSort ==='listCount'">^^</span></th>
+      <th ng-click="groupsTableOrder('guestCount')">GuestCount<span ng-show="groupsTableSort ==='guestCount'">^^</span></th>
+    </tr>
+    <tr ng-repeat="group in groups.groupList | orderBy: groupsTableSort:groupsTableSortReverse | filter:groupsFilter as results">
+      <td>{{group.name}}</td>
+      <td>{{group.userCount}}</td>
+      <td>{{group.listCount}}</td>
+      <td>{{group.guestCount}}</td>
+    </tr>
+  </table>
+
 </div>
