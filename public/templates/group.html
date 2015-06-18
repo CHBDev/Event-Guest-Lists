@@ -1,7 +1,7 @@
 
 <div ng-controller="GroupController" class="group-html">
-CURRENT GROUP: {{groups.currentGroup}}
-<div id="groups-toolbar"> NEW </div>
+CURRENT GROUP: {{groups[pOrS].currentGroup}}
+<div class="groups-toolbar"> NEW </div>
 
 <!-- <div>
   <input type="search" ng-model="q" placeholder="filter..." aria-label="filter..." />
@@ -18,17 +18,25 @@ CURRENT GROUP: {{groups.currentGroup}}
   <input type="search" ng-model="groupsFilter" placeholder="filter..." aria-label="filter..." />
   <table class="group-table">
     <tr>
+      <th>.\/.</th>
       <th ng-click="groupsTableOrder('name')">Group Name<span ng-show="groupsTableSort ==='name'">^^</span></th>
       <th ng-click="groupsTableOrder('userCount')">UserCount<span ng-show="groupsTableSort ==='userCount'">^^</span></th>
       <th ng-click="groupsTableOrder('listCount')">ListCount<span ng-show="groupsTableSort ==='listCount'">^^</span></th>
       <th ng-click="groupsTableOrder('guestCount')">GuestCount<span ng-show="groupsTableSort ==='guestCount'">^^</span></th>
     </tr>
-    <tr ng-repeat="group in groups.groupList | orderBy: groupsTableSort:groupsTableSortReverse | filter:groupsFilter as results">
+    <tr ng-repeat="group in groups.groupArray | orderBy: groupsTableSort:groupsTableSortReverse | filter:groupsFilter as results">
+    <td><button ng-click="groups[pOrS].currentGroup = group.name" ng-show="groups[pOrS].currentGroup !== group.name">SELECT</button><span ng-show="groups[pOrS].currentGroup === group.name">ACTIVE</span></td>
       <td>{{group.name}}</td>
       <td>{{group.userCount}}</td>
       <td>{{group.listCount}}</td>
       <td>{{group.guestCount}}</td>
     </tr>
   </table>
+
+  <div class="selected-group" ng-show="groups[pOrS].currentGroup">
+    <div class="group-toolbar">
+      show users, show events, show guest, show lists?
+    </div>
+    {{groups[pOrS].currentGroup}}
 
 </div>

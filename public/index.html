@@ -60,7 +60,7 @@
           </div>
 
           <div id="mainView">
-            <div id="mainViewPrimary">
+            <div id="mainViewPrimary" ng-controller="PrimaryController">
               <div id="toolBarPrimary" class="toolBar">
                 <div class="groupTabButton tabButton" ng-click="changePrimaryTab('group')">GROUP</div>
                 <div class="eventsTabButton tabButton" ng-click="changePrimaryTab('events')">EVENTS</div>
@@ -71,7 +71,7 @@
               <lists-primary ng-show="dispatch.currentPrimaryTab === 'lists'"></lists-primary>
               <events-primary ng-show="dispatch.currentPrimaryTab === 'events'"></events-primary>
               <group-primary ng-show="dispatch.currentPrimaryTab === 'group'"></group-primary>
-            </div><div id="mainViewSecondary">
+            </div><div id="mainViewSecondary" ng-controller="SecondaryController">
               <div id="toolBarSecondary" class="toolBar">
                 <div class="groupTabButton tabButton" ng-click="changeSecondaryTab('group')">GROUP</div>
                 <div class="eventsTabButton tabButton" ng-click="changeSecondaryTab('events')">EVENTS</div>

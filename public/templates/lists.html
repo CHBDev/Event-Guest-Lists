@@ -1,4 +1,41 @@
-<div ng-controller="ListController" class="messages-html">
-  LIST={{users.currentUsername}}
-  ANOTHER={{happy}}
+<div ng-controller="ListController" class="list-html">
+CURRENT list: {{lists[pOrS].currentlist}}
+<div class="lists-toolbar"> NEW </div>
+
+<!-- <div>
+  <input type="search" ng-model="q" placeholder="filter..." aria-label="filter..." />
+  <ul class="lists-container">
+    <li class="animate-repeat" ng-repeat="list in lists | filter:q as results">
+      [{{$index + 1}}] {{list.name}} who is {{friend.age}} years old.
+    </li>
+    <li class="animate-repeat" ng-if="results.length == 0">
+      <strong>No results found...</strong>
+    </li>
+  </ul>
+</div> -->
+
+  <input type="search" ng-model="listsFilter" placeholder="filter..." aria-label="filter..." />
+  <table class="lists-table">
+    <tr>
+      <th>.\/.</th>
+      <th ng-click="listsTableOrder('name')">List Name<span ng-show="listsTableSort ==='name'">^^</span></th>
+      <th ng-click="listsTableOrder('owner')">Owner<span ng-show="listsTableSort ==='owner'">^^</span></th>
+      <th ng-click="listsTableOrder('origEvent')">Orig Event<span ng-show="listsTableSort ==='origEvent'">^^</span></th>
+      <th ng-click="listsTableOrder('guestCount')">GuestCount<span ng-show="listsTableSort ==='guestCount'">^^</span></th>
+    </tr>
+    <tr ng-repeat="list in lists.listArray | orderBy: listsTableSort:listsTableSortReverse | filter:listsFilter as results">
+    <td><button ng-click="lists[pOrS].currentlist = list.name" ng-show="lists[pOrS].currentlist !== list.name">SELECT</button><span ng-show="lists[pOrS].currentlist === list.name">ACTIVE</span></td>
+      <td>{{list.name}}</td>
+      <td>{{list.owner}}</td>
+      <td>{{list.origEvent}}</td>
+      <td>{{list.guestCount}}</td>
+    </tr>
+  </table>
+
+  <div class="selected-list" ng-show="lists[pOrS].currentlist">
+    <div class="list-toolbar">
+      show users, show events, show guest, show lists?
+    </div>
+    {{lists[pOrS].currentlist}}
+
 </div>

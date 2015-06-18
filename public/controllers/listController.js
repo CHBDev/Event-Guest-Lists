@@ -1,14 +1,17 @@
 controllers
 
-  .controller('ListController', function($scope, $http, socket, users, controllerDispatch){
+  .controller('ListController', function($scope, $http, socket, users, lists, groups, controllerDispatch){
     var s = $scope;
     s.users = users;
+    s.lists = lists;
+    s.groups = groups;
+    s.dispatch = controllerDispatch;
 
     socket.on('list:update', function(data){
 
     });
 
-    s.dispatch = controllerDispatch;
+
 
     s.$on("primary", function(event, args){
       if(args.name === "lists"){

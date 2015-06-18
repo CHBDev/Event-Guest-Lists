@@ -1,8 +1,11 @@
 controllers
 
-  .controller('NavController', function($scope, $http, socket, users, controllerDispatch){
+  .controller('NavController', function($scope, $http, socket, users, groups, lists, controllerDispatch){
       var s = $scope;
       s.users = users;
+      s.dispatch = controllerDispatch;
+      s.groups = groups;
+      s.lists = lists;
 
       s.menuIsOpen = false;
 
@@ -10,7 +13,21 @@ controllers
         s.menuIsOpen = s.menuIsOpen ? false : true;
       }
 
-      s.dispatch = controllerDispatch;
 
 
+
+  })
+
+  .controller('PrimaryController', function($scope, socket, users, groups, lists, controllerDispatch){
+    var s = $scope;
+    s.pOrS = "primary";
+  })
+
+  .controller('SecondaryController', function($scope, socket, users, groups, lists, controllerDispatch){
+    var s = $scope;
+    s.pOrS = "secondary";
   });
+
+
+
+
