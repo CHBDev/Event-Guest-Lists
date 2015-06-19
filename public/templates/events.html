@@ -1,6 +1,43 @@
-Events
-<div ng-controller="EventController" class="events-html">
-this is a custom events html directive insert
-  {{users.currentUserName}}
-  above should be your current username
+<div ng-controller="EventController" class="event-html">
+  <div ng-hide="events[pOrS].currentEvent">
+    <div class="events-toolbar"> EVENTS TOOLBAR </div>
+
+    <!-- <div>
+      <input type="search" ng-model="q" placeholder="filter..." aria-label="filter..." />
+      <ul class="events-container">
+        <li class="animate-repeat" ng-repeat="event in events | filter:q as results">
+          [{{$index + 1}}] {{event.name}} who is {{friend.age}} years old.
+        </li>
+        <li class="animate-repeat" ng-if="results.length == 0">
+          <strong>No results found...</strong>
+        </li>
+      </ul>
+    </div> -->
+
+      <input type="search" ng-model="eventsFilter" placeholder="filter..." aria-label="filter..." />
+      <table class="events-table">
+        <tr>
+          <th>.\/.</th>
+          <th ng-click="eventsTableOrder('name')">event Name<span ng-show="eventsTableSort ==='name'">^^</span></th>
+          <th ng-click="eventsTableOrder('owner')">Owner<span ng-show="eventsTableSort ==='owner'">^^</span></th>
+          <th ng-click="eventsTableOrder('date')">Orig Event<span ng-show="eventsTableSort ==='origEvent'">^^</span></th>
+          <th ng-click="eventsTableOrder('guestCount')">GuestCount<span ng-show="eventsTableSort ==='guestCount'">^^</span></th>
+          <th ng-click="eventsTableOrder('listCount')">ListCount<span ng-show="eventsTableSort ==='listCount'">^^</span></th>
+        </tr>
+        <tr ng-repeat="event in events.eventArray | orderBy: eventsTableSort:eventsTableSortReverse | filter:eventsFilter as results">
+        <td><button ng-click="events[pOrS].currentEvent = event.name" ng-show="events[pOrS].currentEvent !== event.name">SELECT</button><span ng-show="events[pOrS].currentEvent === event.name">ACTIVE</span></td>
+          <td>{{event.name}}</td>
+          <td>{{event.owner}}</td>
+          <td>{{event.date}}</td>
+          <td>{{event.listCount}}</td>
+          <td>{{event.guestCount}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="selected-event" ng-show="events[pOrS].currentEvent">
+      <div class="event-toolbar">
+        TOOLBAR FOR A SINGLE EVENT
+      </div>
+   </div>
 </div>

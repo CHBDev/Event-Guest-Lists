@@ -1,8 +1,11 @@
 controllers
 
-  .controller('EventController', function($scope, $http, socket, users, controllerDispatch){
+  .controller('EventController', function($scope, $http, socket, users, events, lists, groups, controllerDispatch){
     var s = $scope;
     s.users = users;
+    s.events = events;
+    s.groups = groups;
+    s.lists = lists;
 
     socket.on('event:update', function(data){
 
@@ -23,18 +26,26 @@ controllers
     })
 
 
+    s.eventsTableSort = 'name';
+    s.eventsTableSortReverse = true;
+    s.eventsTableOrder = function(prop){
+        $scope.eventsTableSortReverse = ($scope.eventsTableSort === prop) ? !$scope.eventsTableSortReverse : false;
+        $scope.eventsTableSort = prop;
+    };
+
+
 
   })
 
 
-  .directive('eventsPrimary', function(){
-  return {
-    restrict: 'E',
-    templateUrl: "../templates/events.html"
-  }
-})
+//   .directive('eventsPrimary', function(){
+//   return {
+//     restrict: 'E',
+//     templateUrl: "../templates/events.html"
+//   }
+// })
 
-.directive('eventsSecondary', function(){
+.directive('eventsDir', function(){
   return {
     restrict: 'E',
     templateUrl: "../templates/events.html"

@@ -1,9 +1,12 @@
 controllers
 
-  .controller('UserController', function($scope, $http, socket, users, controllerDispatch){
+  .controller('UserController', function($scope, $http, socket, users, groups, events, lists, controllerDispatch){
     var s = $scope;
 
     s.users = users;
+    s.events = events;
+    s.groups = groups;
+    s.lists = lists;
 
     s.loginFormData = {email: null, password: null, confirm: null};
     s.createUserOpen = false;
@@ -79,28 +82,28 @@ controllers
 
   })
 
-.directive('usersPrimary', function(){
+// .directive('usersPrimary', function(){
+//   return {
+//     restrict: 'E',
+//     templateUrl: "../templates/users.html"
+//   }
+// })
+
+.directive('usersDir', function(){
   return {
     restrict: 'E',
     templateUrl: "../templates/users.html"
   }
 })
 
-.directive('usersSecondary', function(){
-  return {
-    restrict: 'E',
-    templateUrl: "../templates/users.html"
-  }
-})
+// .directive('messagesPrimary', function(){
+//   return {
+//     restrict: 'E',
+//     templateUrl: "../templates/messages.html"
+//   }
+// })
 
-.directive('messagesPrimary', function(){
-  return {
-    restrict: 'E',
-    templateUrl: "../templates/messages.html"
-  }
-})
-
-.directive('messagesSecondary', function(){
+.directive('messagesDir', function(){
   return {
     restrict: 'E',
     templateUrl: "../templates/messages.html"

@@ -1,11 +1,12 @@
 controllers
 
-  .controller('NavController', function($scope, $http, socket, users, groups, lists, controllerDispatch){
+  .controller('NavController', function($scope, $http, socket, users, groups, lists, events, controllerDispatch){
       var s = $scope;
       s.users = users;
       s.dispatch = controllerDispatch;
       s.groups = groups;
       s.lists = lists;
+      s.events = events;
 
       s.menuIsOpen = false;
 
@@ -18,12 +19,12 @@ controllers
 
   })
 
-  .controller('PrimaryController', function($scope, socket, users, groups, lists, controllerDispatch){
+  .controller('PrimaryController', function($scope, socket, users, groups, lists, events, controllerDispatch){
     var s = $scope;
     s.pOrS = "primary";
   })
 
-  .controller('SecondaryController', function($scope, socket, users, groups, lists, controllerDispatch){
+  .controller('SecondaryController', function($scope, socket, users, groups, lists, events, controllerDispatch){
     var s = $scope;
     s.pOrS = "secondary";
   });

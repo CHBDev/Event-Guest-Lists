@@ -198,15 +198,59 @@ body{
   height: 2em;
 }
 
-#toolBarPrimary{
+#toolbar-primary{
 
   background-color: orange;
 }
 
-#toolBarSecondary{
+#toolbar-secondary{
 
   background-color: green;
 }
+
+#selectedGroupPrimary{
+  background-color: #884444;
+  display: inline-block;
+  width: 100%;
+  height: 5vh;
+}
+
+#selectedEventPrimary{
+  background-color: #448844;
+  display: inline-block;
+  width: 100%;
+  height: 5vh;
+}
+
+#selectedListPrimary{
+  background-color: #444488;
+  display: inline-block;
+  width: 100%;
+  height: 5vh;
+}
+
+#selectedGroupSecondary{
+  background-color: #995555;
+  display: inline-block;
+  width: 100%;
+  height: 5vh;
+}
+
+#selectedEventSecondary{
+  background-color: #559955;
+  display: inline-block;
+  width: 100%;
+  height: 5vh;
+}
+
+#selectedListSecondary{
+  background-color: #555599;
+  display: inline-block;
+  width: 100%;
+  height: 5vh;
+}
+
+
 
 
 

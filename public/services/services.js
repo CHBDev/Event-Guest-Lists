@@ -32,18 +32,21 @@
 
   .factory('controllerDispatch', function($rootScope){
     var r = {};
+    r.primary = {currentTab: null};
+    r.secondary = {currentTab: null};
 
     r.changePrimaryTab = function(name){
       $rootScope.$broadcast("primary", {name:name});
-      r.currentPrimaryTab = name;
+      r.primary.currentTab = name;
+
     }
     r.changeSecondaryTab = function(name){
       $rootScope.$broadcast("secondary", {name:name});
-      r.currentSecondaryTab = name;
+      r.secondary.currentTab = name;
     }
 
-    r.currentPrimaryTab = "events";
-    r.currentSecondaryTab = "lists";
+    r.primary.currentTab = 'group'; //sets default tabs
+    r.secondary.currentTab = 'messages'; //sets default tabs
 
     // r.currentPrimaryTabContent = "DEFAULT TAB";
     // r.currentSecondaryTabContent = "DEFAULT TAB";

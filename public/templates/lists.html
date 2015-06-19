@@ -1,5 +1,4 @@
 <div ng-controller="ListController" class="list-html">
-CURRENT list: {{lists[pOrS].currentlist}}
 <div class="lists-toolbar"> NEW </div>
 
 <!-- <div>
@@ -24,7 +23,7 @@ CURRENT list: {{lists[pOrS].currentlist}}
       <th ng-click="listsTableOrder('guestCount')">GuestCount<span ng-show="listsTableSort ==='guestCount'">^^</span></th>
     </tr>
     <tr ng-repeat="list in lists.listArray | orderBy: listsTableSort:listsTableSortReverse | filter:listsFilter as results">
-    <td><button ng-click="lists[pOrS].currentlist = list.name" ng-show="lists[pOrS].currentlist !== list.name">SELECT</button><span ng-show="lists[pOrS].currentlist === list.name">ACTIVE</span></td>
+    <td><button ng-click="lists[pOrS].currentList = list.name" ng-show="lists[pOrS].currentList !== list.name">SELECT</button><span ng-show="lists[pOrS].currentList === list.name">ACTIVE</span></td>
       <td>{{list.name}}</td>
       <td>{{list.owner}}</td>
       <td>{{list.origEvent}}</td>
@@ -32,10 +31,10 @@ CURRENT list: {{lists[pOrS].currentlist}}
     </tr>
   </table>
 
-  <div class="selected-list" ng-show="lists[pOrS].currentlist">
+  <div class="selected-list" ng-show="lists[pOrS].currentList">
     <div class="list-toolbar">
       show users, show events, show guest, show lists?
     </div>
-    {{lists[pOrS].currentlist}}
+    {{lists[pOrS].currentList}}
 
 </div>

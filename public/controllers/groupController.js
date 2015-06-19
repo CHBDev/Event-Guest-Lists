@@ -1,9 +1,11 @@
 controllers
 
-  .controller('GroupController', function($scope, $http, socket, users, groups, controllerDispatch){
+  .controller('GroupController', function($scope, $http, socket, users, groups, events, lists, controllerDispatch){
     var s = $scope;
     s.users = users;
+    s.events = events;
     s.groups = groups;
+    s.lists = lists;
 
     socket.on('group:update', function(data){
 
@@ -34,14 +36,14 @@ controllers
 
   })
 
-  .directive('groupPrimary', function(){
-    return {
-      restrict: 'E',
-      templateUrl: "../templates/group.html"
-    }
-  })
+  // .directive('groupPrimary', function(){
+  //   return {
+  //     restrict: 'E',
+  //     templateUrl: "../templates/group.html"
+  //   }
+  // })
 
-  .directive('groupSecondary', function(){
+  .directive('groupDir', function(){
     return {
       restrict: 'E',
       templateUrl: "../templates/group.html"

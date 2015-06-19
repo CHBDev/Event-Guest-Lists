@@ -1,0 +1,25 @@
+
+
+  <div id="toolbar-{{pOrS}}" class="toolBar">
+    <div ng-hide="events[pOrS].currentEvent" class="groupTabButton tabButton" ng-click="pOrS === 'primary' ? changePrimaryTab('group') : changeSecondaryTab('group')">GROUP</div>
+    <div ng-show="groups[pOrS].currentGroup" class="eventsTabButton tabButton" ng-click="pOrS === 'primary' ? changePrimaryTab('events') : changeSecondaryTab('events')">EVENTS</div>
+    <div ng-show="groups[pOrS].currentGroup" class="listsTabButton tabButton" ng-click="pOrS === 'primary' ? changePrimaryTab('lists') : changeSecondaryTab('lists')">LISTS</div>
+    <div class="messagesTabButton tabButton" ng-click="pOrS === 'primary' ? changePrimaryTab('messages') : changeSecondaryTab('messages')">MESSAGES</div>
+  </div>
+
+  <div id="{{pOrS === 'primary' ? 'selectedGroupPrimary' : 'selectedGroupSecondary'}}"  ng-show="groups[pOrS].currentGroup">
+  {{groups[pOrS].currentGroup}}<span class="closeSelection"><button ng-click="dispatch[pOrS].currentTab = 'group'; groups[pOrS].currentGroup = null; events[pOrS].currentEvent = null; lists[pOrS].currentList = null">X</button></span>
+  </div>
+  <div id="{{pOrS === 'primary' ? 'selectedEventPrimary' : 'selectedEventSecondary'}}"  ng-show="events[pOrS].currentEvent">
+  {{events[pOrS].currentEvent}}<span class="closeSelection"><button ng-click="events[pOrS].currentEvent = null; lists[pOrS].currentList = null">X</button></span>
+  </div>
+   <div id="{{pOrS === 'primary' ? 'selectedListPrimary' : 'selectedListSecondary'}}"  ng-show="lists[pOrS].currentList">
+
+  {{lists[pOrS].currentList}}<span class="closeSelection"><button ng-click="lists[pOrS].currentList = null">X</button></span>
+  </div>
+
+  <messages-dir ng-show="dispatch[pOrS].currentTab === 'messages'"></messages-dir>
+  <lists-dir ng-show="dispatch[pOrS].currentTab === 'lists'"></lists-dir>
+  <events-dir ng-show="dispatch[pOrS].currentTab === 'events'"></events-dir>
+  <group-dir ng-show="dispatch[pOrS].currentTab === 'group'"></group-dir>
+

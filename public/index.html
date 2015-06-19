@@ -54,35 +54,56 @@
 
               </div>
               </form>
-
-
-
           </div>
 
-          <div id="mainView">
+          <div ng-show="users.currentUsername" id="mainView">
             <div id="mainViewPrimary" ng-controller="PrimaryController">
-              <div id="toolBarPrimary" class="toolBar">
-                <div class="groupTabButton tabButton" ng-click="changePrimaryTab('group')">GROUP</div>
-                <div class="eventsTabButton tabButton" ng-click="changePrimaryTab('events')">EVENTS</div>
-                <div class="listsTabButton tabButton" ng-click="changePrimaryTab('lists')">LISTS</div>
+              <tabs-view></tabs-view>
+              <!-- <div id="toolBarPrimary" class="toolBar">
+                <div ng-hide="events.primary.currentEvent" class="groupTabButton tabButton" ng-click="changePrimaryTab('group')">GROUP</div>
+                <div ng-show="groups.primary.currentGroup" class="eventsTabButton tabButton" ng-click="changePrimaryTab('events')">EVENTS</div>
+                <div ng-show="groups.primary.currentGroup" class="listsTabButton tabButton" ng-click="changePrimaryTab('lists')">LISTS</div>
                 <div class="messagesTabButton tabButton" ng-click="changePrimaryTab('messages')">MESSAGES</div>
               </div>
-              <messages-primary ng-show="dispatch.currentPrimaryTab === 'messages'"></messages-primary>
-              <lists-primary ng-show="dispatch.currentPrimaryTab === 'lists'"></lists-primary>
-              <events-primary ng-show="dispatch.currentPrimaryTab === 'events'"></events-primary>
-              <group-primary ng-show="dispatch.currentPrimaryTab === 'group'"></group-primary>
+
+              <div id="selectedGroupPrimary"  ng-show="groups.primary.currentGroup">
+              {{groups.primary.currentGroup}}<span class="closeSelection"><button ng-click="dispatch.primary.currentTab = 'group'; groups.primary.currentGroup = null; events.primary.currentEvent = null; lists.primary.currentList = null">X</button></span>
+              </div>
+              <div id="selectedEventPrimary"  ng-show="events.primary.currentEvent">
+              {{events.primary.currentEvent}}<span class="closeSelection"><button ng-click="events.primary.currentEvent = null; lists.primary.currentList = null">X</button></span>
+              </div>
+               <div id="selectedListPrimary"  ng-show="lists.primary.currentList">
+
+              {{lists.primary.currentList}}<span class="closeSelection"><button ng-click="lists.primary.currentList = null">X</button></span>
+              </div>
+
+              <messages-primary ng-show="dispatch.primary.currentTab === 'messages'"></messages-primary>
+              <lists-primary ng-show="dispatch.primary.currentTab === 'lists'"></lists-primary>
+              <events-primary ng-show="dispatch.primary.currentTab === 'events'"></events-primary>
+              <group-primary ng-show="dispatch.primary.currentTab === 'group'"></group-primary>-->
             </div><div id="mainViewSecondary" ng-controller="SecondaryController">
-              <div id="toolBarSecondary" class="toolBar">
+            <tabs-view></tabs-view>
+             <!--  <div id="toolBarSecondary" class="toolBar">
                 <div class="groupTabButton tabButton" ng-click="changeSecondaryTab('group')">GROUP</div>
-                <div class="eventsTabButton tabButton" ng-click="changeSecondaryTab('events')">EVENTS</div>
-                <div class="listsTabButton tabButton" ng-click="changeSecondaryTab('lists')">LISTS</div>
+                <div ng-show="groups.secondary.currentGroup" class="eventsTabButton tabButton" ng-click="changeSecondaryTab('events')">EVENTS</div>
+                <div ng-show="groups.secondary.currentGroup" class="listsTabButton tabButton" ng-click="changeSecondaryTab('lists')">LISTS</div>
                 <div class="messagesTabButton tabButton" ng-click="changeSecondaryTab('messages')">MESSAGES</div>
               </div>
 
-              <messages-secondary ng-show="dispatch.currentSecondaryTab === 'messages'"></messages-secondary>
-              <lists-secondary ng-show="dispatch.currentSecondaryTab === 'lists'"></lists-secondary>
-              <events-secondary ng-show="dispatch.currentSecondaryTab === 'events'"></events-secondary>
-              <group-secondary ng-show="dispatch.currentSecondaryTab === 'group'"></group-secondary>
+              <div id="selectedGroupSecondary"  ng-show="groups.secondary.currentGroup">
+              {{groups.secondary.currentGroup}}<span class="closeSelection"><button ng-click="groups.secondary.currentGroup = null">X</button></span>
+              </div>
+              <div id="selectedEventSecondary"  ng-show="events.secondary.currentEvent">
+              {{events.secondary.currentEvent}}<span class="closeSelection"><button ng-click="events.secondary.currentEvent = null">X</button></span>
+              </div>
+               <div id="selectedListSecondary"  ng-show="lists.secondary.currentList">
+              {{lists.secondary.currentList}}<span class="closeSelection"><button ng-click="lists.secondary.currentList = null">X</button></span>
+              </div>
+
+              <messages-dir ng-show="dispatch.secondary.currentTab === 'messages'"></messages-dir>
+              <lists-dir ng-show="dispatch.secondary.currentTab === 'lists'"></lists-dir>
+              <events-dir ng-show="dispatch.secondary.currentTab === 'events'"></events-dir>
+              <group-dir ng-show="dispatch.secondary.currentTab === 'group'"></group-dir> -->
             </div>
           </div>
 
