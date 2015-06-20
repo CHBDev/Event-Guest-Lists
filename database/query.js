@@ -5,6 +5,7 @@ me.user = {};
 me.group = {};
 me.event = {};
 me.list = {};
+me.guest = {};
 me.wrapper = wrapper;
 me.query = function(str, arrOrCb, cb){
   if(Array.isArray(arrOrCb) === false){
@@ -18,6 +19,7 @@ var dbUser = require("../database/user.js")(me);
 var dbGroup = require("../database/group.js")(me);
 var dbEvent = require("../database/event.js")(me);
 var dbList = require("../database/list.js")(me);
+var dbGuest = require("../database/guest.js")(me);
 
 me.user.create = function(data, cb){
   dbUser.create(data, cb);
@@ -61,6 +63,16 @@ me.list.modify = function(data,cb){
 };
 me.list.remove = function(data,cb){
   dbList.remove(data, cb);
+};
+
+me.guest.create = function(data,cb){
+  dbGuest.create(data, cb);
+};
+me.guest.modify = function(data,cb){
+  dbGuest.modify(data, cb);
+};
+me.guest.remove = function(data,cb){
+  dbGuest.remove(data, cb);
 };
 
 

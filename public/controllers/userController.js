@@ -7,6 +7,8 @@ controllers
     s.events = events;
     s.groups = groups;
     s.lists = lists;
+    s.dispatch = controllerDispatch;
+    s.conSec = {name: "user", fileInput: {} };
 
     s.loginFormData = {email: null, password: null, confirm: null};
     s.createUserOpen = false;
@@ -38,10 +40,7 @@ controllers
       socket.emit('user:create', form);
     }.bind(s, s.loginFormData);
 
-    s.dispatch = controllerDispatch;
 
-    s.test = "YAY";
-    // $scope.test = "YAY";
 
 
     s.$on("primary", function(event, args){

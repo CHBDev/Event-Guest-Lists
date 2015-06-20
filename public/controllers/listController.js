@@ -8,6 +8,8 @@ controllers
     s.events = events;
     s.dispatch = controllerDispatch;
 
+    s.conSec = {name: "list", fileInput: {} };
+
     socket.on('list:update', function(data){
 
     });
@@ -27,10 +29,18 @@ controllers
     })
 
     s.listsTableSort = 'name';
-    s.listsTableSortReverse = true;
+    s.listsTableSortReverse = false;
+    s.listTableSort = 'name';
+    s.listTableSortReverse = false;
+
     s.listsTableOrder = function(prop){
         $scope.listsTableSortReverse = ($scope.listsTableSort === prop) ? !$scope.listsTableSortReverse : false;
         $scope.listsTableSort = prop;
+    };
+
+     s.listTableOrder = function(prop){
+        $scope.listTableSortReverse = ($scope.listTableSort === prop) ? !$scope.listTableSortReverse : false;
+        $scope.listTableSort = prop;
     };
 
 

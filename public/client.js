@@ -9,5 +9,7 @@ client = angular.module('theClient',[
   // Do not use in new projects.
   //TODO
   $sceProvider.enabled(false);
-});
+})
+
+
 

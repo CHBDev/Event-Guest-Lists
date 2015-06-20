@@ -7,6 +7,8 @@ controllers
     s.groups = groups;
     s.lists = lists;
 
+    s.conSec = {name: "event", fileInput: {} };
+
     socket.on('event:update', function(data){
 
     });

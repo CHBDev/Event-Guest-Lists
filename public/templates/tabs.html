@@ -4,6 +4,7 @@
     <div ng-hide="events[pOrS].currentEvent" class="groupTabButton tabButton" ng-click="pOrS === 'primary' ? changePrimaryTab('group') : changeSecondaryTab('group')">GROUP</div>
     <div ng-show="groups[pOrS].currentGroup" class="eventsTabButton tabButton" ng-click="pOrS === 'primary' ? changePrimaryTab('events') : changeSecondaryTab('events')">EVENTS</div>
     <div ng-show="groups[pOrS].currentGroup" class="listsTabButton tabButton" ng-click="pOrS === 'primary' ? changePrimaryTab('lists') : changeSecondaryTab('lists')">LISTS</div>
+    <div ng-show="groups[pOrS].currentGroup" class="listsTabButton tabButton" ng-click="pOrS === 'primary' ? changePrimaryTab('guests') : changeSecondaryTab('guests')">GUESTS</div>
     <div class="messagesTabButton tabButton" ng-click="pOrS === 'primary' ? changePrimaryTab('messages') : changeSecondaryTab('messages')">MESSAGES</div>
   </div>
 
@@ -22,4 +23,5 @@
   <lists-dir ng-show="dispatch[pOrS].currentTab === 'lists'"></lists-dir>
   <events-dir ng-show="dispatch[pOrS].currentTab === 'events'"></events-dir>
   <group-dir ng-show="dispatch[pOrS].currentTab === 'group'"></group-dir>
+  <guests-dir ng-show="dispatch[pOrS].currentTab === 'guests'"></guests-dir>
 

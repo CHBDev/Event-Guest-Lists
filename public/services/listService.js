@@ -9,8 +9,6 @@ services
     r.primary.currentList = null;
     r.secondary.currentList = null;
 
-    r.testMe = "YAY";
-
     r.listArray = [
                     {name: "important people", owner: "cory", origEvent: "Big Wedding", guestCount: 900},
                     {name: "only lawyers", owner: "joe", origEvent: "GALA DAY", guestCount: 207},

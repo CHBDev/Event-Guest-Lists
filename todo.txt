@@ -1,0 +1,19 @@
+//TODO
+wire up CRUD for all the things
+wire up tables for all the things
+design final flow
+add drag and drop file import
+
+
+messaging system
+allow users to suggest changes and updates to other users via messages
+
+
+
+//ISSUES
+tab not updating on csv read and import, despite it showing updated after clicking tab again
+   like some binding update issue.
+
+
+
+//TEST

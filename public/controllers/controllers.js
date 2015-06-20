@@ -11,6 +11,8 @@ controllers.
     s.events = events;
     s.dispatch = controllerDispatch;
 
+    s.conSec = {name: null, fileInput: {} };
+
     socket.on('init', function(data){
       console.log("INIT: ", data.stuff);
     });
@@ -36,7 +38,7 @@ controllers.
 
 
     s.changePrimaryTab = function(tabName){
-        console.log("CHANGE PRIMARY TAB");
+
       s.dispatch.changePrimaryTab(tabName);
     }
 
