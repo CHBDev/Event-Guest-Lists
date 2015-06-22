@@ -26,7 +26,7 @@ controllers
       if(args.name === "lists"){
 
       }
-    })
+    });
 
     s.listsTableSort = 'name';
     s.listsTableSortReverse = false;

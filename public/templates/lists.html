@@ -1,4 +1,10 @@
 <div ng-controller="ListController" class="list-html">
+<div>CONSECNAME: {{conSec.name}}</div>
+<div>LISTS pOrS : {{pOrS}}</div>
+<div></div>
+<div ng-show="conSec.fileInput.data">THERE IS A FILE LOADED</div>
+<div ng-show="lists[pOrS].currentList">THERE IS A LIST SELECTED</div>
+<br>
 <div class="lists-toolbar"> ALL LISTS TOOLBAR </div><br>
 
 <h1>ADD CSV FILE TO MAKE NEW LIST</h1>

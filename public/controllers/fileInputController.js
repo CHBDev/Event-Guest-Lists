@@ -80,25 +80,26 @@ controllers
         var file = (onChangeEvent.srcElement || onChangeEvent.target).files[0];
 
          Papa.parse(file, {
-          header: true,
-          worker: true,
+            header: true,
+            worker: true,
 
+            complete: function(results) {
+              console.log(scope.conSec);
 
+              if(scope.conSec.name){
+                scope.conSec.fileInput.err = results.err;
+                scope.conSec.fileInput.data = results.data;
+                scope.conSec.fileInput.meta = results.meta;
 
-          complete: function(results) {
-            console.log(scope.conSec);
-            var lowestController = scope.conSec;
-            if(lowestController.name){
-              lowestController.fileInput.err = results.err;
-              lowestController.fileInput.data = results.data;
-              lowestController.fileInput.meta = results.meta;
-
-              scope.current = "Imported CSV"
-            }else{
-              console.log("ERR: attempting file parse without controller support");
+                //this will be the 'currentList', or 'currentGroup' past in, etc
+                scope.current = "Imported CSV"
+                scope.$apply();
+              }else{
+                console.log("ERR: attempting file parse without controller support");
+              }
             }
-          }
-        });
+          });
+
 
       });
     }
@@ -108,7 +109,7 @@ controllers
 .directive('fileInput', function(){
   return {
     restrict: 'E',
-    scope: {conSec: '=conSec'},
+    scope: {conSec: '=conSec', current: '=current'},
     templateUrl: "../templates/fileInput.html"
   }
 });
