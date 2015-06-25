@@ -9,6 +9,8 @@ services
     r.primary.currentGroup = null;
     r.secondary.currentGroup = null;
 
+
+
     r.cache = {};
     r.cache.usersGroups = [
                     {name: "my special group2", userCount: 7, listCount: 24, guestCount: 345},
