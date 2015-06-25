@@ -1,20 +1,15 @@
 controllers
 
-  .controller('ListController', function($scope, $http, socket, users, lists, groups, events, controllerDispatch){
+  .controller('ListsController', function($scope, $http, controllerDispatch){
     var s = $scope;
-    s.users = users;
-    s.lists = lists;
-    s.groups = groups;
-    s.events = events;
-    s.dispatch = controllerDispatch;
+
+    controllerDispatch.setServicesToLocalScope(s);
 
     s.conSec = {name: "list", fileInput: {} };
 
-    socket.on('list:update', function(data){
+    s.socket.on('list:update', function(data){
 
     });
-
-
 
     s.$on("primary", function(event, args){
       if(args.name === "lists"){
@@ -58,4 +53,11 @@ controllers
     restrict: 'E',
     templateUrl: "../templates/lists.html"
   }
-});
+})
+
+.directive('listDir', function(){
+  return {
+    restrict: 'E',
+    templateUrl: "../templates/list.html"
+  }
+})

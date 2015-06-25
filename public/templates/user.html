@@ -1,0 +1,20 @@
+<div ng-controller="UsersController" class="user-html">
+  <div class="selected-user"> SELECTED USER PAGE </div>
+
+    <div id="toolbar-{{pOrS}}" class="toolbar users">
+      <div ng-class="{'active-toolbar-button': users[pOrS].currentToolbarButton === 'groups'}" class="groups users-toolbar-button toolbar-button" ng-click="users[pOrS].currentToolbarButton = 'groups'">MY GROUPS</div>
+      <div ng-class="{'active-toolbar-button': users[pOrS].currentToolbarButton === 'events'}" class="events events-toolbar-button toolbar-button" ng-click="users[pOrS].currentToolbarButton = 'events'">MY EVENTS</div>
+      <div ng-class="{'active-toolbar-button': users[pOrS].currentToolbarButton === 'lists'}" class="lists lists-toolbar-button toolbar-button" ng-click="users[pOrS].currentToolbarButton = 'lists'">MY LISTS</div>
+      <div ng-class="{'active-toolbar-button': users[pOrS].currentToolbarButton === 'messages'}" class="messages messages-toolbar-button toolbar-button" ng-click="users[pOrS].currentToolbarButton = 'messages'">MY MESSAGES</div>
+    </div>
+
+  <div ng-switch="users[pOrS].currentToolbarButton">
+    <events-dir ng-switch-when="events"></events-dir>
+    <lists-dir ng-switch-when="lists"></lists-dir>
+    <messages-dir ng-switch-when="messages"></messages-dir>
+    <groups-dir ng-switch-default></groups-dir>
+  </div>
+
+
+
+</div>

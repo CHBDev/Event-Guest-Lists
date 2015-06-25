@@ -1,0 +1,16 @@
+<div ng-controller="EventsController" class="event-html">
+  <div ng-show="events[pOrS].currentEvent">
+    <div class="selected-event"> SELECTED EVENT </div>
+
+
+    <div id="toolbar-{{pOrS}}" class="toolbar">
+     <!--  <div class="users-tab-button tab-button" ng-click="groups.showUsers(pOrS)">USERS</div> -->
+      <!-- <div  class="events-tab-button tab-button" ng-click="groups.showEvents(pOrS)">EVENTS</div> -->
+      <div  class="lists-tab-button tab-button" ng-click="groups.showLists(pOrS)">LISTS</div>
+      <!-- <div  class="guests-tab-buttn tab-button" ng-click="groups.showGuests(pOrS)">GUESTS</div> -->
+      <div class="messages-tab-button tab-button" ng-click="groups.showMessages(pOrS)">MESSAGES</div>
+
+
+  </div>
+</div>
+

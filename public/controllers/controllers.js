@@ -2,34 +2,30 @@ controllers = angular.module("theClient.controllers", []);
 
 controllers.
 
-  controller('ClientController', function($scope, $http, socket, users, groups, lists, events, controllerDispatch){
+  controller('ClientController', function($scope, $http, controllerDispatch){
 
     var s = $scope;
-    s.groups = groups;
-    s.lists = lists;
-    s.users = users;
-    s.events = events;
-    s.dispatch = controllerDispatch;
+    controllerDispatch.setServicesToLocalScope(s);
 
     s.conSec = {name: null, fileInput: {} };
 
-    socket.on('init', function(data){
+    s.socket.on('init', function(data){
       console.log("INIT: ", data.stuff);
     });
 
-    socket.on('user:join', function(data){
+    s.socket.on('user:join', function(data){
 
     });
 
-    socket.on('user:left', function(data){
+    s.socket.on('user:left', function(data){
 
     });
 
-    socket.on('list:update', function(data){
+    s.socket.on('list:update', function(data){
 
     });
 
-    socket.on('event:update', function(data){
+    s.socket.on('event:update', function(data){
 
     });
 

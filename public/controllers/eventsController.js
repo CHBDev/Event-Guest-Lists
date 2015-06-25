@@ -1,19 +1,17 @@
 controllers
 
-  .controller('EventController', function($scope, $http, socket, users, events, lists, groups, controllerDispatch){
+  .controller('EventsController', function($scope, $http, controllerDispatch){
     var s = $scope;
-    s.users = users;
-    s.events = events;
-    s.groups = groups;
-    s.lists = lists;
+    controllerDispatch.setServicesToLocalScope(s);
+
 
     s.conSec = {name: "event", fileInput: {} };
 
-    socket.on('event:update', function(data){
+    s.socket.on('event:update', function(data){
 
     });
 
-    s.dispatch = controllerDispatch;
+
 
     s.$on("primary", function(event, args){
       if(args.name === "events"){
@@ -52,4 +50,11 @@ controllers
     restrict: 'E',
     templateUrl: "../templates/events.html"
   }
-});
+})
+
+.directive('eventDir', function(){
+  return {
+    restrict: 'E',
+    templateUrl: "../templates/event.html"
+  }
+})

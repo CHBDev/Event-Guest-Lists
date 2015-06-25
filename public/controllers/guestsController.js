@@ -1,17 +1,13 @@
 controllers
 
-  .controller('GuestController', function($scope, $http, socket, users, groups, events, lists, guests, controllerDispatch){
+  .controller('GuestsController', function($scope, $http, controllerDispatch){
     var s = $scope;
-    s.users = users;
-    s.events = events;
-    s.groups = groups;
-    s.lists = lists;
-    s.guests = guests;
-    s.dispatch = controllerDispatch;
+
+    controllerDispatch.setServicesToLocalScope(s);
 
     s.conSec = {name: "guest", fileInput: {} };
 
-    socket.on('guest:update', function(data){
+    s.socket.on('guest:update', function(data){
 
     });
 
@@ -27,7 +23,7 @@ controllers
       if(args.name === "group"){
 
       }
-    })
+    });
 
 
     s.guestsTableSort = 'name';
@@ -51,5 +47,12 @@ controllers
     return {
       restrict: 'E',
       templateUrl: "../templates/guests.html"
+    }
+  })
+
+   .directive('guestDir', function(){
+    return {
+      restrict: 'E',
+      templateUrl: "../templates/guest.html"
     }
   });

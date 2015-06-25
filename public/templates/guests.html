@@ -1,3 +1,40 @@
-<div ng-controller="GuestController" class="guests-html">
-  GUESTS TEMPLATE
+<div ng-controller="GuestsController" class="guests-html">
+  <div ng-hide="guests[pOrS].currentGuest">
+    <div  class="guests-toolbar"> ALL AVAILABLE GUESTS </div>
+
+  <!-- <div>
+    <input type="search" ng-model="q" placeholder="filter..." aria-label="filter..." />
+    <ul class="guests-container">
+      <li class="animate-repeat" ng-repeat="guest in guests | filter:q as results">
+        [{{$index + 1}}] {{guest.name}} who is {{friend.age}} years old.
+      </li>
+      <li class="animate-repeat" ng-if="results.length == 0">
+        <strong>No results found...</strong>
+      </li>
+    </ul>
+  </div> -->
+
+    <input type="search" ng-model="guestsFilter" placeholder="filter..." aria-label="filter..." />
+    <table class="guest-table table">
+      <tr>
+        <th>.\/.</th>
+        <th ng-click="guestsTableOrder('name')">Guest Name<span ng-show="guestsTableSort ==='name'">^^</span></th>
+        <th ng-click="guestsTableOrder('userCount')">UserCount<span ng-show="guestsTableSort ==='userCount'">^^</span></th>
+        <th ng-click="guestsTableOrder('listCount')">ListCount<span ng-show="guestsTableSort ==='listCount'">^^</span></th>
+        <th ng-click="guestsTableOrder('guestCount')">GuestCount<span ng-show="guestsTableSort ==='guestCount'">^^</span></th>
+      </tr>
+      <tr ng-class-odd="'odd-table-row'" ng-repeat="guest in guests.guestsArray | orderBy: guestsTableSort:guestsTableSortReverse | filter:guestsFilter as results">
+      <td><button ng-click="guests[pOrS].currentGuest = guest.name; dispatch[pOrS].currentTab = 'events'" ng-show="guests[pOrS].currentGuest !== guest.name">SELECT</button><span ng-show="guests[pOrS].currentGuest === guest.name">ACTIVE</span></td>
+        <td>{{guest.name}}</td>
+        <td>{{guest.userCount}}</td>
+        <td>{{guest.listCount}}</td>
+        <td>{{guest.guestCount}}</td>
+      </tr>
+    </table>
+  </div>
+
 </div>
+
+
+
+

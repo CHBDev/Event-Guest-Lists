@@ -18,10 +18,8 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;
   cursor: default;
-
-
 }
-/* HTML5 display-role reset for older browsers */
+
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
@@ -64,12 +62,12 @@ table {
 *,
 *:before,
 *:after{
- /*-webkit-box-sizing: border-box;
+ -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;*/
-  -webkit-box-sizing: padding-box;
+  box-sizing: border-box;
+  /*-webkit-box-sizing: padding-box;
   -moz-box-sizing: padding-box;
-  box-sizing: padding-box;
+  box-sizing: padding-box;*/
   /*-webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;*/
@@ -172,83 +170,32 @@ body{
 #mainViewPrimary{
   display: inline-block;
   height: 100%;
-  width: 60%;
+  width: 49%;
   overflow: scroll;
-  background-color: red;
+  background-color: black;
+}
+
+#mainViewMiddle{
+  display: inline-block;
+  height: 100%;
+  width: 2%;
+  border: 1px solid white;
+  background-color: black;
 }
 
 #mainViewSecondary{
   display: inline-block;
   height: 100%;
-  width: 40%;
+  width: 49%;
   overflow: scroll;
   background-color: blue;
 }
 
-.tabButton{
-  display: inline-block;
-  width: 19%;
-  height: 100%;
 
-}
 
-.toolBar{
-  display: inline-block;
-  width: 100%;
-  height: 2em;
-}
 
-#toolbar-primary{
 
-  background-color: orange;
-}
 
-#toolbar-secondary{
-
-  background-color: green;
-}
-
-#selectedGroupPrimary{
-  background-color: #884444;
-  display: inline-block;
-  width: 100%;
-  height: 5vh;
-}
-
-#selectedEventPrimary{
-  background-color: #448844;
-  display: inline-block;
-  width: 100%;
-  height: 5vh;
-}
-
-#selectedListPrimary{
-  background-color: #444488;
-  display: inline-block;
-  width: 100%;
-  height: 5vh;
-}
-
-#selectedGroupSecondary{
-  background-color: #995555;
-  display: inline-block;
-  width: 100%;
-  height: 5vh;
-}
-
-#selectedEventSecondary{
-  background-color: #559955;
-  display: inline-block;
-  width: 100%;
-  height: 5vh;
-}
-
-#selectedListSecondary{
-  background-color: #555599;
-  display: inline-block;
-  width: 100%;
-  height: 5vh;
-}
 
 
 

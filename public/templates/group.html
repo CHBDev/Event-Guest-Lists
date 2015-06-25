@@ -1,43 +1,18 @@
 
-<div ng-controller="GroupController" class="group-html">
-  <div ng-hide="groups[pOrS].currentGroup">
-    <div  class="groups-toolbar"> ALL GROUPS TOOLBAR </div>
+<div ng-controller="GroupsController" class="group-html">
+SELECTED GROUP
+    <div class="selected-group"></div>
 
-  <!-- <div>
-    <input type="search" ng-model="q" placeholder="filter..." aria-label="filter..." />
-    <ul class="groups-container">
-      <li class="animate-repeat" ng-repeat="group in groups | filter:q as results">
-        [{{$index + 1}}] {{group.name}} who is {{friend.age}} years old.
-      </li>
-      <li class="animate-repeat" ng-if="results.length == 0">
-        <strong>No results found...</strong>
-      </li>
-    </ul>
-  </div> -->
+      <div id="toolbar-{{pOrS}}" class="toolbar">
+        <div class="users-toolbar-button toolbar-button" ng-click="groups.showUsers(pOrS)">USERS</div>
+        <div  class="events-toolbar-button toolbar-button" ng-click="groups.showEvents(pOrS)">EVENTS</div>
+        <div  class="lists-toolbar-button toolbar-button" ng-click="groups.showLists(pOrS)">LISTS</div>
+        <div  class="guests-toolbar-buttn toolbar-button" ng-click="groups.showGuests(pOrS)">GUESTS</div>
+        <div class="messages-toolbar-button toolbar-button" ng-click="groups.showMessages(pOrS)">MESSAGES</div>
+      </div>
 
-    <input type="search" ng-model="groupsFilter" placeholder="filter..." aria-label="filter..." />
-    <table class="group-table">
-      <tr>
-        <th>.\/.</th>
-        <th ng-click="groupsTableOrder('name')">Group Name<span ng-show="groupsTableSort ==='name'">^^</span></th>
-        <th ng-click="groupsTableOrder('userCount')">UserCount<span ng-show="groupsTableSort ==='userCount'">^^</span></th>
-        <th ng-click="groupsTableOrder('listCount')">ListCount<span ng-show="groupsTableSort ==='listCount'">^^</span></th>
-        <th ng-click="groupsTableOrder('guestCount')">GuestCount<span ng-show="groupsTableSort ==='guestCount'">^^</span></th>
-      </tr>
-      <tr ng-repeat="group in groups.groupArray | orderBy: groupsTableSort:groupsTableSortReverse | filter:groupsFilter as results">
-      <td><button ng-click="groups[pOrS].currentGroup = group.name; dispatch[pOrS].currentTab = 'events'" ng-show="groups[pOrS].currentGroup !== group.name">SELECT</button><span ng-show="groups[pOrS].currentGroup === group.name">ACTIVE</span></td>
-        <td>{{group.name}}</td>
-        <td>{{group.userCount}}</td>
-        <td>{{group.listCount}}</td>
-        <td>{{group.guestCount}}</td>
-      </tr>
-    </table>
-  </div>
 
-  <div class="selected-group" ng-show="groups[pOrS].currentGroup">
-    <div class="group-toolbar">
-      SINGLE GROUP TOOLBAR
-    </div>
-  </div>
 </div>
+
+
 

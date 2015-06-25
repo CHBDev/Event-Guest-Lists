@@ -1,0 +1,15 @@
+
+.selected-tab{
+  display: inline-block;
+  height: 100%;
+  width: 24%;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.selection-bar{
+  display: inline-block;
+  height: 2em;
+  width: 100%;
+  background-color: gray;
+}

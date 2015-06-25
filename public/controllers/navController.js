@@ -1,12 +1,8 @@
 controllers
 
-  .controller('NavController', function($scope, $http, socket, users, groups, lists, events, controllerDispatch){
+  .controller('NavController', function($scope, $http, controllerDispatch){
       var s = $scope;
-      s.users = users;
-      s.dispatch = controllerDispatch;
-      s.groups = groups;
-      s.lists = lists;
-      s.events = events;
+      controllerDispatch.setServicesToLocalScope(s);
 
       s.menuIsOpen = false;
 
@@ -15,18 +11,21 @@ controllers
       }
 
 
-
-
   })
 
-  .controller('PrimaryController', function($scope, socket, users, groups, lists, events, controllerDispatch){
+  .controller('PrimaryController', function($scope, controllerDispatch){
     var s = $scope;
     s.pOrS = "primary";
   })
 
-  .controller('SecondaryController', function($scope, socket, users, groups, lists, events, controllerDispatch){
+  .controller('SecondaryController', function($scope, controllerDispatch){
     var s = $scope;
     s.pOrS = "secondary";
+  })
+
+   .controller('MiddleController', function($scope, controllerDispatch){
+    var s = $scope;
+
   });
 
 

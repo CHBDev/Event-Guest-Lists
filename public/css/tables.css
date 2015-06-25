@@ -1,0 +1,49 @@
+table{
+
+}
+
+table, th, td{
+  border: 1px solid black;
+}
+
+td, th{
+  padding: .24em 1em .24em 1em;
+}
+
+/*td{
+  margin: 1px, 2px, 1px, 2px;
+}
+
+th{
+  margin: 1px, 2px, 1px, 2px;
+}*/
+
+tr{
+
+}
+
+tr.odd-table-row{
+  background-color: rgba(0,0,0,.18);
+}
+
+.table{
+  margin: 0 auto;
+}
+
+.table th{
+  font-weight: bold;
+}
+
+.group-table{
+  text-align: center;
+}
+
+.group-table tr:first-child{
+  background-color: yellow;
+  color: black;
+}
+
+.events-table tr:first-child{
+  background-color: yellow;
+  color: black;
+}

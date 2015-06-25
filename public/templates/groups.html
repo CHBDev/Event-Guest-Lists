@@ -1,0 +1,24 @@
+<div ng-controller="GroupsController" class="groups-html">
+    <div  class="groups-toolbar"> GROUPS THIS USER IS A MEMBER OF </div>
+
+    <input type="search" ng-model="groupsFilter" placeholder="filter..." aria-label="filter..." />
+    <table class="group-table table">
+      <tr>
+        <th>.\/.</th>
+        <th ng-click="groupsTableOrder('name')">Group Name<span ng-show="groupsTableSort ==='name'">^^</span></th>
+        <th ng-click="groupsTableOrder('userCount')">UserCount<span ng-show="groupsTableSort ==='userCount'">^^</span></th>
+        <th ng-click="groupsTableOrder('listCount')">ListCount<span ng-show="groupsTableSort ==='listCount'">^^</span></th>
+        <th ng-click="groupsTableOrder('guestCount')">GuestCount<span ng-show="groupsTableSort ==='guestCount'">^^</span></th>
+      </tr>
+      {{getGroupArray(pOrS)}}
+      <tr ng-class-odd="'odd-table-row'" ng-repeat="group in getGroupArray(pOrS) | orderBy: groupsTableSort:groupsTableSortReverse | filter:groupsFilter as results">
+      <td><button ng-click="groups[pOrS].currentGroup = group.name; dispatch[pOrS].currentTab = 'events'" ng-show="groups[pOrS].currentGroup !== group.name">SELECT</button><span ng-show="groups[pOrS].currentGroup === group.name">ACTIVE</span></td>
+        <td>{{group.name}}</td>
+        <td>{{group.userCount}}</td>
+        <td>{{group.listCount}}</td>
+        <td>{{group.guestCount}}</td>
+      </tr>
+    </table>
+
+
+</div>

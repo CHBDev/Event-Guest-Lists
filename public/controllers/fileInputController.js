@@ -77,29 +77,28 @@ controllers
 
       element.on('change', function(onChangeEvent) {
 
-        var file = (onChangeEvent.srcElement || onChangeEvent.target).files[0];
+      var file = (onChangeEvent.srcElement || onChangeEvent.target).files[0];
 
-         Papa.parse(file, {
-            header: true,
-            worker: true,
+       Papa.parse(file, {
+          header: true,
+          worker: true,
 
-            complete: function(results) {
-              console.log(scope.conSec);
+          complete: function(results) {
+            console.log(scope.conSec);
 
-              if(scope.conSec.name){
-                scope.conSec.fileInput.err = results.err;
-                scope.conSec.fileInput.data = results.data;
-                scope.conSec.fileInput.meta = results.meta;
+            if(scope.conSec.name){
+              scope.conSec.fileInput.err = results.err;
+              scope.conSec.fileInput.data = results.data;
+              scope.conSec.fileInput.meta = results.meta;
 
-                //this will be the 'currentList', or 'currentGroup' past in, etc
-                scope.current = "Imported CSV"
-                scope.$apply();
-              }else{
-                console.log("ERR: attempting file parse without controller support");
-              }
+              //this will be the 'currentList', or 'currentGroup' past in, etc
+              scope.current.currentList = {name: "Imported CSV", guests: scope.conSec.fileInput.data };
+              scope.$apply();
+            }else{
+              console.log("ERR: attempting file parse without controller support");
             }
-          });
-
+          }
+        });
 
       });
     }

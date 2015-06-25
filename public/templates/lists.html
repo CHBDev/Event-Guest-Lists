@@ -1,7 +1,5 @@
-<div ng-controller="ListController" class="list-html">
-<div>CONSECNAME: {{conSec.name}}</div>
-<div>LISTS pOrS : {{pOrS}}</div>
-<div></div>
+<div ng-controller="ListsController" class="lists-html">
+
 <div ng-show="conSec.fileInput.data">THERE IS A FILE LOADED</div>
 <div ng-show="lists[pOrS].currentList">THERE IS A LIST SELECTED</div>
 <br>
@@ -9,7 +7,7 @@
 
 <h1>ADD CSV FILE TO MAKE NEW LIST</h1>
 
-<file-input con-sec="conSec" current="lists[pOrS].currentList"></file-input>
+<file-input con-sec="conSec" current="lists[pOrS]"></file-input>
 <div ng-show="conSec.fileInput.data">
 GUESt LIST import TABLE
 
@@ -42,17 +40,6 @@ GUESt LIST import TABLE
 THIS IS THE ALL LISTS TABLE
 <br>
 
-  <!-- <div>
-    <input type="search" ng-model="q" placeholder="filter..." aria-label="filter..." />
-    <ul class="lists-container">
-      <li class="animate-repeat" ng-repeat="list in lists | filter:q as results">
-        [{{$index + 1}}] {{list.name}} who is {{friend.age}} years old.
-      </li>
-      <li class="animate-repeat" ng-if="results.length == 0">
-        <strong>No results found...</strong>
-      </li>
-    </ul>
-  </div> -->
 
     <input type="search" ng-model="listsFilter" placeholder="filter..." aria-label="filter..." />
     <table class="lists-table">
@@ -63,7 +50,7 @@ THIS IS THE ALL LISTS TABLE
         <th ng-click="listsTableOrder('origEvent')">Orig Event<span ng-show="listsTableSort ==='origEvent'">^^</span></th>
         <th ng-click="listsTableOrder('guestCount')">GuestCount<span ng-show="listsTableSort ==='guestCount'">^^</span></th>
       </tr>
-      <tr ng-repeat="list in lists.listArray | orderBy: listsTableSort:listsTableSortReverse | filter:listsFilter as results">
+      <tr ng-repeat="list in lists.listsArray | orderBy: listsTableSort:listsTableSortReverse | filter:listsFilter as results">
       <td><button ng-click="lists[pOrS].currentList = list.name" ng-show="lists[pOrS].currentList !== list.name">SELECT</button><span ng-show="lists[pOrS].currentList === list.name">ACTIVE</span></td>
         <td>{{list.name}}</td>
         <td>{{list.owner}}</td>
@@ -71,11 +58,6 @@ THIS IS THE ALL LISTS TABLE
         <td>{{list.guestCount}}</td>
       </tr>
     </table>
-
-    <div class="selected-list" ng-show="lists[pOrS].currentList">
-    {{lists[pOrS].currentList}}
-      <div class="list-toolbar">
-      </div>
 
 </div>
 

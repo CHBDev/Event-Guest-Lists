@@ -1,19 +1,16 @@
 controllers
 
-  .controller('GroupController', function($scope, $http, socket, users, groups, events, lists, controllerDispatch){
+  .controller('GroupsController', function($scope, $http, $interval, controllerDispatch){
     var s = $scope;
-    s.users = users;
-    s.events = events;
-    s.groups = groups;
-    s.lists = lists;
+
+    controllerDispatch.setServicesToLocalScope(s);
 
     s.conSec = {name: "group", fileInput: {} };
+    s.interval = $interval;
 
-    socket.on('group:update', function(data){
+    s.socket.on('group:update', function(data){
 
     });
-
-    s.dispatch = controllerDispatch;
 
     s.$on("primary", function(event, args){
       if(args.name === "group"){
@@ -25,7 +22,9 @@ controllers
       if(args.name === "group"){
 
       }
-    })
+    });
+
+    s.interval(function(arr){arr.push({name: "my special groupTEST", userCount: 7, listCount: 24, guestCount: 345});}.bind(this, s.groups.cache.usersGroups), 5000);
 
 
     s.groupsTableSort = 'name';
@@ -33,6 +32,15 @@ controllers
     s.groupsTableOrder = function(prop){
         $scope.groupsTableSortReverse = ($scope.groupsTableSort === prop) ? !$scope.groupsTableSortReverse : false;
         $scope.groupsTableSort = prop;
+    };
+
+    s.getGroupArray = function(pOrS){
+      if(s.dispatch[pOrS].currentTab === 'users'){
+
+        return s.groups.cache.usersGroups;
+      }else{
+        return s.groups.cache.eventsGroups;
+      }
     };
 
 
@@ -50,4 +58,13 @@ controllers
       restrict: 'E',
       templateUrl: "../templates/group.html"
     }
+  })
+
+   .directive('groupsDir', function(){
+    return {
+      restrict: 'E',
+      templateUrl: "../templates/groups.html"
+    }
   });
+
+

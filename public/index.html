@@ -1,14 +1,20 @@
 <!doctype html>
 <html ng-app="theClient">
   <head>
-    <title>Event Guest Lists</title>
+    <title>inviteAGAIN</title>
     <link rel="stylesheet" type="text/css" href="./main.css">
+    <link rel="stylesheet" type="text/css" href="./css/sections.css">
+    <link rel="stylesheet" type="text/css" href="./css/tables.css">
+    <link rel="stylesheet" type="text/css" href="./css/toolbars.css">
+    <link rel="stylesheet" type="text/css" href="./css/tabs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+    <script src="./scripts/papaparse.min.js"></script>
   </head>
   <body ng-controller="ClientController" ng-cloak>
 
     <div class="nav group" ng-controller="NavController">
-      <div class="appTitle">Event Guest Lists</div><div> | USER: {{users.currentUsername}}</div>
+      <div class="appTitle">inviteAGAIN</div><div> | USER: {{users.currentUsername}}</div>
       <button id="mainMenuButton" ng-click="toggleMainMenu()">{{menuIsOpen ? "CLOSE" : "MENU"}}</button>
 
       <div ng-show="menuIsOpen">
@@ -29,7 +35,7 @@
     </div>
     <div class="navPush"></div>
 
-      <div ng-controller="UserController">
+      <div ng-controller="UsersController">
 
           <div class="loginBar" ng-if="users.currentUsername === null">
 
@@ -59,73 +65,43 @@
           <div ng-show="users.currentUsername" id="mainView">
             <div id="mainViewPrimary" ng-controller="PrimaryController">
               <tabs-view></tabs-view>
-              <!-- <div id="toolBarPrimary" class="toolBar">
-                <div ng-hide="events.primary.currentEvent" class="groupTabButton tabButton" ng-click="changePrimaryTab('group')">GROUP</div>
-                <div ng-show="groups.primary.currentGroup" class="eventsTabButton tabButton" ng-click="changePrimaryTab('events')">EVENTS</div>
-                <div ng-show="groups.primary.currentGroup" class="listsTabButton tabButton" ng-click="changePrimaryTab('lists')">LISTS</div>
-                <div class="messagesTabButton tabButton" ng-click="changePrimaryTab('messages')">MESSAGES</div>
-              </div>
 
-              <div id="selectedGroupPrimary"  ng-show="groups.primary.currentGroup">
-              {{groups.primary.currentGroup}}<span class="closeSelection"><button ng-click="dispatch.primary.currentTab = 'group'; groups.primary.currentGroup = null; events.primary.currentEvent = null; lists.primary.currentList = null">X</button></span>
-              </div>
-              <div id="selectedEventPrimary"  ng-show="events.primary.currentEvent">
-              {{events.primary.currentEvent}}<span class="closeSelection"><button ng-click="events.primary.currentEvent = null; lists.primary.currentList = null">X</button></span>
-              </div>
-               <div id="selectedListPrimary"  ng-show="lists.primary.currentList">
+            </div><div id="mainViewMiddle">
+              <middle-view></middle-view>
 
-              {{lists.primary.currentList}}<span class="closeSelection"><button ng-click="lists.primary.currentList = null">X</button></span>
-              </div>
-
-              <messages-primary ng-show="dispatch.primary.currentTab === 'messages'"></messages-primary>
-              <lists-primary ng-show="dispatch.primary.currentTab === 'lists'"></lists-primary>
-              <events-primary ng-show="dispatch.primary.currentTab === 'events'"></events-primary>
-              <group-primary ng-show="dispatch.primary.currentTab === 'group'"></group-primary>-->
             </div><div id="mainViewSecondary" ng-controller="SecondaryController">
-            <tabs-view></tabs-view>
-             <!--  <div id="toolBarSecondary" class="toolBar">
-                <div class="groupTabButton tabButton" ng-click="changeSecondaryTab('group')">GROUP</div>
-                <div ng-show="groups.secondary.currentGroup" class="eventsTabButton tabButton" ng-click="changeSecondaryTab('events')">EVENTS</div>
-                <div ng-show="groups.secondary.currentGroup" class="listsTabButton tabButton" ng-click="changeSecondaryTab('lists')">LISTS</div>
-                <div class="messagesTabButton tabButton" ng-click="changeSecondaryTab('messages')">MESSAGES</div>
-              </div>
+              <tabs-view></tabs-view>
 
-              <div id="selectedGroupSecondary"  ng-show="groups.secondary.currentGroup">
-              {{groups.secondary.currentGroup}}<span class="closeSelection"><button ng-click="groups.secondary.currentGroup = null">X</button></span>
-              </div>
-              <div id="selectedEventSecondary"  ng-show="events.secondary.currentEvent">
-              {{events.secondary.currentEvent}}<span class="closeSelection"><button ng-click="events.secondary.currentEvent = null">X</button></span>
-              </div>
-               <div id="selectedListSecondary"  ng-show="lists.secondary.currentList">
-              {{lists.secondary.currentList}}<span class="closeSelection"><button ng-click="lists.secondary.currentList = null">X</button></span>
-              </div>
-
-              <messages-dir ng-show="dispatch.secondary.currentTab === 'messages'"></messages-dir>
-              <lists-dir ng-show="dispatch.secondary.currentTab === 'lists'"></lists-dir>
-              <events-dir ng-show="dispatch.secondary.currentTab === 'events'"></events-dir>
-              <group-dir ng-show="dispatch.secondary.currentTab === 'group'"></group-dir> -->
             </div>
           </div>
 
         </div>
   </body>
 
+
+
   <script src="./services/services.js"></script>
-  <script src="./services/userService.js"></script>
-  <script src="./services/listService.js"></script>
-  <script src="./services/groupService.js"></script>
-  <script src="./services/eventService.js"></script>
-  <script src="./services/guestService.js"></script>
+  <script src="./services/usersService.js"></script>
+  <script src="./services/groupsService.js"></script>
+  <script src="./services/eventsService.js"></script>
+  <script src="./services/guestsService.js"></script>
+  <script src="./services/listsService.js"></script>
+  <script src="./services/messagesService.js"></script>
+  <script src="./services/middleService.js"></script>
+
   <script src="./client.js"></script>
+
   <script src="./controllers/controllers.js"></script>
-  <script src="./controllers/userController.js"></script>
-  <script src="./controllers/listController.js"></script>
-  <script src="./controllers/eventController.js"></script>
-  <script src="./controllers/groupController.js"></script>
+  <script src="./controllers/usersController.js"></script>
+  <script src="./controllers/groupsController.js"></script>
+  <script src="./controllers/eventsController.js"></script>
+  <script src="./controllers/listsController.js"></script>
+  <script src="./controllers/guestsController.js"></script>
+  <script src="./controllers/messagesController.js"></script>
+
   <script src="./controllers/navController.js"></script>
   <script src="./controllers/fileInputController.js"></script>
-  <script src="./controllers/guestController.js"></script>
-  <script src="./scripts/papaparse.min.js"></script>
 
-  <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+
+
 </html>
