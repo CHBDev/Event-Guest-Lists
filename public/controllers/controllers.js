@@ -29,25 +29,21 @@ controllers.
 
     });
 
-
-
-
-
     s.changePrimaryTab = function(tabName){
 
       s.dispatch.changePrimaryTab(tabName);
-    }
+    };
 
     s.changeSecondaryTab = function(tabName){
       s.dispatch.changeSecondaryTab(tabName);
-    }
+    };
 
 
   })
 
   .directive('tabsView', function(){
-  return {
-    restrict: 'E',
-    templateUrl: "../templates/tabs.html"
-  }
-});
+    return {
+      restrict: 'E',
+      templateUrl: "../templates/tabs.html"
+    };
+  });

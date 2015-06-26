@@ -11,12 +11,12 @@ controllers
     s.createUserOpen = false;
 
     s.toggleLoginCreate = function(){
-      s.createUserOpen === false ? s.createUserOpen = true : s.createUserOpen = false;
-    }
+      s.createUserOpen = (s.createUserOpen === false) ? true : false;
+    };
 
     s.passwordsMatch = function(){
       return s.loginFormData.password == s.loginFormData.confirm;
-    }
+    };
 
     s.login = function(form){
       console.log("client login");
@@ -50,7 +50,7 @@ controllers
       if(args.name === "messages"){
         // s.dispatch.currentSecondaryTabContent = "<users-secondary>JOE AWSOME</users-secondary>";
       }
-    })
+    });
 
     s.socket.on('user:update', function(data){
 
@@ -73,7 +73,7 @@ controllers
         console.log("CREATE SUCCESS");
         //server handles sending login response on create also
       }
-    })
+    });
 
   })
 
@@ -88,14 +88,14 @@ controllers
   return {
     restrict: 'E',
     templateUrl: "../templates/user.html"
-  }
+  };
 })
 
 .directive('usersDir', function(){
   return {
     restrict: 'E',
     templateUrl: "../templates/users.html"
-  }
+  };
 });
 
 // .directive('messagesPrimary', function(){

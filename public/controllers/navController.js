@@ -8,7 +8,7 @@ controllers
 
       s.toggleMainMenu = function(){
         s.menuIsOpen = s.menuIsOpen ? false : true;
-      }
+      };
 
 
   })

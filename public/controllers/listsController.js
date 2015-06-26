@@ -52,12 +52,12 @@ controllers
   return {
     restrict: 'E',
     templateUrl: "../templates/lists.html"
-  }
+  };
 })
 
 .directive('listDir', function(){
   return {
     restrict: 'E',
     templateUrl: "../templates/list.html"
-  }
-})
+  };
+});

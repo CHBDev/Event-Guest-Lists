@@ -1,0 +1,313 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  cursor: default;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*----group clear fix ------*/
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+
+.group:after {
+  clear: both;
+}
+
+.group {
+  clear: both;
+  *zoom: 1;
+}
+
+/*----=====   GRID =======-------*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /*-webkit-box-sizing: padding-box;
+  -moz-box-sizing: padding-box;
+  box-sizing: padding-box;*/
+  /*-webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;*/
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide {
+  display: none !important;
+}
+
+html {
+  font-family: "Helvetica", Helvetica;
+  text-align: center;
+  color: white;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  background-color: yellow;
+  overflow: hidden;
+}
+
+.nav {
+  position: fixed;
+  top: 0px;
+  height: 40px;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.navPush {
+  height: 40px;
+  width: 100%;
+  background-color: purple;
+}
+
+.appTitle {
+  display: inline-block;
+  float: left;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#mainMenuButton {
+  display: inline-block;
+  float: right;
+}
+
+#mainMenu {
+  background-color: black;
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+  position: fixed;
+  top: 2em;
+  right: 0px;
+}
+
+.loginBar {
+  display: inline-block;
+  width: 100%;
+  height: 4em;
+  background-color: cyan;
+}
+
+.css-form input.ng-invalid.ng-touched {
+  background-color: #FA787E;
+}
+
+/*.css-form input.ng-valid.ng-touched {
+  background-color: #78FA89;
+}*/
+.loginBarConfirm {
+  display: inline-block;
+  width: auto;
+  height: 100%;
+}
+
+#loginBarError {
+  display: inline-block;
+  width: 100%;
+  height: 1.2em;
+  color: red;
+  font-weight: bold;
+}
+
+#mainView {
+  display: block;
+  height: 100vh;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+#mainViewPrimary {
+  display: inline-block;
+  height: 100%;
+  width: 49%;
+  overflow: scroll;
+  background-color: black;
+  border: 1px solid red;
+}
+
+#mainViewMiddle {
+  display: inline-block;
+  height: 100%;
+  width: 2%;
+  border: 1px solid white;
+  background-color: black;
+}
+
+#mainViewSecondary {
+  display: inline-block;
+  height: 100%;
+  width: 49%;
+  overflow: scroll;
+  background-color: black;
+  border: 1px solid red;
+}
+
+.users {
+  background-color: blue;
+}
+
+.groups {
+  background-color: red;
+}
+
+.events {
+  background-color: orange;
+}
+
+.lists {
+  background-color: green;
+}
+
+.messages {
+  background-color: gray;
+}
+
+.edit {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.toolbar {
+  display: inline-block;
+  width: 100%;
+  height: 4em;
+  padding-top: 1em;
+}
+
+.toolbar-button {
+  display: inline-block;
+  padding-top: .5em;
+  width: 19%;
+  height: 100%;
+  vertical-align: top;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
+}
+
+.active-toolbar-button {
+  border: 1px solid white;
+  border-bottom: 0px;
+}
+
+.toolbar-primary {
+  background-color: orange;
+}
+
+.toolbar-secondary {
+  background-color: green;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+td, th {
+  padding: .24em 1em .24em 1em;
+}
+
+/*td{
+  margin: 1px, 2px, 1px, 2px;
+}
+
+th{
+  margin: 1px, 2px, 1px, 2px;
+}*/
+tr.odd-table-row {
+  background-color: rgba(0, 0, 0, 0.18);
+}
+
+.table {
+  margin: 0 auto;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.group-table {
+  text-align: center;
+}
+
+.group-table tr:first-child {
+  background-color: yellow;
+  color: black;
+}
+
+.events-table tr:first-child {
+  background-color: yellow;
+  color: black;
+}
+
+.selected-tab {
+  display: inline-block;
+  height: 100%;
+  width: 24%;
+  font-size: 1.1em;
+  padding-top: .5em;
+  font-weight: bold;
+  vertical-align: top;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
+}
+
+.selection-bar {
+  display: inline-block;
+  height: 4em;
+  width: 100%;
+  background-color: black;
+  padding-top: 1em;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -47,12 +47,12 @@ controllers
     return {
       restrict: 'E',
       templateUrl: "../templates/guests.html"
-    }
+    };
   })
 
    .directive('guestDir', function(){
     return {
       restrict: 'E',
       templateUrl: "../templates/guest.html"
-    }
+    };
   });

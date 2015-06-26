@@ -57,14 +57,14 @@ controllers
     return {
       restrict: 'E',
       templateUrl: "../templates/group.html"
-    }
+    };
   })
 
    .directive('groupsDir', function(){
     return {
       restrict: 'E',
       templateUrl: "../templates/groups.html"
-    }
+    };
   });
 
 

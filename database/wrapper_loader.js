@@ -41,7 +41,7 @@ var connectionLoop = function(){
         return del.call(this, err, sequence);
       };
 
-      ex.currDB =  process.env.NODE_ENV || 'dev'
+      ex.currDB =  process.env.NODE_ENV || 'dev';
       console.log("==============CONNECTED as ID ", db.threadId);
       ex.isLive = true;
 

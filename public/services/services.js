@@ -25,7 +25,7 @@
               callback.apply(socket, args);
             }
           });
-        })
+        });
       };
       return r;
   })
@@ -48,11 +48,11 @@
       $rootScope.$broadcast("primary", {name:name});
       r.primary.currentTab = name;
 
-    }
+    };
     r.changeSecondaryTab = function(name){
       $rootScope.$broadcast("secondary", {name:name});
       r.secondary.currentTab = name;
-    }
+    };
 
     r.primary.currentTab = 'users'; //sets default tabs
     r.secondary.currentTab = 'messages'; //sets default tabs

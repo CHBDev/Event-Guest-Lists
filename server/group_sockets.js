@@ -8,4 +8,4 @@ module.exports = function(io, socket){
   socket.on("group:remove", function(data){
     query.group.remove(data);
   });
-}
+};

@@ -110,5 +110,5 @@ controllers
     restrict: 'E',
     scope: {conSec: '=conSec', current: '=current'},
     templateUrl: "../templates/fileInput.html"
-  }
+  };
 });

@@ -32,12 +32,12 @@ controllers
   return {
     restrict: 'E',
     templateUrl: "../templates/messages.html"
-  }
+  };
 })
 
 .directive('messageDir', function(){
   return {
     restrict: 'E',
     templateUrl: "../templates/message.html"
-  }
+  };
 });

@@ -23,7 +23,7 @@ controllers
       if(args.name === "events"){
 
       }
-    })
+    });
 
 
     s.eventsTableSort = 'name';
@@ -58,12 +58,12 @@ controllers
   return {
     restrict: 'E',
     templateUrl: "../templates/events.html"
-  }
+  };
 })
 
 .directive('eventDir', function(){
   return {
     restrict: 'E',
     templateUrl: "../templates/event.html"
-  }
-})
+  };
+});

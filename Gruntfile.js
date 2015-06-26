@@ -9,26 +9,44 @@ module.exports = function(grunt){
                   }
                 };
 
+  init.watch = {
+
+                    css:{
+                      files: ['**/*.scss'],
+                      tasks: ['sass'],
+                      options: {livereload: true}
+                    },
+                    js:{
+                      files: ['public/**/*.js', 'server/**/*.js', 'database/**/*.js'],
+                      tasks: ['jshint'],
+                      options: {livereload: true}
+                    }
+
+                };
+
   init.jshint = {
-                all: ['public/**/*.js', 'server/**/*.js', 'database/**/*.js']
+                  all: ['public/**/*.js', 'server/**/*.js', 'database/**/*.js', '!public/libs/**']
                 };
 
   init.concurrent = {
-                      options: {
+                      target: {
+                        options: {
                           logConcurrentOutput: true
                         },
-                        tasks: ['nodemon', 'watch']
-                      };
+                        tasks: ['nodemon', 'watchcssandjs']
+                      }
+                    };
+
   init.sass = {
     dist: {
       options: {
         style: 'expanded'
       },
       files: {
-        'index.css': './public/css/compileThis.scss',
+        './public/index.css': './public/css/compileThis.scss'
       }
     }
-  }
+  };
 
   grunt.initConfig(init);
 
@@ -41,7 +59,9 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-sass');
 
 
-  grunt.registerTask('serve', ['jshint','sass','concurrent']);
+  grunt.registerTask('serve', ['jshint','sass','concurrent:target']);
+  grunt.registerTask('watchcssandjs', ['watch:css','watch:js']);
+
 
   //TODO add grunt publish
 

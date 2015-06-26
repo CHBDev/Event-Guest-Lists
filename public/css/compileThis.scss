@@ -1,8 +1,6 @@
-@import reset.scss;
-@import main.scss;
-@import sections.scss;
-@import toolbars.scss;
-@import tables.scss;
-@import tabs.scss;
-
-compileThis.scss
+@import 'reset';
+@import 'main';
+@import 'sections';
+@import 'toolbars';
+@import 'tables';
+@import 'tabs';

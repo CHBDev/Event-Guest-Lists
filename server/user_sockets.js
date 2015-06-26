@@ -33,7 +33,7 @@ module.exports = function(io, socket){
     login(socket, data);
 
   });
-}
+};
 
 
 //NAMESPACE

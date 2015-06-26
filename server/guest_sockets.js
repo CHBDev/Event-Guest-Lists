@@ -8,4 +8,4 @@ module.exports = function(io, socket){
   socket.on("guest:remove", function(data){
     query.guest.remove(data);
   });
-}
+};
