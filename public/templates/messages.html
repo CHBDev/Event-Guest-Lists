@@ -1,18 +1,4 @@
-<div ng-controller="MessagesController" class="messages-html">
-  <div ng-hide="messages[pOrS].currentGuest">
-    <div  class="messages-toolbar"> ALL AVAILABLE MESSAGES </div>
-
-  <!-- <div>
-    <input type="search" ng-model="q" placeholder="filter..." aria-label="filter..." />
-    <ul class="messages-container">
-      <li class="animate-repeat" ng-repeat="message in messages | filter:q as results">
-        [{{$index + 1}}] {{message.name}} who is {{friend.age}} years old.
-      </li>
-      <li class="animate-repeat" ng-if="results.length == 0">
-        <strong>No results found...</strong>
-      </li>
-    </ul>
-  </div> -->
+<div ng-controller="MessagesController" class="messages messages-html">
 
     <input type="search" ng-model="messagesFilter" placeholder="filter..." aria-label="filter..." />
     <table class="message-table table">
@@ -23,7 +9,7 @@
         <th ng-click="messagesTableOrder('listCount')">ListCount<span ng-show="messagesTableSort ==='listCount'">^^</span></th>
         <th ng-click="messagesTableOrder('messageCount')">GuestCount<span ng-show="messagesTableSort ==='messageCount'">^^</span></th>
       </tr>
-      <tr ng-class-odd="'odd-table-row'" ng-repeat="message in messages.messageArray | orderBy: messagesTableSort:messagesTableSortReverse | filter:messagesFilter as results">
+      <tr ng-class-odd="'odd-table-row'" ng-repeat="message in getMessageArray(pOrS) | orderBy: messagesTableSort:messagesTableSortReverse | filter:messagesFilter as results">
       <td><button ng-click="messages[pOrS].currentGuest = message.name; dispatch[pOrS].currentTab = 'events'" ng-show="messages[pOrS].currentGuest !== message.name">SELECT</button><span ng-show="messages[pOrS].currentGuest === message.name">ACTIVE</span></td>
         <td>{{message.name}}</td>
         <td>{{message.userCount}}</td>

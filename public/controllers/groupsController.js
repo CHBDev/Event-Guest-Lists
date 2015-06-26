@@ -24,7 +24,7 @@ controllers
       }
     });
 
-    s.interval(function(arr){arr.push({name: "my special groupTEST", userCount: 7, listCount: 24, guestCount: 345});}.bind(this, s.groups.cache.usersGroups), 5000);
+    //s.interval(function(arr){arr.push({name: "my special groupTEST", userCount: 7, listCount: 24, guestCount: 345});}.bind(this, s.groups.cache.usersGroups), 5000);
 
 
     s.groupsTableSort = 'name';

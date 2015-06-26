@@ -3,9 +3,10 @@ services
  .factory('users', function(){
     var r = {};
 
-    r.currentUsername = null;
     //TODO *** unhack
-    r.currentUsername = "FAKE.USERNAME@FAKE.COM";
+    r.currentUser = {};
+    r.currentUser.name = "FAKE.USERNAME@FAKE.COM";
+    r.currentUser.id = "123";
 
     r.primary = {currentToolbarButton: ""};
     r.secondary = {currentToolbarButton: ""};

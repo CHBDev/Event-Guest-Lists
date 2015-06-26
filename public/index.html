@@ -14,14 +14,14 @@
   <body ng-controller="ClientController" ng-cloak>
 
     <div class="nav group" ng-controller="NavController">
-      <div class="appTitle">inviteAGAIN</div><div> | USER: {{users.currentUsername}}</div>
+      <div class="appTitle">inviteAGAIN</div><div> | USER: {{users.currentUser.name}}</div>
       <button id="mainMenuButton" ng-click="toggleMainMenu()">{{menuIsOpen ? "CLOSE" : "MENU"}}</button>
 
       <div ng-show="menuIsOpen">
         <div id="mainMenu" >
 
-          <div ng-show="users.currentUsername !== null">
-            <div id="mainMenuProfileButton">{{users.currentUsername}}</div>
+          <div ng-show="users.currentUser.name !== null">
+            <div id="mainMenuProfileButton">{{users.currentUser.name}}</div>
             <div id="mainMenuLogoutButton">LOGOUT</div>
           </div>
 
@@ -37,7 +37,7 @@
 
       <div ng-controller="UsersController">
 
-          <div class="loginBar" ng-if="users.currentUsername === null">
+          <div class="loginBar" ng-if="users.currentUser.name === null">
 
               <form name="loginFormHere" novalidate class="css-form" ng-submit="loginFormHere.$valid && (createUserOpen ? passwordsMatch() && create(loginFormHere) : login(loginFormHere))">
                 Email: <input type="email" name="email" ng-model="loginFormData.email" required/>
@@ -62,7 +62,7 @@
               </form>
           </div>
 
-          <div ng-show="users.currentUsername" id="mainView">
+          <div ng-show="users.currentUser.name" id="mainView">
             <div id="mainViewPrimary" ng-controller="PrimaryController">
               <tabs-view></tabs-view>
 

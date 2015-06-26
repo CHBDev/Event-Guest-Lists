@@ -33,6 +33,15 @@ controllers
         $scope.eventsTableSort = prop;
     };
 
+     s.getEventArray = function(pOrS){
+      if(s.dispatch[pOrS].currentTab === 'users'){
+
+        return s.events.cache.usersEvents;
+      }else{
+        return s.events.cache.groupsEvents;
+      }
+    };
+
 
 
   })

@@ -1,6 +1,5 @@
-<div ng-controller="EventsController" class="events-html">
-  <div ng-hide="events[pOrS].currentEvent">
-    <div class="events-toolbar"> ALL EVENTS IN THIS GROUP </div>
+<div ng-controller="EventsController" class="events events-html">
+    <!-- <div class="events-toolbar"> ALL EVENTS IN THIS GROUP </div> -->
 
     <!-- <div>
       <input type="search" ng-model=" q" placeholder="filter..." aria-label="filter..." />
@@ -24,8 +23,8 @@
           <th ng-click="eventsTableOrder('guestCount')">GuestCount<span ng-show="eventsTableSort ==='guestCount'">^^</span></th>
           <th ng-click="eventsTableOrder('listCount')">ListCount<span ng-show="eventsTableSort ==='listCount'">^^</span></th>
         </tr>
-        <tr ng-repeat="event in events.eventsArray | orderBy: eventsTableSort:eventsTableSortReverse | filter:eventsFilter as results">
-        <td><button ng-click="events[pOrS].currentEvent = event.name" ng-show="events[pOrS].currentEvent !== event.name">SELECT</button><span ng-show="events[pOrS].currentEvent === event.name">ACTIVE</span></td>
+        <tr ng-repeat="event in getEventArray(pOrS) | orderBy: eventsTableSort:eventsTableSortReverse | filter:eventsFilter as results">
+        <td><button ng-click="events[pOrS].currentEvent = event; groups[pOrS].currentGroup = event.group; dispatch[pOrS].currentTab = 'events'" ng-show="events[pOrS].currentEvent.id !== event.id">SELECT</button><span ng-show="events[pOrS].currentEvent.id === event.id">ACTIVE</span></td>
           <td>{{event.name}}</td>
           <td>{{event.owner}}</td>
           <td>{{event.date}}</td>
@@ -33,6 +32,4 @@
           <td>{{event.guestCount}}</td>
         </tr>
       </table>
-    </div>
-
 </div>
