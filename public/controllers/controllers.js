@@ -41,6 +41,13 @@ controllers.
 
   })
 
+  .directive('btn', function(){
+    return {
+      restrict: 'E',
+
+    };
+  })
+
   .directive('tabsView', function(){
     return {
       restrict: 'E',

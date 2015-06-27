@@ -1,26 +1,34 @@
 
 .users{
-  background-color: blue;
+  background-color: $users-color;
 }
 
 .groups{
-  background-color: red;
+  background-color: $groups-color;
 }
 
 .events{
-  background-color: orange;
+  background-color: $events-color;
 }
 
 .lists{
-  background-color: green;
+  background-color: $lists-color;
 }
 
 .messages{
-  background-color: gray;
+  background-color: $messages-color;
+}
+
+.home, .title{
+  background-color: $title-color;
+}
+
+.menu{
+  background-color: $menu-color;
 }
 
 .edit{
-  background-color: rgba(0,0,0,0.3);
+  background-color: $edit;
 }
 
 

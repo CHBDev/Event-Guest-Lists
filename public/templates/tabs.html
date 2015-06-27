@@ -1,8 +1,14 @@
 
 <div id="{{pOrS === 'primary' ? selected-bar-primary : selcted-bar-secondary}}" class="selection-bar" ng-show="users.currentUser.id">
 
+  <div ng-if="pOrS === 'primary'" id='home-tab' class="home-tab home" ng-click="dispatch[pOrS].currentTab = 'home'">
+    <div class="selected-title home-icon"></div>
+  </div>
+
+
+
   <div id="{{pOrS === 'primary' ? 'selectedUserPrimary' : 'selectedUserSecondary'}}" class="selected-tab selected-user-tab users" ng-click="dispatch[pOrS].currentTab = 'users'">
-    <div class="selected-title">{{users.currentUser.name}}</div>
+    <div class="selected-title">Account</div>
   </div>
 
   <div id="{{pOrS === 'primary' ? 'selectedGroupPrimary' : 'selectedGroupSecondary'}}" class="selected-tab selected-group-tab groups" ng-show="groups[pOrS].currentGroup.id" ng-click="dispatch[pOrS].currentTab = 'groups'">
@@ -15,6 +21,11 @@
 
   <div id="{{pOrS === 'primary' ? 'selectedListPrimary' : 'selectedListSecondary'}}" class="selected-tab selected-list-tab lists" ng-show="lists[pOrS].currentList.id" ng-click="dispatch[pOrS].currentTab = 'lists'">
     <div class="selected-title">{{lists[pOrS].currentList.name}}</div>
+  </div>
+
+
+   <div ng-if="pOrS === 'secondary'" id="menu-tab" class="menu-tab menu" ng-click="dispatch[pOrS].currentTab = 'menu'">
+    <div class="selected-title menu-icon"></div>
   </div>
 
 </div>

@@ -8,60 +8,41 @@ html {
     font-family: "Helvetica", Helvetica;
     text-align: center;
     color: white;
+    font-size: 16px;
 }
-
 
 body{
   width: 100%;
   height: 100%;
-  font-size: 16px;
-  background-color: yellow;
+  background-color: white;
   overflow: hidden;
 }
 
 
-.nav{
-  position: fixed;
-  top: 0px;
-  height: 40px;
-  width: 100%;
-  background-color: black;
+
+
+#main-menu-button{
+  @include setup-tab(10em);
+  background-color: $menu-color;
   color: white;
-}
-
-.navPush{
-  height: 40px;
-  width: 100%;
-  background-color: purple;
-
-}
-
-.appTitle{
-  display: inline-block;
-  float: left;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-#mainMenuButton{
-  display: inline-block;
   float: right;
 }
 
-#mainMenu{
+#main-menu{
   background-color: black;
   display: inline-block;
   width: 200px;
   height: 300px;
   position: fixed;
-  top: 2em;
+  top: $top-bar-height;
   right: 0px;
+  border: 1px solid white;
 }
 
-.loginBar{
+.login-bar{
   display: inline-block;
   width: 100%;
-  height: 4em;
+  height: 4rem;
   background-color: cyan;
 
 }
@@ -74,54 +55,54 @@ body{
   background-color: #78FA89;
 }*/
 
-.loginBarConfirm{
+.login-bar-confirm{
   display: inline-block;
   width: auto;
   height: 100%;
 }
 
-#loginBarError{
+#login-bar-error{
   display: inline-block;
   width: 100%;
-  height: 1.2em;
+  height: 1.2rem;
   color: red;
   font-weight: bold;
 }
 
 
-#mainView{
+#main-view{
   display: block;
   height: 100vh;
   width: 100%;
-  padding-bottom: 40px;
+  padding-bottom: $top-bar-height;
+  // margin-top: -2rem;
 
 
 }
 
-#mainViewPrimary{
+@mixin main-views{
   display: inline-block;
   height: 100%;
   width: 49%;
   overflow: scroll;
-  background-color: black;
   border: 1px solid red;
 }
 
-#mainViewMiddle{
+#main-view-primary{
+  @include main-views;
+  // background-color: $title-color;
+}
+
+#main-view-middle{
   display: inline-block;
   height: 100%;
   width: 2%;
   border: 1px solid white;
-  background-color: black;
 }
 
-#mainViewSecondary{
-  display: inline-block;
-  height: 100%;
-  width: 49%;
-  overflow: scroll;
-  background-color: black;
-  border: 1px solid red;
+#main-view-secondary{
+  @include main-views;
+  // background-color: $menu-color;
 }
 
 

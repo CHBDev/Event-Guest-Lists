@@ -1,20 +1,109 @@
+$top-bar-height: 4rem;
+$big-button-radius: 10px;
+$small-button-radius: 5px;
+
+@mixin button-top-border-radius($radius) {
+          -webkit-border-top-left-radius: $radius $radius;
+          -webkit-border-top-right-radius: $radius $radius;
+          -moz-border-border-top-left-radius: $radius $radius;
+          -moz-border-border-top-right-radius: $radius $radius;
+          -ms-border-top-left-radius: $radius $radius;
+          -ms-border-top-right-radius: $radius $radius;
+          border-top-left-radius: $radius $radius;
+          border-top-right-radius: $radius $radius;
+}
+
+@mixin btn($h:auto, $w:auto, $bgC: gray, $txtC: black ){
+
+  width: $w;
+  height: $h;
+  color: $txtC;
+  background-color: $bgC;
+
+
+  &:active{
+    color: red;
+  }
+
+}
+
+btn{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@mixin setup-tab-bar($h:$top-bar-height){
+  display: inline-block;
+  height: $h;
+  width: 100%;
+  padding-top: $h * .25;
+}
+
+
+@mixin setup-tab($w, $fs:1em){
+  height: 100%;
+  width: $w;
+  font-size: $fs;
+  vertical-align:top;
+  @include button-top-border-radius($big-button-radius);
+  @extend btn;
+}
+
+
+.nav{
+  height: $top-bar-height - 1rem;
+
+}
+
+
+.app-title{
+  float: left;
+  @include setup-tab(10rem);
+  background-color: $title-color;
+}
+
+.home-tab{
+  @include setup-tab(12%);
+}
+
+.menu-tab{
+  @include setup-tab(12%);
+}
+
 
 .selected-tab{
-  display: inline-block;
-  height: 100%;
-  width: 24%;
-  font-size: 1.1em;
-  padding-top: .5em;
-  font-weight: bold;
-  vertical-align:top;
-  border-top-left-radius: 10px 10px;
-  border-top-right-radius: 10px 10px;
+  @include setup-tab(21.5%);
+}
+
+.selected-tab.active{
+
 }
 
 .selection-bar{
-  display: inline-block;
-  height: 4em;
-  width: 100%;
-  background-color: black;
-  padding-top: 1em;
+  @include setup-tab-bar();
+}
+
+.toolbar{
+  @include setup-tab-bar()
+
+}
+
+.toolbar-button{
+  @include setup-tab(18%)
+
+}
+
+.active-toolbar-button{
+
+}
+
+.home-icon{
+  @include bg-img-center-contain("home-icon-white");
+
+}
+
+.menu-icon{
+  @include bg-img-center-contain("gear-icon");
 }

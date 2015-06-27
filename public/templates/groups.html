@@ -12,7 +12,7 @@
       </tr>
 
       <tr ng-class-odd="'odd-table-row'" ng-repeat="group in getGroupArray(pOrS) | orderBy: groupsTableSort:groupsTableSortReverse | filter:groupsFilter as results">
-      <td><button ng-click="groups[pOrS].currentGroup = group; dispatch[pOrS].currentTab = 'groups'" ng-show="groups[pOrS].currentGroup.id !== group.id">SELECT</button><span ng-show="groups[pOrS].currentGroup.id === group.id">ACTIVE</span></td>
+      <td><button class="test-btn" ng-click="groups[pOrS].currentGroup = group; dispatch[pOrS].currentTab = 'groups'" ng-show="groups[pOrS].currentGroup.id !== group.id">SELECT</button><span ng-show="groups[pOrS].currentGroup.id === group.id">ACTIVE</span></td>
         <td>{{group.name}}</td>
         <td>{{group.userCount}}</td>
         <td>{{group.listCount}}</td>

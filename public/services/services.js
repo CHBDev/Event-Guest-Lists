@@ -55,7 +55,7 @@
     };
 
     r.primary.currentTab = 'users'; //sets default tabs
-    r.secondary.currentTab = 'messages'; //sets default tabs
+    r.secondary.currentTab = 'users'; //sets default tabs
 
     // r.currentPrimaryTabContent = "DEFAULT TAB";
     // r.currentSecondaryTabContent = "DEFAULT TAB";
