@@ -1,0 +1,51 @@
+@function color-blacker($r, $g, $b, $a, $percent){
+
+  $rf: (255 * $percent) + ($r * (1 - $percent));
+  $gf: (255 * $percent) + ($g * (1 - $percent));
+  $bf: (255 * $percent) + ($b * (1 - $percent));
+
+  @return rgba($rf, $gf, $bf, $a);
+};
+
+@function color-lighter($r, $g, $b, $a, $percent){
+
+  $rf:  ($r * (1 - $percent));
+  $gf:  ($g * (1 - $percent));
+  $bf:  ($b * (1 - $percent));
+
+  @return rgba($rf, $gf, $bf, $a);
+};
+
+
+$coral-r: 255; $coral-g:173; $coral-b: 92; $coral: rgba($coral-r, $coral-g, $coral-b, 1);
+$yellow-r: 255; $yellow-g:195; $yellow-b: 0; $yellow: rgba($yellow-r, $yellow-g, $yellow-b, 1);
+$pink-r: 255; $pink-g:92; $pink-b:92; $pink: rgba($pink-r, $pink-g, $pink-b, 1);
+$blue-r: 92; $blue-g:201; $blue-b: 255; $blue: rgba($blue-r, $blue-g, $blue-b, 1);
+$green-r: 146; $green-g:255; $green-b: 92; $green: rgba($green-r, $green-g, $green-b, 1);
+$purple-r: 146; $purple-g:92; $purple-b: 255; $purple: rgba($purple-r, $purple-g, $purple-b, 1);
+$gray-r: 92; $gray-g:92; $gray-b: 92; $gray: rgba($gray-r, $gray-g, $gray-b, 1);
+
+
+$dark-blue-r: 92; $dark-blue-g:160; $dark-blue-b: 255; $dark-blue: rgba($dark-blue-r, $dark-blue-g, $dark-blue-b, 1);
+
+$dusk-gray-r: 48; $dusk-gray-g:62; $dusk-gray-b: 77; $dusk-gray: rgba($dusk-gray-r, $dusk-gray-g, $dusk-gray-b, 1);
+$dusk-blue-r: 102; $dusk-blue-g:152; $dusk-blue-b: 200; $dusk-blue: rgba($dusk-blue-r, $dusk-blue-g, $dusk-blue-b, 1);
+
+$dusk-orange-r: 199; $dusk-orange-g:142; $dusk-orange-b: 101; $dusk-orange: rgba($dusk-orange-r, $dusk-orange-g, $dusk-orange-b, 1);
+$dusk-pink-r: 199; $dusk-pink-g:101; $dusk-pink-b: 101; $dusk-pink: rgba($dusk-pink-r, $dusk-pink-g, $dusk-pink-b, 1);
+$dusk-green-r: 101; $dusk-green-g:199; $dusk-green-b: 101; $dusk-green: rgba($dusk-green-r, $dusk-green-g, $dusk-green-b, 1);
+$dusk-yellow-r: 199; $dusk-yellow-g:199; $dusk-yellow-b: 101; $dusk-yellow: rgba($dusk-yellow-r, $dusk-yellow-g, $dusk-yellow-b, 1);
+$dusk-cyan-r: 101; $dusk-cyan-g:199; $dusk-cyan-b: 199; $dusk-cyan: rgba($dusk-cyan-r, $dusk-cyan-g, $dusk-cyan-b, 1);
+$dusk-purple-r: 101; $dusk-purple-g:101; $dusk-purple-b: 199; $dusk-purple: rgba($dusk-purple-r, $dusk-purple-g, $dusk-purple-b, 1);
+$dusk-dark-gray-r: 101; $dusk-dark-gray-g:101; $dusk-dark-gray-b: 101; $dusk-dark-gray: rgba($dusk-dark-gray-r, $dusk-dark-gray-g, $dusk-dark-gray-b, 1);
+$dusk-light-gray-r: 199; $dusk-light-gray-g:199; $dusk-light-gray-b: 199; $dusk-light-gray: rgba($dusk-light-gray-r, $dusk-light-gray-g, $dusk-light-gray-b, 1);
+
+$users-color: $coral;
+$groups-color: $dusk-blue;
+$events-color: $dusk-pink;
+$lists-color: $dusk-green;
+$messages-color: rgba(255,255,255,0.36);
+$title-color: $dusk-dark-gray;
+$menu-color: $title-color;
+$edit-color: rgba(0,0,0,0.2);
+

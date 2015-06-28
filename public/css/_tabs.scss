@@ -48,7 +48,12 @@ btn{
   font-size: $fs;
   vertical-align:top;
   @include button-top-border-radius($big-button-radius);
-  @extend btn;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+
 }
 
 
@@ -64,6 +69,8 @@ btn{
   background-color: $title-color;
 }
 
+
+
 .home-tab{
   @include setup-tab(12%);
 }
@@ -75,6 +82,7 @@ btn{
 
 .selected-tab{
   @include setup-tab(21.5%);
+  // flex-basis: 0;
 }
 
 .selected-tab.active{
@@ -100,10 +108,54 @@ btn{
 }
 
 .home-icon{
-  @include bg-img-center-contain("home-icon-white");
+  @include bg-img-center-contain("home_white_shadow");
 
 }
 
+.users-icon{
+  @include bg-img-center-contain("menu_white_shadow");
+}
+
 .menu-icon{
-  @include bg-img-center-contain("gear-icon");
+  @include bg-img-center-contain("menu_white_shadow");
+}
+
+.groups-icon{
+  @include bg-img-center-contain("group_white_shadow");
+}
+
+.events-icon{
+  @include bg-img-center-contain("event_white_shadow");
+}
+
+.lists-icon{
+  @include bg-img-center-contain("list_white_shadow");
+}
+
+.guests-icon{
+  @include bg-img-center-contain("guest_white_shadow");
+}
+
+.messages-icon{
+  @include bg-img-center-contain("messages_white_shadow");
+}
+
+.selected-icon{
+  display: inline-block;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  // margin-left: -0.75em;
+  // flex-basis: 0;
+  width: 2em;
+  // height: 2em;
+}
+
+.toolbar-icon{
+  display: inline-block;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  // margin-left: -0.75em;
+  // flex-basis: 0;
+  width: 2em;
+  // height: 2em;
 }
