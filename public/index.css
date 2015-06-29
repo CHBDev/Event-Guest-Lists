@@ -80,7 +80,7 @@ table {
 }
 
 .users {
-  background-color: #ffad5c;
+  background-color: #c78e65;
 }
 
 .groups {
@@ -96,7 +96,7 @@ table {
 }
 
 .messages {
-  background-color: rgba(255, 255, 255, 0.36);
+  background-color: #c7c7c7;
 }
 
 .home, .title {
@@ -108,7 +108,7 @@ table {
 }
 
 .edit {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #c7c765;
 }
 
 table, th, td {
@@ -184,46 +184,6 @@ btn {
   background-color: #656565;
 }
 
-.home-tab {
-  height: 100%;
-  width: 12%;
-  font-size: 1em;
-  vertical-align: top;
-  -webkit-border-top-left-radius: 10px 10px;
-  -webkit-border-top-right-radius: 10px 10px;
-  -moz-border-border-top-left-radius: 10px 10px;
-  -moz-border-border-top-right-radius: 10px 10px;
-  -ms-border-top-left-radius: 10px 10px;
-  -ms-border-top-right-radius: 10px 10px;
-  border-top-left-radius: 10px 10px;
-  border-top-right-radius: 10px 10px;
-  display: inline-flex;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-  overflow: hidden;
-}
-
-.menu-tab {
-  height: 100%;
-  width: 12%;
-  font-size: 1em;
-  vertical-align: top;
-  -webkit-border-top-left-radius: 10px 10px;
-  -webkit-border-top-right-radius: 10px 10px;
-  -moz-border-border-top-left-radius: 10px 10px;
-  -moz-border-border-top-right-radius: 10px 10px;
-  -ms-border-top-left-radius: 10px 10px;
-  -ms-border-top-right-radius: 10px 10px;
-  border-top-left-radius: 10px 10px;
-  border-top-right-radius: 10px 10px;
-  display: inline-flex;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-  overflow: hidden;
-}
-
 .selected-tab {
   height: 100%;
   width: 21.5%;
@@ -242,6 +202,48 @@ btn {
   align-items: center;
   align-content: center;
   overflow: hidden;
+}
+
+.selected-home-tab {
+  height: 100%;
+  width: 12%;
+  font-size: 1em;
+  vertical-align: top;
+  -webkit-border-top-left-radius: 10px 10px;
+  -webkit-border-top-right-radius: 10px 10px;
+  -moz-border-border-top-left-radius: 10px 10px;
+  -moz-border-border-top-right-radius: 10px 10px;
+  -ms-border-top-left-radius: 10px 10px;
+  -ms-border-top-right-radius: 10px 10px;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.selected-menu-tab {
+  height: 100%;
+  width: 12%;
+  font-size: 1em;
+  vertical-align: top;
+  -webkit-border-top-left-radius: 10px 10px;
+  -webkit-border-top-right-radius: 10px 10px;
+  -moz-border-border-top-left-radius: 10px 10px;
+  -moz-border-border-top-right-radius: 10px 10px;
+  -ms-border-top-left-radius: 10px 10px;
+  -ms-border-top-right-radius: 10px 10px;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+  justify-content: center;
 }
 
 .selection-bar {
@@ -292,7 +294,7 @@ btn {
   display: inline-block;
   width: 100%;
   height: 100%;
-  background-image: url("../img/menu_white_shadow.png");
+  background-image: url("../img/folders_white_shadow.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
@@ -302,7 +304,7 @@ btn {
   display: inline-block;
   width: 100%;
   height: 100%;
-  background-image: url("../img/menu_white_shadow.png");
+  background-image: url("../img/stack_white_shadow.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
@@ -358,6 +360,16 @@ btn {
   background-size: contain;
 }
 
+.edit-icon {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/gear_white_shadow.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
 .selected-icon {
   display: inline-block;
   margin-left: 0.2em;
@@ -370,6 +382,12 @@ btn {
   margin-left: 0.2em;
   margin-right: 0.2em;
   width: 2em;
+}
+
+.menu-icon, .home-icon {
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  width: 50%;
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide {
@@ -481,6 +499,25 @@ body {
   width: 49%;
   overflow: scroll;
   border: 1px solid red;
+}
+
+@media screen and (max-width: 960px) {
+  .selected-title {
+    display: none;
+  }
+
+  .toolbar-title {
+    display: none;
+  }
+
+  [class*='-tab'], .toolbar-button {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 1280px) {
+  body {
+    font-size: 14px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

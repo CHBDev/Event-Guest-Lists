@@ -1,0 +1,25 @@
+
+@media screen and (max-width: 960px){
+  .selected-title{
+    display: none;
+  }
+  body{
+    // background-color: red;
+  }
+  .toolbar-title{
+    display: none;
+  }
+  [class*='-tab'], .toolbar-button{
+    justify-content: center;
+  }
+
+}
+
+@media screen and (max-width: 1280px){
+
+  body{
+    font-size: 14px;
+  }
+}
+
+

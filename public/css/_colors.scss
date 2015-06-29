@@ -40,12 +40,12 @@ $dusk-purple-r: 101; $dusk-purple-g:101; $dusk-purple-b: 199; $dusk-purple: rgba
 $dusk-dark-gray-r: 101; $dusk-dark-gray-g:101; $dusk-dark-gray-b: 101; $dusk-dark-gray: rgba($dusk-dark-gray-r, $dusk-dark-gray-g, $dusk-dark-gray-b, 1);
 $dusk-light-gray-r: 199; $dusk-light-gray-g:199; $dusk-light-gray-b: 199; $dusk-light-gray: rgba($dusk-light-gray-r, $dusk-light-gray-g, $dusk-light-gray-b, 1);
 
-$users-color: $coral;
+$users-color: $dusk-orange;
 $groups-color: $dusk-blue;
 $events-color: $dusk-pink;
 $lists-color: $dusk-green;
-$messages-color: rgba(255,255,255,0.36);
+$messages-color: $dusk-light-gray;
 $title-color: $dusk-dark-gray;
 $menu-color: $title-color;
-$edit-color: rgba(0,0,0,0.2);
+$edit-color: $dusk-yellow;
 

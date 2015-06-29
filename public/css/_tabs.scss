@@ -69,25 +69,21 @@ btn{
   background-color: $title-color;
 }
 
-
-
-.home-tab{
-  @include setup-tab(12%);
-}
-
-.menu-tab{
-  @include setup-tab(12%);
-}
-
-
 .selected-tab{
   @include setup-tab(21.5%);
   // flex-basis: 0;
 }
 
-.selected-tab.active{
-
+.selected-home-tab{
+  @include setup-tab(12%);
+  justify-content: center;
 }
+
+.selected-menu-tab{
+  @include setup-tab(12%);
+  justify-content: center;
+}
+
 
 .selection-bar{
   @include setup-tab-bar();
@@ -103,9 +99,6 @@ btn{
 
 }
 
-.active-toolbar-button{
-
-}
 
 .home-icon{
   @include bg-img-center-contain("home_white_shadow");
@@ -113,11 +106,11 @@ btn{
 }
 
 .users-icon{
-  @include bg-img-center-contain("menu_white_shadow");
+  @include bg-img-center-contain("folders_white_shadow");
 }
 
 .menu-icon{
-  @include bg-img-center-contain("menu_white_shadow");
+  @include bg-img-center-contain("stack_white_shadow");
 }
 
 .groups-icon{
@@ -140,6 +133,10 @@ btn{
   @include bg-img-center-contain("messages_white_shadow");
 }
 
+.edit-icon{
+  @include bg-img-center-contain("gear_white_shadow");
+}
+
 .selected-icon{
   display: inline-block;
   margin-left: 0.2em;
@@ -158,4 +155,12 @@ btn{
   // flex-basis: 0;
   width: 2em;
   // height: 2em;
+}
+
+.menu-icon, .home-icon{
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  // margin-left: -0.75em;
+  // flex-basis: 0;
+  width: 50%;
 }

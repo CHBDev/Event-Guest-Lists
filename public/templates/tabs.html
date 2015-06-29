@@ -1,11 +1,9 @@
 
 <div id="{{pOrS === 'primary' ? selected-bar-primary : selcted-bar-secondary}}" class="selection-bar" ng-show="users.currentUser.id">
 
-  <div ng-if="pOrS === 'primary'" id='home-tab' class="home-tab home" ng-click="dispatch[pOrS].currentTab = 'home'">
-    <div class="selected-title home-icon"></div>
+  <div ng-if="pOrS === 'primary'" id="{{pOrS === 'primary' ? 'selectedUserPrimary' : 'selectedUserSecondary'}}" class="selected-tab selected-home-tab home" ng-click="dispatch[pOrS].currentTab = 'home'">
+    <div class="home-icon selected-icon"></div><!-- <div class="selected-title">Invite Again</div> -->
   </div>
-
-
 
   <div id="{{pOrS === 'primary' ? 'selectedUserPrimary' : 'selectedUserSecondary'}}" class="selected-tab selected-user-tab users" ng-click="dispatch[pOrS].currentTab = 'users'">
     <div class="users-icon selected-icon"></div><div class="selected-title">Account</div>
@@ -24,8 +22,8 @@
   </div>
 
 
-   <div ng-if="pOrS === 'secondary'" id="menu-tab" class="menu-tab menu" ng-click="dispatch[pOrS].currentTab = 'menu'">
-    <div class="selected-title menu-icon"></div>
+  <div ng-if="pOrS === 'secondary'" id="{{pOrS === 'primary' ? 'selectedUserPrimary' : 'selectedUserSecondary'}}" class="selected-tab selected-menu-tab menu" ng-click="dispatch[pOrS].currentTab = 'menu'">
+    <div class="menu-icon selected-icon"></div><!-- <div class="selected-title">Menu</div> -->
   </div>
 
 </div>
