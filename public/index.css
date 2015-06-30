@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -426,7 +427,7 @@ th {
 }
 
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid rgba(255, 255, 255, 0);
 }
 
 td, th {
@@ -446,24 +447,27 @@ tr.odd-table-row {
 
 .table {
   margin: 0 auto;
+  color: white;
 }
 
 .table th {
   font-weight: bold;
 }
 
-.group-table {
-  text-align: center;
+.table tr:first-child {
+  background-color: rgba(0, 0, 0, 0.38);
 }
 
-.group-table tr:first-child {
-  background-color: rgba(0, 0, 0, 0.38);
-  color: black;
+.sort-up:after {
+  content: " ▲";
+  position: absolute;
+  font-size: 0.6em;
 }
 
-.events-table tr:first-child {
-  background-color: rgba(0, 0, 0, 0.38);
-  color: black;
+.sort-down:after {
+  content: " ▼";
+  position: absolute;
+  font-size: 0.6em;
 }
 
 btn {
@@ -754,40 +758,6 @@ body {
   overflow: hidden;
 }
 
-#main-menu-button {
-  height: 100%;
-  width: 10em;
-  font-size: 1em;
-  vertical-align: top;
-  -webkit-border-top-left-radius: 10px 10px;
-  -webkit-border-top-right-radius: 10px 10px;
-  -moz-border-border-top-left-radius: 10px 10px;
-  -moz-border-border-top-right-radius: 10px 10px;
-  -ms-border-top-left-radius: 10px 10px;
-  -ms-border-top-right-radius: 10px 10px;
-  border-top-left-radius: 10px 10px;
-  border-top-right-radius: 10px 10px;
-  display: inline-flex;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-  overflow: hidden;
-  background-color: #656565;
-  color: white;
-  float: right;
-}
-
-#main-menu {
-  background-color: black;
-  display: inline-block;
-  width: 200px;
-  height: 300px;
-  position: fixed;
-  top: 4rem;
-  right: 0px;
-  border: 1px solid white;
-}
-
 .login-bar {
   display: inline-block;
   width: 100%;
@@ -820,7 +790,6 @@ body {
   display: block;
   height: 100vh;
   width: 100%;
-  padding-bottom: 4rem;
 }
 
 #main-view-primary {
@@ -828,14 +797,16 @@ body {
   height: 100%;
   width: 49%;
   overflow: scroll;
-  border: 1px solid red;
 }
 
 #main-view-middle {
   display: inline-block;
   height: 100%;
   width: 2%;
-  border: 1px solid white;
+  -webkit-box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 #main-view-secondary {
@@ -843,7 +814,6 @@ body {
   height: 100%;
   width: 49%;
   overflow: scroll;
-  border: 1px solid red;
 }
 
 .filter-add {

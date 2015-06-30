@@ -13,10 +13,10 @@
   <table class="group-table table">
     <tr>
       <th>Active</th>
-      <th ng-click="groupsTableOrder('name')">Group Name<span ng-show="groupsTableSort ==='name'">^^</span></th>
-      <th ng-click="groupsTableOrder('userCount')">UserCount<span ng-show="groupsTableSort ==='userCount'">^^</span></th>
-      <th ng-click="groupsTableOrder('listCount')">ListCount<span ng-show="groupsTableSort ==='listCount'">^^</span></th>
-      <th ng-click="groupsTableOrder('guestCount')">GuestCount<span ng-show="groupsTableSort ==='guestCount'">^^</span></th>
+      <th ng-click="groupsTableOrder('name')">Group Name<span class="sort-icon {{sortIcon}}" ng-show="groupsTableSort ==='name'"></span></th>
+      <th ng-click="groupsTableOrder('userCount')">UserCount<span class="sort-icon {{sortIcon}}" ng-show="groupsTableSort ==='userCount'"></span></th>
+      <th ng-click="groupsTableOrder('listCount')">ListCount<span class="sort-icon {{sortIcon}}" ng-show="groupsTableSort ==='listCount'"></span></th>
+      <th ng-click="groupsTableOrder('guestCount')">GuestCount<span class="sort-icon {{sortIcon}}" ng-show="groupsTableSort ==='guestCount'"></span></th>
     </tr>
 
     <tr ng-class-odd="'odd-table-row'" ng-repeat="group in getGroupArray(pOrS) | orderBy: groupsTableSort:groupsTableSortReverse | filter:groupsFilter as results">

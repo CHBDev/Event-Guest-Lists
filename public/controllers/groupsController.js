@@ -29,9 +29,11 @@ controllers
 
     s.groupsTableSort = 'name';
     s.groupsTableSortReverse = true;
+    s.sortIcon = "sort-down";
     s.groupsTableOrder = function(prop){
-        $scope.groupsTableSortReverse = ($scope.groupsTableSort === prop) ? !$scope.groupsTableSortReverse : false;
-        $scope.groupsTableSort = prop;
+        s.groupsTableSortReverse = ($scope.groupsTableSort === prop) ? !$scope.groupsTableSortReverse : false;
+        s.sortIcon = s.groupsTableSortReverse ? "sort-down" : "sort-up";
+        s.groupsTableSort = prop;
     };
 
     s.getGroupArray = function(pOrS){
@@ -42,7 +44,6 @@ controllers
         return s.groups.cache.eventsGroups;
       }
     };
-
 
   })
 

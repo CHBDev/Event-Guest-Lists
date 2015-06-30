@@ -3,7 +3,7 @@ table{
 }
 
 table, th, td{
-  border: 1px solid black;
+  border: 1px solid rgba(255,255,255,0);
 }
 
 td, th{
@@ -28,22 +28,36 @@ tr.odd-table-row{
 
 .table{
   margin: 0 auto;
+  color: $light-font-color;
 }
 
 .table th{
   font-weight: bold;
 }
 
-.group-table{
-  text-align: center;
+// .group-table{
+//   text-align: center;
+// }
+
+.table tr:first-child{
+  background-color: rgba(0,0,0,.38);
+
+  // color: black;
 }
 
-.group-table tr:first-child{
-  background-color: rgba(0,0,0,.38);
-  color: black;
+.sort-icon{
+
 }
 
-.events-table tr:first-child{
-  background-color: rgba(0,0,0,.38);
-  color: black;
+.sort-up:after{
+  content: " ▲" ;
+  position: absolute;
+  font-size: 0.6em;
+
+}
+
+.sort-down:after{
+  content: " ▼";
+  position: absolute;
+  font-size: 0.6em;
 }
