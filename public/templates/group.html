@@ -1,15 +1,38 @@
 
-<div ng-controller="GroupsController" class="groups group-html">
-SELECTED GROUP
-    <div class="selected-group"></div>
 
-      <div id="toolbar-{{pOrS}}" class="toolbar">
-        <div class="users-toolbar-button toolbar-button" ng-click="groups.showUsers(pOrS)">USERS</div>
-        <div  class="events-toolbar-button toolbar-button" ng-click="groups.showEvents(pOrS)">EVENTS</div>
-        <div  class="lists-toolbar-button toolbar-button" ng-click="groups.showLists(pOrS)">LISTS</div>
-        <div  class="guests-toolbar-buttn toolbar-button" ng-click="groups.showGuests(pOrS)">GUESTS</div>
-        <div class="messages-toolbar-button toolbar-button" ng-click="groups.showMessages(pOrS)">MESSAGES</div>
+
+
+<div ng-controller="GroupsController" class="groups group-html">
+
+    <div class="toolbar groups">
+
+    <!--   <div ng-class="{'active-toolbar-button': groups[pOrS].currentToolbarButton === 'users'}" class="users users-toolbar-button toolbar-button" ng-click="groups[pOrS].currentToolbarButton = 'users'">
+        <div class="users-icon toolbar-icon"></div><div class="toolbar-title">Users</div>
+      </div> -->
+
+      <div ng-class="{'active-toolbar-button': groups[pOrS].currentToolbarButton === 'events'}" class="events events-toolbar-button toolbar-button" ng-click="groups[pOrS].currentToolbarButton = 'events'">
+        <div class="events-icon toolbar-icon"></div><div class="toolbar-title">Events</div>
       </div>
+       <div ng-class="{'active-toolbar-button': groups[pOrS].currentToolbarButton === 'lists'}" class="lists events-toolbar-button toolbar-button" ng-click="groups[pOrS].currentToolbarButton = 'lists'">
+        <div class="lists-icon toolbar-icon"></div><div class="toolbar-title">Lists</div>
+      </div>
+      <div ng-class="{'active-toolbar-button': groups[pOrS].currentToolbarButton === 'messages'}" class="messages messages-toolbar-button toolbar-button" ng-click="groups[pOrS].currentToolbarButton = 'messages'">
+        <div class="messages-icon toolbar-icon"></div><div class="toolbar-title">Messages</div>
+      </div>
+      <div ng-class="{'active-toolbar-button': groups[pOrS].currentToolbarButton === 'edit'}" class="edit edit-toolbar-button toolbar-button" ng-click="groups[pOrS].currentToolbarButton = 'edit'">
+        <div class="edit-icon toolbar-icon"></div><div class="toolbar-title">Edit</div>
+      </div>
+    </div>
+
+  <div ng-switch="groups[pOrS].currentToolbarButton">
+    <div ng-switch-when="edit" class="edit">
+      EDIT GROUPS MENU - save button - cancel button
+    </div>
+    <!-- <users-dir ng-switch-when="users"></users-dir> -->
+    <lists-dir ng-switch-when="lists"></lists-dir>
+    <messages-dir ng-switch-when="messages"></messages-dir>
+    <events-dir ng-switch-default></events-dir>
+  </div>
 
 
 </div>

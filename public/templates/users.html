@@ -1,5 +1,4 @@
-<div ng-controller="UsersController" class="users-html">
-  <div ng-hide="users[pOrS].currentUser">
+<div ng-controller="UsersController" class="users users-html">
     <div  class="users-toolbar"> ALL AVAILABLE USERS </div>
 
     <input type="search" ng-model="usersFilter" placeholder="filter..." aria-label="filter..." />
@@ -12,13 +11,12 @@
         <th ng-click="usersTableOrder('inGroups')"># of Groups<span ng-show="usersTableSort ==='inGroups'">^^</span></th>
       </tr>
       <tr ng-class-odd="'odd-table-row'" ng-repeat="user in users.userArray | orderBy: usersTableSort:usersTableSortReverse | filter:usersFilter as results">
-      <td><button ng-click="users[pOrS].currentUser = user.name; dispatch[pOrS].currentTab = 'users'" ng-show="users[pOrS].currentUser !== user.name">SELECT</button><span ng-show="users[pOrS].currentGuest === user.name">ACTIVE</span></td>
+      <td><span ng-show="users[pOrS].currentGuest === user.name">YOU</span></td>
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>
         <td>{{user.date}}</td>
         <td>{{user.inGroups}}</td>
       </tr>
     </table>
-  </div>
 
 </div>

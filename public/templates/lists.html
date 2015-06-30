@@ -1,4 +1,4 @@
-<div ng-controller="ListsController" class="lists-html">
+<div ng-controller="ListsController" class=" lists lists-html">
 
 <div ng-show="conSec.fileInput.data">THERE IS A FILE LOADED</div>
 <div ng-show="lists[pOrS].currentList">THERE IS A LIST SELECTED</div>
@@ -36,13 +36,10 @@ GUESt LIST import TABLE
 
 </div>
 <div ng-hide="conSec.fileInput.data">
-<br>
-THIS IS THE ALL LISTS TABLE
-<br>
 
 
     <input type="search" ng-model="listsFilter" placeholder="filter..." aria-label="filter..." />
-    <table class="lists-table">
+    <table class=" lists lists-table">
       <tr>
         <th>.\/.</th>
         <th ng-click="listsTableOrder('name')">List Name<span ng-show="listsTableSort ==='name'">^^</span></th>

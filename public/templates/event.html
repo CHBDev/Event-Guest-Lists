@@ -1,16 +1,32 @@
-<div ng-controller="EventsController" class="events event-html">
-  <div ng-show="events[pOrS].currentEvent">
-    <div class="selected-event"> SELECTED EVENT </div>
+<div ng-controller="EventsController" class="events events-html">
 
+    <div class="toolbar events">
 
-    <div id="toolbar-{{pOrS}}" class="toolbar">
-     <!--  <div class="users-tab-button tab-button" ng-click="groups.showUsers(pOrS)">USERS</div> -->
-      <!-- <div  class="events-tab-button tab-button" ng-click="groups.showEvents(pOrS)">EVENTS</div> -->
-      <div  class="lists-tab-button tab-button" ng-click="groups.showLists(pOrS)">LISTS</div>
-      <!-- <div  class="guests-tab-buttn tab-button" ng-click="groups.showGuests(pOrS)">GUESTS</div> -->
-      <div class="messages-tab-button tab-button" ng-click="groups.showMessages(pOrS)">MESSAGES</div>
+      <div ng-class="{'active-toolbar-button': events[pOrS].currentToolbarButton === 'lists'}" class="lists lists-toolbar-button toolbar-button" ng-click="events[pOrS].currentToolbarButton = 'lists'">
+        <div class="lists-icon toolbar-icon"></div><div class="toolbar-title">Lists</div>
+      </div>
 
+     <div ng-class="{'active-toolbar-button': events[pOrS].currentToolbarButton === 'guests'}" class="guests guests-toolbar-button toolbar-button" ng-click="events[pOrS].currentToolbarButton = 'guests'">
+        <div class="guests-icon toolbar-icon"></div><div class="toolbar-title">Guests</div>
+      </div>
+      <div ng-class="{'active-toolbar-button': events[pOrS].currentToolbarButton === 'messages'}" class="messages messages-toolbar-button toolbar-button" ng-click="events[pOrS].currentToolbarButton = 'messages'">
+        <div class="messages-icon toolbar-icon"></div><div class="toolbar-title">Messages</div>
+      </div>
+      <div ng-class="{'active-toolbar-button': events[pOrS].currentToolbarButton === 'edit'}" class="edit edit-toolbar-button toolbar-button" ng-click="events[pOrS].currentToolbarButton = 'edit'">
+        <div class="edit-icon toolbar-icon"></div><div class="toolbar-title">Edit</div>
+      </div>
+    </div>
 
+  <div ng-switch="events[pOrS].currentToolbarButton">
+    <div ng-switch-when="edit" class="edit">
+      EDIT EVENT MENU - save button - cancel button
+    </div>
+
+    <messages-dir ng-switch-when="messages"></messages-dir>
+    <guests-dir ng-switch-default></guests-dir>
+    <lists-dir ng-switch-default></lists-dir>
   </div>
+
+
 </div>
 

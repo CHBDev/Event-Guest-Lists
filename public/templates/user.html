@@ -1,7 +1,7 @@
 <div ng-controller="UsersController" class="users user-html">
-  <!-- <div class="selected-user"> SELECTED USER PAGE </div> -->
+  <!-- id="toolbar-{{pOrS}}" -->
 
-    <div id="toolbar-{{pOrS}}" class="toolbar users">
+    <div class="toolbar users">
 
       <div ng-class="{'active-toolbar-button': users[pOrS].currentToolbarButton === 'groups'}" class="groups users-toolbar-button toolbar-button" ng-click="users[pOrS].currentToolbarButton = 'groups'">
         <div class="groups-icon toolbar-icon"></div><div class="toolbar-title">Groups</div>
@@ -10,7 +10,9 @@
       <div ng-class="{'active-toolbar-button': users[pOrS].currentToolbarButton === 'events'}" class="events events-toolbar-button toolbar-button" ng-click="users[pOrS].currentToolbarButton = 'events'">
         <div class="events-icon toolbar-icon"></div><div class="toolbar-title">Events</div>
       </div>
-      <!-- <div ng-class="{'active-toolbar-button': users[pOrS].currentToolbarButton === 'lists'}" class="lists lists-toolbar-button toolbar-button" ng-click="users[pOrS].currentToolbarButton = 'lists'">MY LISTS</div> -->
+       <div ng-class="{'active-toolbar-button': users[pOrS].currentToolbarButton === 'lists'}" class="lists lists-toolbar-button toolbar-button" ng-click="users[pOrS].currentToolbarButton = 'lists'">
+        <div class="lists-icon toolbar-icon"></div><div class="toolbar-title">Lists</div>
+      </div>
       <div ng-class="{'active-toolbar-button': users[pOrS].currentToolbarButton === 'messages'}" class="messages messages-toolbar-button toolbar-button" ng-click="users[pOrS].currentToolbarButton = 'messages'">
         <div class="messages-icon toolbar-icon"></div><div class="toolbar-title">Messages</div>
       </div>

@@ -16,6 +16,11 @@
   @return rgba($rf, $gf, $bf, $a);
 };
 
+$shade-white: rgba(255,255,255,0.3);
+$shade-black: rgba(0,0,0,0.3);
+
+$text-gray: #242424;
+
 
 $coral-r: 255; $coral-g:173; $coral-b: 92; $coral: rgba($coral-r, $coral-g, $coral-b, 1);
 $yellow-r: 255; $yellow-g:195; $yellow-b: 0; $yellow: rgba($yellow-r, $yellow-g, $yellow-b, 1);
@@ -27,7 +32,6 @@ $gray-r: 92; $gray-g:92; $gray-b: 92; $gray: rgba($gray-r, $gray-g, $gray-b, 1);
 
 
 $dark-blue-r: 92; $dark-blue-g:160; $dark-blue-b: 255; $dark-blue: rgba($dark-blue-r, $dark-blue-g, $dark-blue-b, 1);
-
 $dusk-gray-r: 48; $dusk-gray-g:62; $dusk-gray-b: 77; $dusk-gray: rgba($dusk-gray-r, $dusk-gray-g, $dusk-gray-b, 1);
 $dusk-blue-r: 102; $dusk-blue-g:152; $dusk-blue-b: 200; $dusk-blue: rgba($dusk-blue-r, $dusk-blue-g, $dusk-blue-b, 1);
 

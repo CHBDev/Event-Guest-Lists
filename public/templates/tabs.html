@@ -6,7 +6,7 @@
   </div>
 
   <div id="{{pOrS === 'primary' ? 'selectedUserPrimary' : 'selectedUserSecondary'}}" class="selected-tab selected-user-tab users" ng-click="dispatch[pOrS].currentTab = 'users'">
-    <div class="users-icon selected-icon"></div><div class="selected-title">Account</div>
+    <div class="users-icon selected-icon"></div><div class="selected-title">User</div>
   </div>
 
   <div id="{{pOrS === 'primary' ? 'selectedGroupPrimary' : 'selectedGroupSecondary'}}" class="selected-tab selected-group-tab groups" ng-show="groups[pOrS].currentGroup.id" ng-click="dispatch[pOrS].currentTab = 'groups'">

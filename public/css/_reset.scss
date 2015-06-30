@@ -43,33 +43,4 @@ table {
   border-spacing: 0;
 }
 
-/*----group clear fix ------*/
 
-.group:before,
-.group:after {
-  content: "";
-  display: table;
-}
-.group:after {
-  clear: both;
-}
-.group {
-  clear: both;
-  *zoom: 1;
-}
-
-/*----=====   GRID =======-------*/
-*,
-*:before,
-*:after{
- -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  /*-webkit-box-sizing: padding-box;
-  -moz-box-sizing: padding-box;
-  box-sizing: padding-box;*/
-  /*-webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;*/
-
-}

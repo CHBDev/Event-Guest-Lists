@@ -53,6 +53,8 @@ btn{
   align-items: center;
   align-content: center;
   overflow: hidden;
+  // text-overflow: "-";
+  // white-space: nowrap;
 
 }
 
@@ -110,7 +112,7 @@ btn{
 }
 
 .menu-icon{
-  @include bg-img-center-contain("stack_white_shadow");
+  @include bg-img-center-contain("menu_round_white_shadow");
 }
 
 .groups-icon{
@@ -136,6 +138,8 @@ btn{
 .edit-icon{
   @include bg-img-center-contain("gear_white_shadow");
 }
+
+
 
 .selected-icon{
   display: inline-block;
