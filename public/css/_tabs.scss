@@ -1,16 +1,9 @@
-$top-bar-height: 4rem;
-$big-button-radius: 10px;
-$small-button-radius: 5px;
+$top-bar-height: $divider-height;
+$big-button-radius: $big-radius;
+$small-button-radius: $small-radius;
 
 @mixin button-top-border-radius($radius) {
-          -webkit-border-top-left-radius: $radius $radius;
-          -webkit-border-top-right-radius: $radius $radius;
-          -moz-border-border-top-left-radius: $radius $radius;
-          -moz-border-border-top-right-radius: $radius $radius;
-          -ms-border-top-left-radius: $radius $radius;
-          -ms-border-top-right-radius: $radius $radius;
-          border-top-left-radius: $radius $radius;
-          border-top-right-radius: $radius $radius;
+          @include border-radius-simple($radius, $radius);
 }
 
 @mixin btn($h:auto, $w:auto, $bgC: gray, $txtC: black ){

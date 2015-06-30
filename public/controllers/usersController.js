@@ -5,7 +5,7 @@ controllers
 
     controllerDispatch.setServicesToLocalScope(s);
 
-    s.conSec = {name: "user", fileInput: {} };
+    s.conSec = {name: "users", fileInput: {} };
 
     s.loginFormData = {email: null, password: null, confirm: null};
     s.createUserOpen = false;

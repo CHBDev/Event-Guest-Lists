@@ -426,36 +426,58 @@ th {
   background-color: #c7c765;
 }
 
-table, th, td {
-  border: 1px solid rgba(255, 255, 255, 0);
+tf {
+  display: inline-block;
+  color: white;
+  width: 100%;
+  height: 100%;
 }
 
-td, th {
-  padding: .24em 1em .24em 1em;
+tf-top {
+  display: block;
+  width: 100%;
 }
 
-/*td{
-  margin: 1px, 2px, 1px, 2px;
+tf-middle {
+  display: block;
+  width: 100%;
 }
 
-th{
-  margin: 1px, 2px, 1px, 2px;
-}*/
-tr.odd-table-row {
+tf-bottom {
+  display: block;
+  width: 100%;
+}
+
+tfr {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+tfh {
+  display: inline-block;
+}
+
+tfd {
+  display: inline-block;
+}
+
+tfr.odd-table-row {
   background-color: rgba(0, 0, 0, 0.18);
 }
 
-.table {
-  margin: 0 auto;
-  color: white;
-}
-
-.table th {
-  font-weight: bold;
-}
-
-.table tr:first-child {
+tf-top tfr:first-child {
   background-color: rgba(0, 0, 0, 0.38);
+  border-radius: 10px 10px 0 0;
+}
+
+tf-bottom tfr:last-child {
+  background-color: rgba(0, 0, 0, 0.38);
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  color: transparent;
 }
 
 .sort-up:after {
@@ -468,6 +490,46 @@ tr.odd-table-row {
   content: " ▼";
   position: absolute;
   font-size: 0.6em;
+}
+
+.tfd-1, .tfh-1 {
+  flex: 1 1 0;
+}
+
+.tfd-2, .tfh-2 {
+  flex: 2 2 0;
+}
+
+.tfd-3, .tfh-3 {
+  flex: 3 3 0;
+}
+
+.tfd-4, .tfh-4 {
+  flex: 4 4 0;
+}
+
+.tfd-5, .tfh-5 {
+  flex: 5 5 0;
+}
+
+.tfd-6, .tfh-6 {
+  flex: 6 6 0;
+}
+
+.tfd-7, .tfh-7 {
+  flex: 7 7 0;
+}
+
+.tfd-8, .tfh-8 {
+  flex: 8 8 0;
+}
+
+.tfd-9, .tfh-9 {
+  flex: 9 9 0;
+}
+
+.tfd-10, .tfh-10 {
+  flex: 10 10 0;
 }
 
 btn {
@@ -486,14 +548,7 @@ btn {
   width: 10rem;
   font-size: 1em;
   vertical-align: top;
-  -webkit-border-top-left-radius: 10px 10px;
-  -webkit-border-top-right-radius: 10px 10px;
-  -moz-border-border-top-left-radius: 10px 10px;
-  -moz-border-border-top-right-radius: 10px 10px;
-  -ms-border-top-left-radius: 10px 10px;
-  -ms-border-top-right-radius: 10px 10px;
-  border-top-left-radius: 10px 10px;
-  border-top-right-radius: 10px 10px;
+  border-radius: 10px 10px 0 0;
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
@@ -507,14 +562,7 @@ btn {
   width: 21.5%;
   font-size: 1em;
   vertical-align: top;
-  -webkit-border-top-left-radius: 10px 10px;
-  -webkit-border-top-right-radius: 10px 10px;
-  -moz-border-border-top-left-radius: 10px 10px;
-  -moz-border-border-top-right-radius: 10px 10px;
-  -ms-border-top-left-radius: 10px 10px;
-  -ms-border-top-right-radius: 10px 10px;
-  border-top-left-radius: 10px 10px;
-  border-top-right-radius: 10px 10px;
+  border-radius: 10px 10px 0 0;
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
@@ -527,14 +575,7 @@ btn {
   width: 12%;
   font-size: 1em;
   vertical-align: top;
-  -webkit-border-top-left-radius: 10px 10px;
-  -webkit-border-top-right-radius: 10px 10px;
-  -moz-border-border-top-left-radius: 10px 10px;
-  -moz-border-border-top-right-radius: 10px 10px;
-  -ms-border-top-left-radius: 10px 10px;
-  -ms-border-top-right-radius: 10px 10px;
-  border-top-left-radius: 10px 10px;
-  border-top-right-radius: 10px 10px;
+  border-radius: 10px 10px 0 0;
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
@@ -548,14 +589,7 @@ btn {
   width: 12%;
   font-size: 1em;
   vertical-align: top;
-  -webkit-border-top-left-radius: 10px 10px;
-  -webkit-border-top-right-radius: 10px 10px;
-  -moz-border-border-top-left-radius: 10px 10px;
-  -moz-border-border-top-right-radius: 10px 10px;
-  -ms-border-top-left-radius: 10px 10px;
-  -ms-border-top-right-radius: 10px 10px;
-  border-top-left-radius: 10px 10px;
-  border-top-right-radius: 10px 10px;
+  border-radius: 10px 10px 0 0;
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
@@ -583,14 +617,7 @@ btn {
   width: 18%;
   font-size: 1em;
   vertical-align: top;
-  -webkit-border-top-left-radius: 10px 10px;
-  -webkit-border-top-right-radius: 10px 10px;
-  -moz-border-border-top-left-radius: 10px 10px;
-  -moz-border-border-top-right-radius: 10px 10px;
-  -ms-border-top-left-radius: 10px 10px;
-  -ms-border-top-right-radius: 10px 10px;
-  border-top-left-radius: 10px 10px;
-  border-top-right-radius: 10px 10px;
+  border-radius: 10px 10px 0 0;
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;

@@ -29,6 +29,15 @@
   box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.3);
 }
 
+@mixin border-radius-simple($tl:0, $tr:0, $br:0, $bl:0){
+  border-radius: $tl $tr $br $bl;
+}
+
+$divider-height: 4rem;
+$big-radius: 10px;
+$small-radius: 5px;
+
+
 
 
 

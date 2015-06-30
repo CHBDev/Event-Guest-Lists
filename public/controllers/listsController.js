@@ -5,7 +5,7 @@ controllers
 
     controllerDispatch.setServicesToLocalScope(s);
 
-    s.conSec = {name: "list", fileInput: {} };
+    s.conSec = {name: "lists", fileInput: {} };
 
     s.socket.on('list:update', function(data){
 

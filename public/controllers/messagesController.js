@@ -4,7 +4,7 @@ controllers
     var s = $scope;
     controllerDispatch.setServicesToLocalScope(s);
 
-    s.conSec = {name: "message", fileInput: {} };
+    s.conSec = {name: "messages", fileInput: {} };
 
     s.socket.on('message:update', function(data){
 

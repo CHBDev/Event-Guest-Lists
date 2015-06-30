@@ -5,7 +5,7 @@ controllers
     controllerDispatch.setServicesToLocalScope(s);
 
 
-    s.conSec = {name: "event", fileInput: {} };
+    s.conSec = {name: "events", fileInput: {} };
 
     s.socket.on('event:update', function(data){
 

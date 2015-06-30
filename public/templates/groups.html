@@ -3,29 +3,46 @@
 
   <div class="filter-add groups-filter-add">
     <div class="filter-section">
-      <input class="filter" type="search" ng-model="groupsFilter" placeholder="Filter Groups..." aria-label="filter..." />
+      <input class="filter" type="search" ng-model="tableFilter" placeholder="Filter Groups..." aria-label="filter..." />
     </div>
     <div class="add-section">
       <div class="add-icon"></div><div class="add-title">New Group</div>
     </div>
   </div>
 
-  <table class="group-table table">
-    <tr>
-      <th>Active</th>
-      <th ng-click="groupsTableOrder('name')">Group Name<span class="sort-icon {{sortIcon}}" ng-show="groupsTableSort ==='name'"></span></th>
-      <th ng-click="groupsTableOrder('userCount')">UserCount<span class="sort-icon {{sortIcon}}" ng-show="groupsTableSort ==='userCount'"></span></th>
-      <th ng-click="groupsTableOrder('listCount')">ListCount<span class="sort-icon {{sortIcon}}" ng-show="groupsTableSort ==='listCount'"></span></th>
-      <th ng-click="groupsTableOrder('guestCount')">GuestCount<span class="sort-icon {{sortIcon}}" ng-show="groupsTableSort ==='guestCount'"></span></th>
-    </tr>
+  <controller ng-controller="TableController">
+    <table-fixed-dir></table-fixed-dir>
+  </controller>
 
-    <tr ng-class-odd="'odd-table-row'" ng-repeat="group in getGroupArray(pOrS) | orderBy: groupsTableSort:groupsTableSortReverse | filter:groupsFilter as results">
-    <td><button class="test-btn" ng-click="groups[pOrS].currentGroup = group; dispatch[pOrS].currentTab = 'groups'" ng-show="groups[pOrS].currentGroup.id !== group.id">SELECT</button><span ng-show="groups[pOrS].currentGroup.id === group.id">ACTIVE</span></td>
-      <td>{{group.name}}</td>
-      <td>{{group.userCount}}</td>
-      <td>{{group.listCount}}</td>
-      <td>{{group.guestCount}}</td>
-    </tr>
-  </table>
 
+  <!-- <tf>
+  <tfr><tfh>Active</tfh></tfr>
+      <tf-top>
+        <tfr>
+          <tfh ng-click="groupsTableOrder('name')">Group Name<span class="sort-icon {{sortIcon}}" ng-show="groupsTableSort ==='name'"></span></tfh>
+          <tfh ng-click="groupsTableOrder('userCount')"># Users<span class="sort-icon {{sortIcon}}" ng-show="groupsTableSort ==='userCount'"></span></tfh>
+          <tfh ng-click="groupsTableOrder('listCount')"># Lists<span class="sort-icon {{sortIcon}}" ng-show="groupsTableSort ==='listCount'"></span></tfh>
+          <tfh ng-click="groupsTableOrder('guestCount')"># Guests<span class="sort-icon {{sortIcon}}" ng-show="groupsTableSort ==='guestCount'"></span></tfh>
+        </tfr>
+      </tf-top>
+
+      <tf-left>
+        <tfr ng-class-odd="'odd-table-row'" ng-repeat="group in getGroupArray(pOrS) | orderBy: groupsTableSort:groupsTableSortReverse | filter:groupsFilter as results">
+          <tfd><button class="test-btn" ng-click="groups[pOrS].currentGroup = group; dispatch[pOrS].currentTab = 'groups'" ng-show="groups[pOrS].currentGroup.id !== group.id">SELECT</button><span ng-show="groups[pOrS].currentGroup.id === group.id">ACTIVE</span></tfd>
+        </tfr>
+      </tf-left>
+
+      <tf-right>
+        <tfr ng-class-odd="'odd-table-row'" ng-repeat="group in getGroupArray(pOrS) | orderBy: groupsTableSort:groupsTableSortReverse | filter:groupsFilter as results">
+
+          <tfd>{{group.name}}</tfd>
+          <tfd>{{group.userCount}}</tfd>
+          <tfd>{{group.listCount}}</tfd>
+          <tfd>{{group.guestCount}}</tfd>
+        </tfr>
+      </tf-right>
+
+    <tfr><tfd>.</tfd><tfd>.</tfd><tfd>.</tfd><tfd>.</tfd><tfd>.</tfd></tfr>
+  </table-fixed>
+ -->
 </div>

@@ -3,9 +3,10 @@ controllers
   .controller('GroupsController', function($scope, $http, $interval, controllerDispatch){
     var s = $scope;
 
+
     controllerDispatch.setServicesToLocalScope(s);
 
-    s.conSec = {name: "group", fileInput: {} };
+    s.conSec = {name: "groups", fileInput: {} };
     s.interval = $interval;
 
     s.socket.on('group:update', function(data){
@@ -27,16 +28,7 @@ controllers
     //s.interval(function(arr){arr.push({name: "my special groupTEST", userCount: 7, listCount: 24, guestCount: 345});}.bind(this, s.groups.cache.usersGroups), 5000);
 
 
-    s.groupsTableSort = 'name';
-    s.groupsTableSortReverse = true;
-    s.sortIcon = "sort-down";
-    s.groupsTableOrder = function(prop){
-        s.groupsTableSortReverse = ($scope.groupsTableSort === prop) ? !$scope.groupsTableSortReverse : false;
-        s.sortIcon = s.groupsTableSortReverse ? "sort-down" : "sort-up";
-        s.groupsTableSort = prop;
-    };
-
-    s.getGroupArray = function(pOrS){
+    s.getArray = function(pOrS){
       if(s.dispatch[pOrS].currentTab === 'users'){
 
         return s.groups.cache.usersGroups;
