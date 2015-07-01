@@ -1,21 +1,35 @@
+ <controller ng-controller="TableController">
 
   <tf>
 
-      <tf-top>
-        <tfr>
+      <tf-top class="{{conSec.name}}">
+        <tfr class="{{conSec.name}} tf-header-row">
           <tfh class="tfh-2">Active</tfh>
           <tfh ng-repeat="header in getService(conSec.name).cache.headers" class="{{'tfh-' + header[2]}}"
             ng-click="tableOrder(header[1])">{{header[0]}}<span class=" sort-icon {{sortIcon}}" ng-show="tableSort === header[1] "></span></tfh>
         </tfr>
+
       </tf-top><tf-middle>
+
+        <tfr>
+          <tfh class="tfh-2">Active</tfh>
+          <tfh ng-repeat="header in getService(conSec.name).cache.headers" class="{{'tfh-' + header[2]}}">{{header[0]}}</tfh>
+        </tfr>
+
+
         <tfr ng-class-odd="'odd-table-row'" ng-repeat="thing in getArray(pOrS) | orderBy: tableSort:tableSortReverse | filter:tableFilter as results">
-          <tfd class="tfh-2"><button class="test-btn" ng-click="getService(conSec.name)[pOrS].currentSelection = thing; dispatch[pOrS].currentTab = conSec.name" ng-show="conSec.name[pOrS].currentSelection.id !== thing.id">SELECT</button><span ng-show="getService(conSec.name)[pOrS].currentSelection.id === thing.id">ACTIVE</span></tfd>
+          <tfd class="tfh-2"><button class="table-btn" ng-click="getService(conSec.name)[pOrS].currentSelection = thing; dispatch[pOrS].currentTab = conSec.name" ng-show="getService(conSec.name)[pOrS].currentSelection.id !== thing.id">SELECT</button><span ng-show="getService(conSec.name)[pOrS].currentSelection.id === thing.id">ACTIVE</span></tfd>
           <tfd ng-repeat="tuple in getService(conSec.name).cache.headers" class="{{'tfd-' + tuple[2]}}">{{thing[tuple[1]]}}</tfd>
         </tfr>
-      </tf-middle><tf-bottom>
-        <tfr>.</tfr>
+        <tfr class="darken" ng-show="results.length === 0">No Results for Filter: {{tableFilter}}</tfr>
+        <tfr>...</tfr>
+
+      </tf-middle><tf-bottom class="{{conSec.name}}">
+        <tfr class="{{conSec.name}} tf-footer-row">.</tfr>
       </tf-bottom>
 
   </tf>
+
+</controller>
 
 

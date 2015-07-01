@@ -37,7 +37,15 @@ $divider-height: 4rem;
 $big-radius: 10px;
 $small-radius: 5px;
 
+.fill-parent{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
 
+controller{
+  @extend .fill-parent;
+}
 
 
 

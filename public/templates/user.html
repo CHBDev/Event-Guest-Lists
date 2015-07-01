@@ -1,4 +1,4 @@
-<div ng-controller="UsersController" class="users user-html">
+<div ng-controller="UsersController" class="users user-html fill-parent">
   <!-- id="toolbar-{{pOrS}}" -->
 
     <div class="toolbar users">
@@ -21,7 +21,7 @@
       </div>
     </div>
 
-  <div ng-switch="users[pOrS].currentToolbarButton">
+  <div ng-switch="users[pOrS].currentToolbarButton" class="fill-parent">
   <div ng-switch-when="edit" class="edit">
     EDIT USER MENU - save button - cancel button
   </div>

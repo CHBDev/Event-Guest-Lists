@@ -1,5 +1,5 @@
 
-<div id="{{pOrS === 'primary' ? selected-bar-primary : selcted-bar-secondary}}" class="selection-bar" ng-show="users.currentUser.id">
+<div class="selection-bar" ng-show="users.currentUser.id">
 
   <div ng-if="pOrS === 'primary'" id="{{pOrS === 'primary' ? 'selectedUserPrimary' : 'selectedUserSecondary'}}" class="selected-tab selected-home-tab home" ng-click="dispatch[pOrS].currentTab = 'home'">
     <div class="home-icon selected-icon"></div><!-- <div class="selected-title">Invite Again</div> -->
@@ -9,16 +9,16 @@
     <div class="users-icon selected-icon"></div><div class="selected-title">User</div>
   </div>
 
-  <div id="{{pOrS === 'primary' ? 'selectedGroupPrimary' : 'selectedGroupSecondary'}}" class="selected-tab selected-group-tab groups" ng-show="groups[pOrS].currentGroup.id" ng-click="dispatch[pOrS].currentTab = 'groups'">
-    <div class="groups-icon selected-icon"></div><div class="selected-title">{{groups[pOrS].currentGroup.name}}</div>
+  <div id="{{pOrS === 'primary' ? 'selectedGroupPrimary' : 'selectedGroupSecondary'}}" class="selected-tab selected-group-tab groups" ng-show="groups[pOrS].currentSelection.id" ng-click="dispatch[pOrS].currentTab = 'groups'">
+    <div class="groups-icon selected-icon"></div><div class="selected-title">{{groups[pOrS].currentSelection.name}}</div>
   </div>
 
-  <div id="{{pOrS === 'primary' ? 'selectedEventPrimary' : 'selectedEventSecondary'}}" class="selected-tab selected-event-tab events"  ng-show="events[pOrS].currentEvent.id" ng-click="dispatch[pOrS].currentTab = 'events'">
-    <div class="events-icon selected-icon"></div><div class="selected-title">{{events[pOrS].currentEvent.name}}</div>
+  <div id="{{pOrS === 'primary' ? 'selectedEventPrimary' : 'selectedEventSecondary'}}" class="selected-tab selected-event-tab events"  ng-show="events[pOrS].currentSelection.id" ng-click="dispatch[pOrS].currentTab = 'events'">
+    <div class="events-icon selected-icon"></div><div class="selected-title">{{events[pOrS].currentSelection.name}}</div>
   </div>
 
-  <div id="{{pOrS === 'primary' ? 'selectedListPrimary' : 'selectedListSecondary'}}" class="selected-tab selected-list-tab lists" ng-show="lists[pOrS].currentList.id" ng-click="dispatch[pOrS].currentTab = 'lists'">
-    <div class="lists-icon selected-icon"></div><div class="selected-title">{{lists[pOrS].currentList.name}}</div>
+  <div id="{{pOrS === 'primary' ? 'selectedListPrimary' : 'selectedListSecondary'}}" class="selected-tab selected-list-tab lists" ng-show="lists[pOrS].currentSelection.id" ng-click="dispatch[pOrS].currentTab = 'lists'">
+    <div class="lists-icon selected-icon"></div><div class="selected-title">{{lists[pOrS].currentSelection.name}}</div>
   </div>
 
 
@@ -38,11 +38,11 @@
     <div class="messagesTabButton tabButton" ng-click="pOrS === 'primary' ? changePrimaryTab('messages') : changeSecondaryTab('messages')">MESSAGES</div>
   </div> -->
 
-  <div ng-switch="dispatch[pOrS].currentTab">
-    <group-dir ng-switch-when="groups"></group-dir>
-    <event-dir ng-switch-when="events"></event-dir>
-    <list-dir ng-switch-when="lists"></list-dir>
-    <user-dir ng-switch-when="users"><user-dir>
+  <div ng-switch="dispatch[pOrS].currentTab" class="fill-parent">
+    <group-dir class="fill-parent" ng-switch-when="groups"></group-dir>
+    <event-dir class="fill-parent" ng-switch-when="events"></event-dir>
+    <list-dir class="fill-parent" ng-switch-when="lists"></list-dir>
+    <user-dir class="fill-parent" ng-switch-when="users"><user-dir>
   </div>
 
 <!--   <div class="closeSelection" ng-click="dispatch[pOrS].currentTab = 'groups'; groups[pOrS].currentGroup = null; events[pOrS].currentEvent = null; lists[pOrS].currentList = null">X</div>

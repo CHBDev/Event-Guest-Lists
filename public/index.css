@@ -394,6 +394,16 @@ th {
   padding: 0;
 }
 
+.darken {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.fill-parent, controller {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
 .users {
   background-color: #c78e65;
 }
@@ -428,24 +438,36 @@ th {
 
 tf {
   display: inline-block;
+  position: relative;
   color: white;
   width: 100%;
   height: 100%;
+  max-height: 50vh;
+  min-height: 200px;
+  overflow: hidden;
 }
 
 tf-top {
   display: block;
+  position: absolute;
+  top: 0px;
   width: 100%;
+  border-radius: 10px 10px 0 0;
 }
 
 tf-middle {
   display: block;
   width: 100%;
+  overflow: scroll;
+  height: 100%;
 }
 
 tf-bottom {
   display: block;
+  position: absolute;
+  bottom: 0px;
   width: 100%;
+  border-radius: 0 0 10px 10px;
 }
 
 tfr {
@@ -469,12 +491,12 @@ tfr.odd-table-row {
 }
 
 tf-top tfr:first-child {
-  background-color: rgba(0, 0, 0, 0.38);
+  background-color: rgba(0, 0, 0, 0.36);
   border-radius: 10px 10px 0 0;
 }
 
 tf-bottom tfr:last-child {
-  background-color: rgba(0, 0, 0, 0.38);
+  background-color: rgba(0, 0, 0, 0.36);
   border-radius: 0 0 10px 10px;
   text-align: center;
   color: transparent;
@@ -536,6 +558,23 @@ btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+}
+
+tabs-view {
+  width: 100%;
+  height: 100%;
+}
+
+.selection-holder {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.tab-holder {
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 .nav {
@@ -823,7 +862,7 @@ body {
   display: inline-block;
   height: 100%;
   width: 49%;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 #main-view-middle {
@@ -840,7 +879,7 @@ body {
   display: inline-block;
   height: 100%;
   width: 49%;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .filter-add {

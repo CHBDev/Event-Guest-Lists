@@ -16,6 +16,12 @@
   @return rgba($rf, $gf, $bf, $a);
 };
 
+@function specific-color-blacker($name, $percent:0.3){
+
+  @return color-blacker( #{"$" + $name + "-r"}, #{"$" + $name + "-g"}, #{"$" + $name + "-b"}, #{"$" + $name + "-a"}, $percent );
+
+}
+
 $shade-white: rgba(255,255,255,0.3);
 $shade-black: rgba(0,0,0,0.3);
 
@@ -54,4 +60,40 @@ $messages-color: $dusk-light-gray;
 $title-color: $dusk-dark-gray;
 $menu-color: $title-color;
 $edit-color: $dusk-yellow;
+
+.darken{
+  background-color: rgba(0,0,0,0.3);
+}
+
+// $colors: ("users": (main: $dusk-orange))
+
+// @function get-color-map($section){
+//   @if $section == "users"{
+//     @return "dusk-orange";
+//   }
+//   @else if $section == "groups"{
+//     @return "dusk-blue";
+//   }
+//   @else if $section == "events"{
+//     @return "dusk-pink";
+//   }
+//   @else if $section == "lists"{
+//     @return "dunk-green";
+//   }
+//   @else if $section == "messages"{
+//     @return "dusk-light-gray";
+//   }
+//   @else if $section == "title"{
+//     @return "dusk-dark-gray";
+//   }
+//   @else if $section == "menu"{
+//     @return "title-color"
+//   }
+//   @else if $section == "edit"{
+//     @return "dusk-yellow"
+//   }
+//   @else{
+//     @return white;
+//   }
+// }
 
