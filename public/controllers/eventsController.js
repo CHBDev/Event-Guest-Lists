@@ -26,14 +26,14 @@ controllers
     });
 
 
-    s.eventsTableSort = 'name';
-    s.eventsTableSortReverse = true;
-    s.eventsTableOrder = function(prop){
-        $scope.eventsTableSortReverse = ($scope.eventsTableSort === prop) ? !$scope.eventsTableSortReverse : false;
-        $scope.eventsTableSort = prop;
-    };
+    // s.eventsTableSort = 'name';
+    // s.eventsTableSortReverse = true;
+    // s.eventsTableOrder = function(prop){
+    //     $scope.eventsTableSortReverse = ($scope.eventsTableSort === prop) ? !$scope.eventsTableSortReverse : false;
+    //     $scope.eventsTableSort = prop;
+    // };
 
-     s.getEventArray = function(pOrS){
+     s.getArray = function(pOrS){
       if(s.dispatch[pOrS].currentTab === 'users'){
 
         return s.events.cache.usersEvents;

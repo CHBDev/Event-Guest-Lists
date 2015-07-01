@@ -23,6 +23,12 @@ controllers
         s.tableSort = prop;
     };
 
+
+    s.defaultSelectButton = function(pOrS, thing, name){
+      s[name][pOrS].currentSelection = thing;
+      s.dispatch[pOrS].currentTab = name;
+    };
+
   })
 
 

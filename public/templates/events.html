@@ -1,19 +1,19 @@
-<div ng-controller="EventsController" class="events events-html">
-    <!-- <div class="events-toolbar"> ALL EVENTS IN THIS GROUP </div> -->
+<div ng-controller="EventsController" class="events events-html fill-parent">
 
-    <!-- <div>
-      <input type="search" ng-model=" q" placeholder="filter..." aria-label="filter..." />
-      <ul class="events-container">
-        <li class="animate-repeat" ng-repeat="event in events | filter:q as results">
-          [{{$index + 1}}] {{event.name}} who is {{friend.age}} years old.
-        </li>
-        <li class="animate-repeat" ng-if="results.length == 0">
-          <strong>No results found...</strong>
-        </li>
-      </ul>
-    </div> -->
 
-      <input type="search" ng-model="eventsFilter" placeholder="filter..." aria-label="filter..." />
+<div class="filter-add events-filter-add">
+  <div class="filter-section">
+    <input class="filter" type="search" ng-model="tableFilter" placeholder="Filter Events..." aria-label="filter..." />
+  </div>
+  <div class="add-section">
+    <div class="add-icon"></div><div class="add-title">New Event</div>
+  </div>
+</div>
+
+  <table-fixed-dir></table-fixed-dir>
+
+
+<!--       <input type="search" ng-model="eventsFilter" placeholder="filter..." aria-label="filter..." />
       <table class="events-table">
         <tr>
           <th>.\/.</th>
@@ -31,5 +31,5 @@
           <td>{{event.listCount}}</td>
           <td>{{event.guestCount}}</td>
         </tr>
-      </table>
+      </table> -->
 </div>

@@ -23,41 +23,31 @@ controllers
       }
     });
 
-    s.listsTableSort = 'name';
-    s.listsTableSortReverse = false;
-    s.listTableSort = 'name';
-    s.listTableSortReverse = false;
-
-    s.listsTableOrder = function(prop){
-        $scope.listsTableSortReverse = ($scope.listsTableSort === prop) ? !$scope.listsTableSortReverse : false;
-        $scope.listsTableSort = prop;
+    s.getArray = function(pOrS){
+      //TODO need logic for which list here
+      return s.lists.cache.usersLists;
     };
 
-     s.listTableOrder = function(prop){
-        $scope.listTableSortReverse = ($scope.listTableSort === prop) ? !$scope.listTableSortReverse : false;
-        $scope.listTableSort = prop;
-    };
+    s.selectButtonClicked = function(pOrS, thing){
+      s.lists[pOrS].currentSelection = thing;
+      s.dispatch[pOrS].currentTab = "lists";
+      // s.groups[pOrS].currentSelection = thing.origEvent;
+    }
 
 
   })
 
-//   .directive('listsPrimary', function(){
-//   return {
-//     restrict: 'E',
-//     templateUrl: "../templates/lists.html"
-//   }
-// })
 
-.directive('listsDir', function(){
-  return {
-    restrict: 'E',
-    templateUrl: "../templates/lists.html"
-  };
-})
+  .directive('listsDir', function(){
+    return {
+      restrict: 'E',
+      templateUrl: "../templates/lists.html"
+    };
+  })
 
-.directive('listDir', function(){
-  return {
-    restrict: 'E',
-    templateUrl: "../templates/list.html"
-  };
-});
+  .directive('listDir', function(){
+    return {
+      restrict: 'E',
+      templateUrl: "../templates/list.html"
+    };
+  });

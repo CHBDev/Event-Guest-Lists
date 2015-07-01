@@ -6,10 +6,11 @@ services
     r.primary = {};
     r.secondary = {};
 
-    r.primary.currentEvent = {};
-    r.secondary.currentEvent = {};
+    r.primary.currentSelection = {};
+    r.secondary.currentSelection = {};
 
     r.cache = {};
+    r.cache.headers = [["Event Name","name",5],["Owner", "owner",1], ["Date","date",1],["List Count","listCount",1]];
 
     r.cache.usersEvents = [
                     {id: "id123", name: "USER EVENTS 1", group:{id: "id123", name: "USERGROUP 1"}, owner: "cory", date: "10/10/10", listCount: 3, guestCount: 900},

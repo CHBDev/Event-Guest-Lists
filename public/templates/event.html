@@ -17,13 +17,12 @@
       </div>
     </div>
 
-  <div ng-switch="events[pOrS].currentToolbarButton">
+  <div ng-switch="events[pOrS].currentToolbarButton" class="fill-parent">
     <div ng-switch-when="edit" class="edit">
       EDIT EVENT MENU - save button - cancel button
     </div>
-
     <messages-dir ng-switch-when="messages"></messages-dir>
-    <guests-dir ng-switch-default></guests-dir>
+    <guests-dir ng-switch-when="guests"></guests-dir>
     <lists-dir ng-switch-default></lists-dir>
   </div>
 
