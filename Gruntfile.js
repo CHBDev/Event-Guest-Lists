@@ -1,4 +1,5 @@
 module.exports = function(grunt){
+  // require('grunt-postcss')(grunt);
 
   var init = {};
 
@@ -9,11 +10,26 @@ module.exports = function(grunt){
                   }
                 };
 
+  init.postcss = {
+            options: {
+                map: true,
+                processors: [
+                    require('autoprefixer-core')({
+                        browsers: ['last 3 versions']
+                    })
+                ]
+            },
+            dist: {
+                // src: ['public/css/*.scss', '!public/css/_normalize.scss', '!public/css/_reset.scss']
+                src: 'public/css/finishedCompileStep1.scss'
+            }
+        };
+
   init.watch = {
 
                     css:{
                       files: ['**/*.scss'],
-                      tasks: ['sass'],
+                      tasks: ['sass:step1', 'final-post-css', 'sass:step2'],
                       options: {livereload: true}
                     },
                     js:{
@@ -38,12 +54,20 @@ module.exports = function(grunt){
                     };
 
   init.sass = {
-    dist: {
+    step1: {
       options: {
         style: 'expanded'
       },
       files: {
-        './public/index.css': './public/css/compileThis.scss'
+        './public/css/finishedCompileStep1.scss': './public/css/compileStep1.scss'
+      }
+    },
+    step2: {
+      options: {
+        style: 'expanded'
+      },
+      files: {
+        './public/index.css': './public/css/compileStep2.scss'
       }
     }
   };
@@ -57,9 +81,12 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-postcss');
+
+  grunt.registerTask('final-post-css', ['postcss:dist']);
 
 
-  grunt.registerTask('serve', ['jshint','sass','concurrent:target']);
+  grunt.registerTask('serve', ['jshint','sass:step1', 'final-post-css', 'sass:step2','concurrent:target']);
   grunt.registerTask('watchcssandjs', ['watch:css','watch:js']);
 
 

@@ -8,11 +8,11 @@ controllers
     s.setupTableData = function(arr, secName){
       s.arr = arr;
       s.secName = secName;
-    }
+    };
 
     s.getService = function(str){
       return s[str];
-    }
+    };
 
     s.tableSort = 'name';
     s.tableSortReverse = true;

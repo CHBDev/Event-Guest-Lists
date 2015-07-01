@@ -32,7 +32,7 @@ controllers
       s.lists[pOrS].currentSelection = thing;
       s.dispatch[pOrS].currentTab = "lists";
       // s.groups[pOrS].currentSelection = thing.origEvent;
-    }
+    };
 
 
   })
