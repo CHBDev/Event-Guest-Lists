@@ -28,7 +28,7 @@ btn{
 
 
 @mixin setup-tab-bar($h:$top-bar-height){
-  display: inline-block;
+  display: block;
   height: $h;
   width: 100%;
   padding-top: $h * .25;
@@ -53,7 +53,7 @@ btn{
 
 tabs-view{
   width: 100%;
-  height: 100%;
+
 }
 
 .selection-holder{
@@ -82,8 +82,12 @@ tabs-view{
 }
 
 .selected-tab{
-  @include setup-tab(16.5%);
+  @include setup-tab(12%);
   // flex-basis: 0;
+}
+
+.selected-tab.active{
+  width: 18%;
 }
 
 .selected-home-tab{

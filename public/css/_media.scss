@@ -1,3 +1,29 @@
+@media screen and (max-width: 768px){
+  #main-view-middle{
+    display: none;
+  }
+  #main-view{
+    flex-direction: column;
+  }
+  #main-view-primary{
+    display: block;
+    width: 100%;
+    height: 50%;
+  }
+
+   #main-view-secondary{
+    display: block;
+    width: 100%;
+    height: 50%;
+  }
+
+  tf{
+    min-height: 50px;
+    max-height: 100vh;
+  }
+
+}
+
 
 @media screen and (max-width: 960px){
   .selected-title{
@@ -12,6 +38,8 @@
   [class*='-tab'], .toolbar-button{
     justify-content: center;
   }
+
+
 
 }
 

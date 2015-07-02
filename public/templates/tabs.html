@@ -1,32 +1,32 @@
 
 <div class="selection-bar" ng-show="users.currentUser.id">
 
-  <div ng-if="pOrS === 'primary'" id="{{pOrS === 'primary' ? 'selectedUserPrimary' : 'selectedUserSecondary'}}" class="selected-tab selected-home-tab home" ng-click="dispatch[pOrS].currentTab = 'home'">
+  <div ng-if="pOrS === 'primary'" id="{{pOrS === 'primary' ? 'selectedUserPrimary' : 'selectedUserSecondary'}}" class="selected-tab selected-home-tab home" ng-click="dispatch[pOrS].currentTab = 'home'"  ng-class="{active: dispatch[pOrS].currentTab === 'home'}">
     <div class="home-icon selected-icon"></div><!-- <div class="selected-title">Invite Again</div> -->
   </div>
 
-  <div id="{{pOrS === 'primary' ? 'selectedUserPrimary' : 'selectedUserSecondary'}}" class="selected-tab selected-user-tab users" ng-click="dispatch[pOrS].currentTab = 'users'">
+  <div id="{{pOrS === 'primary' ? 'selectedUserPrimary' : 'selectedUserSecondary'}}" class="selected-tab selected-user-tab users" ng-click="dispatch[pOrS].currentTab = 'users'" ng-class="{active: dispatch[pOrS].currentTab === 'users'}">
     <div class="users-icon selected-icon"></div><div class="selected-title">{{dispatch.names.user}}</div>
   </div>
 
-  <div id="{{pOrS === 'primary' ? 'selectedGroupPrimary' : 'selectedGroupSecondary'}}" class="selected-tab selected-group-tab groups" ng-show="groups[pOrS].currentSelection.id" ng-click="dispatch[pOrS].currentTab = 'groups'">
+  <div id="{{pOrS === 'primary' ? 'selectedGroupPrimary' : 'selectedGroupSecondary'}}" class="selected-tab selected-group-tab groups" ng-show="groups[pOrS].currentSelection.id" ng-click="dispatch[pOrS].currentTab = 'groups'" ng-class="{active: dispatch[pOrS].currentTab === 'groups'}">
     <div class="groups-icon selected-icon"></div><div class="selected-title">{{dispatch.names.group}}</div>
   </div>
 
-  <div id="{{pOrS === 'primary' ? 'selectedEventPrimary' : 'selectedEventSecondary'}}" class="selected-tab selected-event-tab events"  ng-show="events[pOrS].currentSelection.id" ng-click="dispatch[pOrS].currentTab = 'events'">
+  <div id="{{pOrS === 'primary' ? 'selectedEventPrimary' : 'selectedEventSecondary'}}" class="selected-tab selected-event-tab events"  ng-show="events[pOrS].currentSelection.id" ng-click="dispatch[pOrS].currentTab = 'events'"  ng-class="{active: dispatch[pOrS].currentTab === 'events'}">
     <div class="events-icon selected-icon"></div><div class="selected-title">{{dispatch.names.event}}</div>
   </div>
 
-  <div id="{{pOrS === 'primary' ? 'selectedListPrimary' : 'selectedListSecondary'}}" class="selected-tab selected-list-tab lists" ng-show="lists[pOrS].currentSelection.id" ng-click="dispatch[pOrS].currentTab = 'lists'">
+  <div id="{{pOrS === 'primary' ? 'selectedListPrimary' : 'selectedListSecondary'}}" class="selected-tab selected-list-tab lists" ng-show="lists[pOrS].currentSelection.id" ng-click="dispatch[pOrS].currentTab = 'lists'"  ng-class="{active: dispatch[pOrS].currentTab === 'lists'}">
     <div class="lists-icon selected-icon"></div><div class="selected-title">{{dispatch.names.list}}</div>
   </div>
 
-  <div id="{{pOrS === 'primary' ? 'selectedListPrimary' : 'selectedListSecondary'}}" class="selected-tab selected-guest-tab guests" ng-show="guests[pOrS].currentSelection.id" ng-click="dispatch[pOrS].currentTab = 'guests'">
+  <div id="{{pOrS === 'primary' ? 'selectedListPrimary' : 'selectedListSecondary'}}" class="selected-tab selected-guest-tab guests" ng-show="guests[pOrS].currentSelection.id" ng-click="dispatch[pOrS].currentTab = 'guests'" ng-class="{active: dispatch[pOrS].currentTab === 'guests'}">
     <div class="guests-icon selected-icon"></div><div class="selected-title">{{dispatch.names.guest}}</div>
   </div>
 
 
-  <div ng-if="pOrS === 'secondary'" id="{{pOrS === 'primary' ? 'selectedUserPrimary' : 'selectedUserSecondary'}}" class="selected-tab selected-menu-tab menu" ng-click="dispatch[pOrS].currentTab = 'menu'">
+  <div ng-if="pOrS === 'secondary'" id="{{pOrS === 'primary' ? 'selectedUserPrimary' : 'selectedUserSecondary'}}" class="selected-tab selected-menu-tab menu" ng-click="dispatch[pOrS].currentTab = 'menu'"  ng-class="{active: dispatch[pOrS].currentTab === 'menu'}">
     <div class="menu-icon selected-icon"></div><!-- <div class="selected-title">Menu</div> -->
   </div>
 

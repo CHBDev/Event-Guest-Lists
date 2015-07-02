@@ -1,14 +1,21 @@
 <controller ng-controller="GroupsController" class="groups groups-html">
 
-  <div class="filter-add groups-filter-add">
-    <div class="filter-section">
-      <input class="filter" type="search" ng-model="tableFilter" placeholder="Filter Groups..." aria-label="filter..." />
-    </div>
-    <div class="add-section">
-      <div class="add-icon"></div><div class="add-title">{{dispatch.names.new + " " + dispatch.names.group}}</div>
+  <!-- <table class="outer-table"> -->
+
+  <div class="section-above-table">
+    <div class="filter-add groups-filter-add">
+      <div class="filter-section">
+        <input class="filter" type="search" ng-model="tableFilter" placeholder="Filter Groups..." aria-label="filter..." />
+      </div>
+      <div class="add-section">
+        <div class="add-icon"></div><div class="add-title">{{dispatch.names.new + " " + dispatch.names.group}}</div>
+      </div>
     </div>
   </div>
-
-    <table-fixed-dir></table-fixed-dir>
+  <div class="section-for-table">
+      <table-fixed-dir class="fill-parent"></table-fixed-dir>
+  </div>
+  <div class="section-after-table"></div>
+ <!--  </table> -->
 
 </controller>
