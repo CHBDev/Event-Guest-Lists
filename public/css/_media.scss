@@ -1,36 +1,6 @@
-@media screen and (max-width: 768px){
-  #main-view-middle{
-    display: none;
-  }
-  #main-view{
-    flex-direction: column;
-  }
-  #main-view-primary{
-    display: block;
-    width: 100%;
-    height: 50%;
-  }
-
-   #main-view-secondary{
-    display: block;
-    width: 100%;
-    height: 50%;
-  }
-
-  tf{
-    min-height: 50px;
-    max-height: 100vh;
-  }
-
-}
-
-
-@media screen and (max-width: 960px){
+@mixin hide-titles{
   .selected-title{
     display: none;
-  }
-  body{
-    // background-color: red;
   }
   .toolbar-title{
     display: none;
@@ -38,16 +8,74 @@
   [class*='-tab'], .toolbar-button{
     justify-content: center;
   }
-
-
-
 }
 
-@media screen and (max-width: 1280px){
 
-  body{
-    font-size: 14px;
+@mixin stack-views{
+  #main-view-middle{
+    display: none;
+  }
+  #main-view{
+    flex-direction: column;
+  }
+  #main-view-primary{
+    // display: block;
+    width: 100%;
+    height: 50%;
+  }
+   #main-view-secondary{
+    // display: block;
+    width: 100%;
+    height: 50%;
   }
 }
+
+@mixin pump-size-and-padding{
+  body{
+    font-size: 18px;
+  }
+  tfr{
+    padding: 0.5em 0 0.5em 0;
+  }
+}
+
+@media all and (orientation: portrait){
+  @include stack-views;
+
+  @media all and (max-width: 767px){
+    @include hide-titles;
+  }
+}
+
+@media all and (orientation: landscape){
+
+  @media all and (max-width: 959px){
+    @include hide-titles;
+  }
+
+}
+
+// @media screen and (max-width: 959px){
+
+//   body{
+//     // background-color: red;
+//     font-size: 16px;
+//   }
+// }
+
+body.zoom-view{
+  @include pump-size-and-padding;
+}
+
+// @media screen and (max-width: 1280px){
+
+//     body{
+//       font-size: 14px;
+//     }
+// }
+
+
+
+
 
 
