@@ -10,15 +10,8 @@ controllers
 
     });
 
-    s.messagesTableSort = 'name';
-    s.messagesTableSortReverse = true;
-    s.messagesTableOrder = function(prop){
-        $scope.messagesTableSortReverse = ($scope.messagesTableSort === prop) ? !$scope.messagesTableSortReverse : false;
-        $scope.messagesTableSort = prop;
-    };
 
-
-    s.getMessageArray = function(pOrS){
+    s.getArray = function(pOrS){
       var str = s.dispatch[pOrS].currentTab;
 
       return s.messages.cache[str + "Messages"];

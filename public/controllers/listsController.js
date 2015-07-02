@@ -28,11 +28,11 @@ controllers
       return s.lists.cache.usersLists;
     };
 
-    s.selectButtonClicked = function(pOrS, thing){
-      s.lists[pOrS].currentSelection = thing;
-      s.dispatch[pOrS].currentTab = "lists";
-      // s.groups[pOrS].currentSelection = thing.origEvent;
-    };
+    // s.selectButtonClicked = function(pOrS, thing){
+    //   s.lists[pOrS].currentSelection = thing;
+    //   s.dispatch[pOrS].currentTab = "lists";
+    //   // s.groups[pOrS].currentSelection = thing.origEvent;
+    // };
 
 
   })

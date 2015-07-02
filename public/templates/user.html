@@ -1,23 +1,23 @@
-<div ng-controller="UsersController" class="users user-html fill-parent">
+<controller ng-controller="UsersController" class="users user-html">
   <!-- id="toolbar-{{pOrS}}" -->
 
     <div class="toolbar users">
 
       <div ng-class="{'active-toolbar-button': users[pOrS].currentToolbarButton === 'groups'}" class="groups users-toolbar-button toolbar-button" ng-click="users[pOrS].currentToolbarButton = 'groups'">
-        <div class="groups-icon toolbar-icon"></div><div class="toolbar-title">Groups</div>
+        <div class="groups-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.groups}}</div>
       </div>
 
       <div ng-class="{'active-toolbar-button': users[pOrS].currentToolbarButton === 'events'}" class="events events-toolbar-button toolbar-button" ng-click="users[pOrS].currentToolbarButton = 'events'">
-        <div class="events-icon toolbar-icon"></div><div class="toolbar-title">Events</div>
+        <div class="events-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.events}}</div>
       </div>
        <div ng-class="{'active-toolbar-button': users[pOrS].currentToolbarButton === 'lists'}" class="lists lists-toolbar-button toolbar-button" ng-click="users[pOrS].currentToolbarButton = 'lists'">
-        <div class="lists-icon toolbar-icon"></div><div class="toolbar-title">Lists</div>
+        <div class="lists-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.lists}}</div>
       </div>
       <div ng-class="{'active-toolbar-button': users[pOrS].currentToolbarButton === 'messages'}" class="messages messages-toolbar-button toolbar-button" ng-click="users[pOrS].currentToolbarButton = 'messages'">
-        <div class="messages-icon toolbar-icon"></div><div class="toolbar-title">Messages</div>
+        <div class="messages-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.messages}}</div>
       </div>
       <div ng-class="{'active-toolbar-button': users[pOrS].currentToolbarButton === 'edit'}" class="edit edit-toolbar-button toolbar-button" ng-click="users[pOrS].currentToolbarButton = 'edit'">
-        <div class="edit-icon toolbar-icon"></div><div class="toolbar-title">Edit</div>
+        <div class="edit-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.edit}}</div>
       </div>
     </div>
 
@@ -35,4 +35,4 @@
 
 
 
-</div>
+</controller>

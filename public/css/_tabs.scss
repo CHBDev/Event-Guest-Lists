@@ -82,17 +82,17 @@ tabs-view{
 }
 
 .selected-tab{
-  @include setup-tab(21.5%);
+  @include setup-tab(16.5%);
   // flex-basis: 0;
 }
 
 .selected-home-tab{
-  @include setup-tab(12%);
+  @include setup-tab(10%);
   justify-content: center;
 }
 
 .selected-menu-tab{
-  @include setup-tab(12%);
+  @include setup-tab(10%);
   justify-content: center;
 }
 

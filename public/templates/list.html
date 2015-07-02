@@ -1,5 +1,24 @@
-<div ng-controller="ListsController" class="list-html">
-  <div ng-show="lists[pOrS].currentGuest">
-    <div class="selected-list"> SELECTED LIST </div>
+<controller ng-controller="ListsController" class="lists list-html">
+  <div class="toolbar lists">
+
+
+   <div ng-class="{'active-toolbar-button': lists[pOrS].currentToolbarButton === 'guests'}" class="guests guests-toolbar-button toolbar-button" ng-click="lists[pOrS].currentToolbarButton = 'guests'">
+      <div class="guests-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.guests}}</div>
+    </div>
+    <div ng-class="{'active-toolbar-button': lists[pOrS].currentToolbarButton === 'messages'}" class="messages messages-toolbar-button toolbar-button" ng-click="lists[pOrS].currentToolbarButton = 'messages'">
+      <div class="messages-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.messages}}</div>
+    </div>
+    <div ng-class="{'active-toolbar-button': lists[pOrS].currentToolbarButton === 'edit'}" class="edit edit-toolbar-button toolbar-button" ng-click="lists[pOrS].currentToolbarButton = 'edit'">
+      <div class="edit-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.edit}}</div>
+    </div>
   </div>
+
+<div ng-switch="lists[pOrS].currentToolbarButton" class="fill-parent">
+  <div ng-switch-when="edit" class="edit">
+    EDIT EVENT MENU - save button - cancel button
+  </div>
+  <messages-dir ng-switch-when="messages"></messages-dir>
+  <guests-dir ng-switch-default></guests-dir>
+
 </div>
+</controller>

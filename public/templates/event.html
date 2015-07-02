@@ -1,19 +1,19 @@
-<div ng-controller="EventsController" class="events events-html">
+<controller ng-controller="EventsController" class="events events-html">
 
     <div class="toolbar events">
 
       <div ng-class="{'active-toolbar-button': events[pOrS].currentToolbarButton === 'lists'}" class="lists lists-toolbar-button toolbar-button" ng-click="events[pOrS].currentToolbarButton = 'lists'">
-        <div class="lists-icon toolbar-icon"></div><div class="toolbar-title">Lists</div>
+        <div class="lists-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.lists}}</div>
       </div>
 
      <div ng-class="{'active-toolbar-button': events[pOrS].currentToolbarButton === 'guests'}" class="guests guests-toolbar-button toolbar-button" ng-click="events[pOrS].currentToolbarButton = 'guests'">
-        <div class="guests-icon toolbar-icon"></div><div class="toolbar-title">Guests</div>
+        <div class="guests-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.guests}}</div>
       </div>
       <div ng-class="{'active-toolbar-button': events[pOrS].currentToolbarButton === 'messages'}" class="messages messages-toolbar-button toolbar-button" ng-click="events[pOrS].currentToolbarButton = 'messages'">
-        <div class="messages-icon toolbar-icon"></div><div class="toolbar-title">Messages</div>
+        <div class="messages-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.messages}}</div>
       </div>
       <div ng-class="{'active-toolbar-button': events[pOrS].currentToolbarButton === 'edit'}" class="edit edit-toolbar-button toolbar-button" ng-click="events[pOrS].currentToolbarButton = 'edit'">
-        <div class="edit-icon toolbar-icon"></div><div class="toolbar-title">Edit</div>
+        <div class="edit-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.edit}}</div>
       </div>
     </div>
 
@@ -27,5 +27,5 @@
   </div>
 
 
-</div>
+</controller>
 

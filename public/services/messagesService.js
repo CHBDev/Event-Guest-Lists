@@ -6,10 +6,13 @@ services
     r.primary = {};
     r.secondary = {};
 
-    r.primary.currentMessage = null;
-    r.secondary.currentMessage = null;
+    r.primary.currentSelection = {};
+    r.secondary.currentSelection = {};
 
     r.cache = {};
+
+    r.cache.headers = [["Title","title",2],["From", "name",2], ["Date","time",1],["Action Button","",1]];
+
 
     r.cache.usersMessages = [
                         {id: "123", name: "Joe", title: "do this1", message: "hi there", time:9889689593, sentTo:{users:["123","456","789"]}},

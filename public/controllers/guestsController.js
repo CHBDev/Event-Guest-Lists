@@ -25,14 +25,10 @@ controllers
       }
     });
 
-
-    s.guestsTableSort = 'name';
-    s.guestsTableSortReverse = true;
-    s.guestsTableOrder = function(prop){
-        $scope.guestsTableSortReverse = ($scope.guestsTableSort === prop) ? !$scope.guestsTableSortReverse : false;
-        $scope.guestsTableSort = prop;
+     s.getArray = function(pOrS){
+      //TODO need logic for which list here
+      return s.guests.cache.guestsArray;
     };
-
 
   })
 

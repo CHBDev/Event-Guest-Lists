@@ -1,22 +1,13 @@
-<div ng-controller="UsersController" class="users users-html">
-    <div  class="users-toolbar"> ALL AVAILABLE USERS </div>
+<controller ng-controller="UsersController" class="users users-html">
+  <div class="filter-add users-filter-add">
+    <div class="filter-section">
+      <input class="filter" type="search" ng-model="tableFilter" placeholder="Filter Users..." aria-label="filter..." />
+    </div>
+    <div class="add-section">
+      <div class="add-icon"></div><div class="add-title">{{dispatch.names.new + " " + dispatch.names.user}}</div>
+    </div>
+  </div>
 
-    <input type="search" ng-model="usersFilter" placeholder="filter..." aria-label="filter..." />
-    <table class="users-table table">
-      <tr>
-        <th>.\/.</th>
-        <th ng-click="usersTableOrder('name')">User Name<span ng-show="usersTableSort ==='name'">^^</span></th>
-        <th ng-click="usersTableOrder('email')">Email<span ng-show="usersTableSort ==='email'">^^</span></th>
-        <th ng-click="usersTableOrder('date')">Date Joined<span ng-show="usersTableSort ==='date'">^^</span></th>
-        <th ng-click="usersTableOrder('inGroups')"># of Groups<span ng-show="usersTableSort ==='inGroups'">^^</span></th>
-      </tr>
-      <tr ng-class-odd="'odd-table-row'" ng-repeat="user in users.userArray | orderBy: usersTableSort:usersTableSortReverse | filter:usersFilter as results">
-      <td><span ng-show="users[pOrS].currentGuest === user.name">YOU</span></td>
-        <td>{{user.name}}</td>
-        <td>{{user.email}}</td>
-        <td>{{user.date}}</td>
-        <td>{{user.inGroups}}</td>
-      </tr>
-    </table>
+  <table-fixed-dir></table-fixed-dir>
 
-</div>
+</controller>

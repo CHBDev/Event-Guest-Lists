@@ -1,14 +1,14 @@
-<div ng-controller="GroupsController" class="groups groups-html fill-parent">
+<controller ng-controller="GroupsController" class="groups groups-html">
 
   <div class="filter-add groups-filter-add">
     <div class="filter-section">
       <input class="filter" type="search" ng-model="tableFilter" placeholder="Filter Groups..." aria-label="filter..." />
     </div>
     <div class="add-section">
-      <div class="add-icon"></div><div class="add-title">New Group</div>
+      <div class="add-icon"></div><div class="add-title">{{dispatch.names.new + " " + dispatch.names.group}}</div>
     </div>
   </div>
 
     <table-fixed-dir></table-fixed-dir>
 
-</div>
+</controller>

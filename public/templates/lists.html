@@ -1,11 +1,11 @@
-<div ng-controller="ListsController" class=" lists lists-html fill-parent">
+<controller ng-controller="ListsController" class=" lists lists-html">
 
   <div class="filter-add lists-filter-add">
     <div class="filter-section">
       <input class="filter" type="search" ng-model="tableFilter" placeholder="Filter Lists..." aria-label="filter..." />
     </div>
     <div class="add-section">
-      <div class="add-icon"></div><div class="add-title">New List</div>
+      <div class="add-icon"></div><div class="add-title">{{dispatch.names.new + " " + dispatch.names.list}}</div>
     </div>
   </div>
 
@@ -41,27 +41,5 @@
 
 </div> -->
 
-<!-- <div ng-hide="conSec.fileInput.data">
 
-
-    <input type="search" ng-model="listsFilter" placeholder="filter..." aria-label="filter..." />
-    <table class=" lists lists-table">
-      <tr>
-        <th>.\/.</th>
-        <th ng-click="listsTableOrder('name')">List Name<span ng-show="listsTableSort ==='name'">^^</span></th>
-        <th ng-click="listsTableOrder('owner')">Owner<span ng-show="listsTableSort ==='owner'">^^</span></th>
-        <th ng-click="listsTableOrder('origEvent')">Orig Event<span ng-show="listsTableSort ==='origEvent'">^^</span></th>
-        <th ng-click="listsTableOrder('guestCount')">GuestCount<span ng-show="listsTableSort ==='guestCount'">^^</span></th>
-      </tr>
-      <tr ng-repeat="list in lists.listsArray | orderBy: listsTableSort:listsTableSortReverse | filter:listsFilter as results">
-      <td><button ng-click="lists[pOrS].currentList = list.name" ng-show="lists[pOrS].currentList !== list.name">SELECT</button><span ng-show="lists[pOrS].currentList === list.name">ACTIVE</span></td>
-        <td>{{list.name}}</td>
-        <td>{{list.owner}}</td>
-        <td>{{list.origEvent}}</td>
-        <td>{{list.guestCount}}</td>
-      </tr>
-    </table>
-
-</div> -->
-
-</div>
+</controller>

@@ -1,4 +1,4 @@
-<div ng-controller="EventsController" class="events events-html fill-parent">
+<controller ng-controller="EventsController" class="events events-html">
 
 
 <div class="filter-add events-filter-add">
@@ -6,7 +6,7 @@
     <input class="filter" type="search" ng-model="tableFilter" placeholder="Filter Events..." aria-label="filter..." />
   </div>
   <div class="add-section">
-    <div class="add-icon"></div><div class="add-title">New Event</div>
+    <div class="add-icon"></div><div class="add-title">{{dispatch.names.new + " " + dispatch.name.event}}</div>
   </div>
 </div>
 
@@ -32,4 +32,4 @@
           <td>{{event.guestCount}}</td>
         </tr>
       </table> -->
-</div>
+</controller>

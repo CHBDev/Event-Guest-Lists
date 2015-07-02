@@ -37,6 +37,10 @@ controllers
       s.socket.emit('user:create', form);
     }.bind(s, s.loginFormData);
 
+    s.getArray = function(pOrS){
+      //TODO need logic for which list here
+      return s.users.cache.orgsUsers;
+    };
 
 
     s.$on("primary", function(event, args){
