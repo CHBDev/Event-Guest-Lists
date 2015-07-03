@@ -1,35 +1,20 @@
 <controller ng-controller="EventsController" class="events events-html">
 
-
-<div class="filter-add events-filter-add">
-  <div class="filter-section">
-    <input class="filter" type="search" ng-model="tableFilter" placeholder="Filter Events..." aria-label="filter..." />
+  <div class="section-above-table">
+    <div class="filter-add events-filter-add">
+      <div class="filter-section">
+        <input class="filter" type="search" ng-model="tableFilter" placeholder="Filter Events..." aria-label="filter..." />
+      </div>
+      <div class="add-section">
+        <div class="add-icon"></div><div class="add-title">{{dispatch.names.new + " " + dispatch.name.event}}</div>
+      </div>
+    </div>
   </div>
-  <div class="add-section">
-    <div class="add-icon"></div><div class="add-title">{{dispatch.names.new + " " + dispatch.name.event}}</div>
+  <div class="section-for-table">
+    <table-fixed-dir></table-fixed-dir>
   </div>
-</div>
+  <div class="section-after-table">
 
-  <table-fixed-dir></table-fixed-dir>
+  </div>
 
-
-<!--       <input type="search" ng-model="eventsFilter" placeholder="filter..." aria-label="filter..." />
-      <table class="events-table">
-        <tr>
-          <th>.\/.</th>
-          <th ng-click="eventsTableOrder('name')">event Name<span ng-show="eventsTableSort ==='name'">^^</span></th>
-          <th ng-click="eventsTableOrder('owner')">Owner<span ng-show="eventsTableSort ==='owner'">^^</span></th>
-          <th ng-click="eventsTableOrder('date')">Orig Event<span ng-show="eventsTableSort ==='origEvent'">^^</span></th>
-          <th ng-click="eventsTableOrder('guestCount')">GuestCount<span ng-show="eventsTableSort ==='guestCount'">^^</span></th>
-          <th ng-click="eventsTableOrder('listCount')">ListCount<span ng-show="eventsTableSort ==='listCount'">^^</span></th>
-        </tr>
-        <tr ng-repeat="event in getEventArray(pOrS) | orderBy: eventsTableSort:eventsTableSortReverse | filter:eventsFilter as results">
-        <td><button ng-click="events[pOrS].currentEvent = event; groups[pOrS].currentGroup = event.group; dispatch[pOrS].currentTab = 'events'" ng-show="events[pOrS].currentEvent.id !== event.id">SELECT</button><span ng-show="events[pOrS].currentEvent.id === event.id">ACTIVE</span></td>
-          <td>{{event.name}}</td>
-          <td>{{event.owner}}</td>
-          <td>{{event.date}}</td>
-          <td>{{event.listCount}}</td>
-          <td>{{event.guestCount}}</td>
-        </tr>
-      </table> -->
 </controller>

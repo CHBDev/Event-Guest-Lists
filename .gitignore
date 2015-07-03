@@ -1,4 +1,5 @@
 node_modules
 database_config.js
 ./database/database_config.js
+.sass-cache
 

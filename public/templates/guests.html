@@ -1,5 +1,6 @@
 <controller ng-controller="GuestsController" class="guests-html guests">
 
+<div class="section-above-table">
   <div class="filter-add guests-filter-add">
     <div class="filter-section">
       <input class="filter" type="search" ng-model="tableFilter" placeholder="Filter Guests..." aria-label="filter..." />
@@ -8,8 +9,13 @@
       <div class="add-icon"></div><div class="add-title">{{dispatch.names.new + " " + dispatch.names.guest}}</div>
     </div>
   </div>
+</div>
+<div class="section-for-table">
 
   <table-fixed-dir></table-fixed-dir>
+  </div>
+<div class="section-after-table">
+</div>
 
 </controller>
 

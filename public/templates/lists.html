@@ -1,45 +1,19 @@
 <controller ng-controller="ListsController" class=" lists lists-html">
-
-  <div class="filter-add lists-filter-add">
-    <div class="filter-section">
-      <input class="filter" type="search" ng-model="tableFilter" placeholder="Filter Lists..." aria-label="filter..." />
-    </div>
-    <div class="add-section">
-      <div class="add-icon"></div><div class="add-title">{{dispatch.names.new + " " + dispatch.names.list}}</div>
+  <div class="section-above-table">
+    <div class="filter-add lists-filter-add">
+      <div class="filter-section">
+        <input class="filter" type="search" ng-model="tableFilter" placeholder="Filter Lists..." aria-label="filter..." />
+      </div>
+      <div class="add-section">
+        <div class="add-icon"></div><div class="add-title">{{dispatch.names.new + " " + dispatch.names.list}}</div>
+      </div>
     </div>
   </div>
-
-    <table-fixed-dir></table-fixed-dir>
-
-  <!-- <file-input con-sec="conSec" current="lists[pOrS]"></file-input>
-
-  <div ng-show="conSec.fileInput.data">
-    GUESt LIST import TABLE
-
-    <div ng-show="conSec.fileInput.err">
-    CSV IMPORT HAD ERRORS
-    </div>
-
-    <input type="search" ng-model="listFilterFile" placeholder="filter..." aria-label="filter..." />
-    <table class="list-table">
-      <tr>
-        <th>.\/.</th>
-        <th ng-click="listTableOrder('name')">Guest Name<span ng-show="listTableSort ==='name'">^^</span></th>
-        <th ng-click="listTableOrder('location')">Location<span ng-show="listTableSort ==='location'">^^</span></th>
-        <th ng-click="listTableOrder('standing')">SCALE<span ng-show="listTableSort ==='standing'">^^</span></th>
-        <th ng-click="listTableOrder('isawesome')">OTHER<span ng-show="listTableSort ==='isawesome'">^^</span></th>
-      </tr>
-      <tr ng-repeat="guest in conSec.fileInput.data | orderBy: listTableSort:listTableSortReverse | filter:listFilterFile as results">
-      <td><button ng-click="lists[pOrS].currentGuest = guest.name" ng-show="lists[pOrS].currentGuest !== guest.name">SELECT</button><span ng-show="lists[pOrS].currentGuest === guest.name">ACTIVE</span></td>
-        <td>{{guest.name}}</td>
-        <td>{{guest.location}}</td>
-        <td>{{guest.standing}}</td>
-        <td>{{guest.isawesome}}</td>
-      </tr>
-    </table>
-
-
-</div> -->
+  <div class="section-for-table">
+      <table-fixed-dir></table-fixed-dir>
+  </div>
+  <div class="section-after-table">
+  </div>
 
 
 </controller>

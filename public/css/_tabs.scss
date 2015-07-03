@@ -3,7 +3,7 @@ $big-button-radius: $big-radius;
 $small-button-radius: $small-radius;
 
 @mixin button-top-border-radius($radius) {
-          @include border-radius-simple($radius, $radius);
+  @include border-radius-simple($radius, $radius);
 }
 
 @mixin btn($h:auto, $w:auto, $bgC: gray, $txtC: black ){
@@ -82,7 +82,7 @@ tabs-view{
 }
 
 .selected-tab{
-  @include setup-tab(12%);
+  @include setup-tab(15%);
   // flex-basis: 0;
 }
 
