@@ -55,9 +55,11 @@ controllers.
     };
   })
 
-  .directive('makeNew', function(){
+   .directive('middleView', function(){
     return {
       restrict: 'E',
-      templateUrl: "../templates/makeNew.html"
-    }
-  })
+      templateUrl: "../templates/middle.html"
+    };
+  });
+
+

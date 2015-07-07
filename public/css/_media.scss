@@ -12,9 +12,6 @@
 
 
 @mixin stack-views{
-  #main-view-middle{
-    display: none;
-  }
   #main-view{
     flex-direction: column;
   }
@@ -37,6 +34,8 @@
   tfr{
     padding: 0.5em 0 0.5em 0;
   }
+
+
 }
 
 @media all and (orientation: portrait){
@@ -45,9 +44,12 @@
   @media all and (max-width: 767px){
     @include hide-titles;
   }
+
+  @include copy-button-landscape;
 }
 
 @media all and (orientation: landscape){
+
 
   @media all and (max-width: 959px){
     @include hide-titles;
@@ -56,6 +58,7 @@
   body{
     min-height: 540px;
   }
+
 
 }
 

@@ -41,6 +41,35 @@
     r.messages = messages;
     r.middle = middle;
 
+    r.pOrSOpposite = function(pOrS){
+      return pOrS === "primary" ? "secondary" : "primary";
+    };
+
+    r.currentSelectedToolbar = function(pOrS){
+      var selectedTab = r[pOrS].currentTab;
+      console.log(pOrS + " selectedTab: " + selectedTab);
+      console.log("current toolbar: " + r[selectedTab][pOrS].currentToolbarButton);
+      return r[selectedTab][pOrS].currentToolbarButton;
+    }
+
+    r.currentSelectedTabName = function(pOrS, useOpp){
+      if(useOpp === true){
+        pOrS = r.pOrSOpposite(pOrS);
+      }
+      var name = r[pOrS].currentTab;
+      if(r[name].currentSelection){
+        if(r[name].currentSelection.name){
+          return r[name].currentSelection.name;
+        }else{
+          console.log("ERROR: selection has no name");
+          return null;
+        }
+      }else{
+        return null;
+        console.log("WARNING: no current selection");
+      }
+    }
+
     r.primary = {currentTab: null};
     r.secondary = {currentTab: null};
 
@@ -56,9 +85,6 @@
 
     r.primary.currentTab = 'users'; //sets default tabs
     r.secondary.currentTab = 'users'; //sets default tabs
-
-    // r.currentPrimaryTabContent = "DEFAULT TAB";
-    // r.currentSecondaryTabContent = "DEFAULT TAB";
 
     r.setServicesToLocalScope = function(aScope){
       aScope.socket = this.socket;

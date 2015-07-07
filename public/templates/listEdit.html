@@ -8,7 +8,9 @@
         <span class="edit-data-save">SAVE</span>
         <span class="edit-data-cancel">CANCEL</span>
     </div><div class="edit-data-right">
-      <div class="edit-import-title">Import </div><file-input con-sec="conSec" current="lists[pOrS].currentList"></file-input>
+      <div class="edit-import-title">Import Guests from CSV</div><file-input con-sec="conSec" current="lists[pOrS].currentList"></file-input>
+      <div class="edit-import-title">Import Guests from Selected</div>
+      <div class="edit-import-button">{{dispatch.currentSelectedTabName(pOrS, true)}}</div>
     </div>
   </div>
 

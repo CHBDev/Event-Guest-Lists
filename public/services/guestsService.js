@@ -9,6 +9,9 @@ services
     r.primary.currentSelection = {};
     r.secondary.currentSelection = {};
 
+    r.primary = {currentToolbarButton: "messages"};
+    r.secondary = {currentToolbarButton: "messages"};
+
     r.cache = {};
 
     r.cache.headers = [["Last","name-last",3],["First", "name-first",2], ["Email","email",4],["City","address-city",2]];

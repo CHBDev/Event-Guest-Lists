@@ -1,0 +1,147 @@
+$middle-width: 2em;
+$middle-width-stacked: 0.5em;
+$copy-button-width: 16em;
+$copy-button-height:  2.5em;
+
+
+#main-view-middle{
+  display: inline-block;
+  height: 100%;
+  width: $middle-width;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  // @include inner-shadow;
+  background-color: rgba(0,0,0,0.05);
+}
+
+
+.table-copy-button{
+  color: black;
+  display: inline-flex;
+  position: absolute;
+  //bottom: $section-after-table-height;
+  bottom: 0;
+  width: $copy-button-width;
+  left: -1 * ( ($copy-button-width / 2) - ($middle-width / 2) );
+  height: $copy-button-height;
+  @include button-top-border-radius($big-button-radius);
+  background-color: black;
+  z-index: 100;
+  // overflow: hidden;
+  // border-left: 1em solid rgba(0,0,0,0.3);
+  // border-right: 1em solid rgba(0,0,0,0.3);
+  // border-top: 1em solid rgba(0,0,0,0.3);
+
+}
+
+.table-copy-slider-primary{
+  display: inline-block;
+  position: relative;
+  // top: $section-after-table-height;
+  width: $copy-button-width / 2;
+  height: $copy-button-height;
+  border-right: 1px solid white;
+  @include border-radius-simple($big-button-radius, 0, 0 , 0  );
+}
+
+.table-copy-slider-secondary{
+  display: inline-block;
+  position: relative;
+  // top: $section-after-table-height;
+  width: $copy-button-width / 2;
+  height: $copy-button-height;
+  border-left: 1px solid transparent;
+  @include border-radius-simple(0, $big-button-radius, 0 , 0  );
+}
+
+#table-copy-slider-hider{
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+}
+
+@mixin copy-button-landscape{
+  #main-view-middle{
+    background-color: red;
+    position: absolute;
+    width: 0;
+    height: 50%;
+    right: 0;
+    text-align: center;
+    overflow: visible;
+    // z-index: -100;
+  }
+
+
+// var theFunctionIWantBoundToThis = function(){ //stuff };
+// var that = this;
+
+// var myWrappedFunction = function(){
+//   theFunctionIWantBoundToThis.call(that);
+// };
+
+// setTimeout(myWrappedFunction, someAmountOfTime);
+
+  .table-copy-button{
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    overflow: visible;
+    //top: -1 * ($copy-button-height);
+    // top: auto;
+
+    bottom: auto;
+    top: auto;
+    right: 0;
+    left: auto;
+    // z-index: -100;
+    // right: auto;
+    // bottom: auto;
+    // left: auto;
+    // right: auto;
+    // height:  $copy-button-width;
+    // @include border-radius-simple($big-button-radius, 0, 0, $big-button-radius );
+    // border-radius: $big-radius;
+    // border: 1px solid black;
+    // left: calc(50% - $copy-button-width);
+
+    // transform: rotate(-90deg);
+
+  }
+
+  .table-copy-slider-primary{
+    display: inline-block;
+    position: relative;
+    width: $copy-button-width/2;
+    height: $copy-button-height;
+    @include border-radius-simple($big-button-radius, 0, 0 , 0  );
+
+    top: -1 * $copy-button-height;
+    right: $copy-button-width/2;
+    z-index: 999;
+  }
+
+  .table-copy-slider-secondary{
+    display: inline-block;
+    position: fixed;
+    width: $copy-button-width /2;
+    height: $copy-button-height;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    @include border-radius-simple($big-button-radius, 0, 0 , 0  );
+    // position: relative;
+    // bottom: -50vh;
+    // right: -50vw;
+  }
+
+
+
+
+}

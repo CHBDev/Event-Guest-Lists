@@ -133,14 +133,7 @@ body{
   // background-color: $title-color;
 }
 
-#main-view-middle{
-  display: inline-block;
-  height: 100%;
-  width: 2%;
-  // border: 1px solid white;
-  @include inner-shadow;
-  background-color: rgba(0,0,0,0.05);
-}
+
 
 #main-view-secondary{
   @include main-views;
