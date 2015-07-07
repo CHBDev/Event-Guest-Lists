@@ -1,19 +1,12 @@
 //TODO
-wire up CRUD for all the things
-wire up tables for all the things
-design final flow
-add drag and drop file import
+1. Readd csv import to list tab
+2. add notes system - with a "do this suggested action button option"
+3. add info section for selected tabs (maybe this is in the tab title again I don't know)
+4. add modding a tab via its edit command
+4. add modding a tab contents via another tab
+5. create generic "new system"
 
-
-messaging system
-allow users to suggest changes and updates to other users via messages
-
-
-
-//ISSUES
-tab not updating on csv read and import, despite it showing updated after clicking tab again
-   like some binding update issue.
-
-
+maybe in view tab the rows of the table all have options to update other view
+but in edit mode they only have option to update the tab itself?
 
 //TEST

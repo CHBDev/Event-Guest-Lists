@@ -4,12 +4,15 @@ services
     var r = {};
 
     //TODO *** unhack
-    r.currentUser = {};
-    r.currentUser.name = "FAKE.USERNAME@FAKE.COM";
-    r.currentUser.id = "123";
+    // r.currentUser = {};
+    // r.currentUser.name = "FAKE.USERNAME@FAKE.COM";
+    // r.currentUser.id = "123";
 
     r.primary = {currentToolbarButton: ""};
     r.secondary = {currentToolbarButton: ""};
+
+    r.primary.currentSelection = {id: "123", name: "FAKE.USERNAME@FAKE.COM" };
+    r.secondary.currentSelection = {id: "123", name: "FAKE.USERNAME@FAKE.COM" };
 
     r.cache = {};
 

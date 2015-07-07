@@ -38,4 +38,13 @@ controllers
       restrict: 'E',
       templateUrl: "../templates/tableFixed.html"
     };
+  })
+
+  .directive('tableFixedEditDir', function(){
+    return {
+      restrict: 'E',
+      templateUrl: "../templates/tableFixedEdit.html"
+    };
   });
+
+

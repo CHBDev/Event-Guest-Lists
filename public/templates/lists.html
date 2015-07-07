@@ -1,14 +1,18 @@
-<controller ng-controller="ListsController" class=" lists lists-html">
+<controller ng-controller="ListsController" class="lists lists-html">
   <div class="section-above-table">
+
     <div class="filter-add lists-filter-add">
       <div class="filter-section">
         <input class="filter" type="search" ng-model="tableFilter" placeholder="Filter Lists..." aria-label="filter..." />
       </div>
-      <div class="add-section">
-        <div class="add-icon"></div><div class="add-title">{{dispatch.names.new + " " + dispatch.names.list}}</div>
+      <div class="add-section" ng-click="newList(pOrS)">
+        <div class="add-icon"></div><div class="add-title">{{dispatch.names.new + " " + dispatch.names.list}}
+        </div>
       </div>
+
     </div>
   </div>
+
   <div class="section-for-table">
       <table-fixed-dir></table-fixed-dir>
   </div>
@@ -17,3 +21,5 @@
 
 
 </controller>
+
+

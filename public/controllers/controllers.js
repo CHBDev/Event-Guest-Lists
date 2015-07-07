@@ -53,4 +53,11 @@ controllers.
       restrict: 'E',
       templateUrl: "../templates/tabs.html"
     };
-  });
+  })
+
+  .directive('makeNew', function(){
+    return {
+      restrict: 'E',
+      templateUrl: "../templates/makeNew.html"
+    }
+  })

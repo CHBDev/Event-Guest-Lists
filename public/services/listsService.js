@@ -3,15 +3,18 @@ services
  .factory('lists', function(){
     var r = {};
 
-    r.primary = {};
-    r.secondary = {};
+    r.primary = {makeNewIsOpen: false};
+    r.secondary = {makeNewIsOpen: false};
 
     r.primary.currentSelection = {};
     r.secondary.currentSelection = {};
 
     r.cache = {};
+    r.tellServerDirty = {};
+    r.tellServerNew = {};
 
     r.cache.headers = [["List Name","name",4],["Owner", "owner",2], ["Original Event","origEvent",4],["Guest Count","guestCount",1]];
+    r.cache.keys = ["name", "owner","guests"  ];
 
 
     r.cache.usersLists = [
@@ -32,5 +35,11 @@ services
                     {id: '3', name: "Presidents", owner: "ken", origEvent: "Labour Day Party", guestCount: 789}
                   ];
 
+
+
     return r;
-  });
+  })
+
+ // .factory('List', function(lists){
+ //    var List = function()
+ // })

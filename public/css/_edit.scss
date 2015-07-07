@@ -1,0 +1,54 @@
+$edit-data-height: 6em;
+
+
+.edit-html{
+  position: relative;
+}
+
+.edit-data{
+  display: flex;
+  height: $edit-data-height;
+  width: 100%;
+
+}
+
+.edit-data-left{
+  display: inline-block;
+  height: 100%;
+  width: 50%;
+  border: 1px solid white;
+
+}
+.edit-data-right{
+  display: inline-block;
+  height: 100%;
+  width: 50%;
+}
+
+.edit-import{
+  display: inline-block;
+  position: absolute;
+  top: $edit-data-height;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+
+}
+
+.edit-import-title{
+  padding-right: 0.5em;
+}
+
+.edit-import-save{
+  border: 1px solid white;
+  display: inline-block;
+  padding: 0.5em;
+}
+
+.edit-import-cancel{
+  border: 1px solid white;
+  display: inline-block;
+  padding: 0.5em;
+}
+
+

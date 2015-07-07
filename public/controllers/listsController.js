@@ -5,7 +5,7 @@ controllers
 
     controllerDispatch.setServicesToLocalScope(s);
 
-    s.conSec = {name: "lists", fileInput: {} };
+    s.conSec = {name: "lists", editTable:{name: "guests", doNotImport: {}}, fileInput: {} };
 
     s.socket.on('list:update', function(data){
 
@@ -25,15 +25,66 @@ controllers
 
     s.getArray = function(pOrS){
       //TODO need logic for which list here
+      if(s.lists[pOrS].currentToolbarButton === "edit"){
+        return s.conSec.fileInput.data;
+      }
+
       return s.lists.cache.usersLists;
     };
 
-    // s.selectButtonClicked = function(pOrS, thing){
-    //   s.lists[pOrS].currentSelection = thing;
-    //   s.dispatch[pOrS].currentTab = "lists";
-    //   // s.groups[pOrS].currentSelection = thing.origEvent;
+
+    // s.List = function(){
+    //     this.myGuests = {};
     // };
 
+    // s.List.prototype = s.lp = {};
+    // s.lp.newList = function(){
+
+    // };
+    // s.lp.removeGuest = function(id){
+    //     this.myGuests[id] = false;
+    // };
+    // s.lp.addGuest = function(id){
+    //     this.myGuests[id] = true;
+    // };
+    // s.lp.cleanupGuests = function(){
+    //     for(var key in this.myGuests){
+    //         if(this.myGuests[key] === false){
+    //             delete this.myGuests[key];
+    //         }
+    //     }
+    // };
+
+    s.editTableToggle = function(thing){
+      s.conSec.editTable.doNotImport[thing.email] = s.conSec.editTable.doNotImport[thing.email] ? false : true;
+    };
+
+    s.editTableShow = function(thing){
+      return !!s.conSec.editTable.doNotImport[thing.email];
+    };
+
+    s.listsAsDirtySections = function(listObj){
+        s.tellServerDirty[listObj.id] = listObj;
+    };
+
+    s.listsAsNewLists = function(listObj){
+        s.tellServerNew[listObj.id] = listObj;
+    };
+
+    s.newList = function(pOrS){
+        var aList = {}
+        aList.id = "NEW";
+        aList.name = "NEW LIST";
+        aList.owner = s.users.primary.currentSelection.id;
+
+            //TODO: once the list is saved we'll add it to the group, events, etc
+
+
+        s.dispatch[pOrS].currentTab = "lists";
+        s.lists[pOrS].currentSelection = aList;
+        s.lists[pOrS].currentToolbarButton = 'edit'
+
+    };
 
   })
 
@@ -50,4 +101,11 @@ controllers
       restrict: 'E',
       templateUrl: "../templates/list.html"
     };
-  });
+  })
+
+  .directive('listEditDir', function(){
+    return {
+      restrict: 'E',
+      templateUrl: "../templates/listEdit.html"
+    }
+  })

@@ -1,5 +1,5 @@
 
-<div class="selection-bar" ng-show="users.currentUser.id">
+<div class="selection-bar" ng-show="users.primary.currentSelection.id">
 
   <div ng-if="pOrS === 'primary'" id="{{pOrS === 'primary' ? 'selectedUserPrimary' : 'selectedUserSecondary'}}" class="selected-tab selected-home-tab home" ng-click="dispatch[pOrS].currentTab = 'home'"  ng-class="{active: dispatch[pOrS].currentTab === 'home'}">
     <div class="home-icon selected-icon"></div><!-- <div class="selected-title">Invite Again</div> -->

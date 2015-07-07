@@ -47,7 +47,7 @@
 
       <controller ng-controller="UsersController">
 
-          <div class="login-bar" ng-if="users.currentUser.name === null">
+          <div class="login-bar" ng-if="users.primary.currentSelection.name === null">
 
               <form name="loginFormHere" novalidate class="css-form" ng-submit="loginFormHere.$valid && (createUserOpen ? passwordsMatch() && create(loginFormHere) : login(loginFormHere))">
                 Email: <input type="email" name="email" ng-model="loginFormData.email" required/>
@@ -72,7 +72,7 @@
               </form>
           </div>
 
-          <div ng-show="users.currentUser.name" id="main-view">
+          <div ng-show="users.primary.currentSelection.name" id="main-view">
             <div id="main-view-primary" ng-controller="PrimaryController">
               <tabs-view class="fill-parent"></tabs-view>
 

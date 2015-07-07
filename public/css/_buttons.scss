@@ -1,5 +1,76 @@
 
+icon-button{
+  height: 1em;
+  width: 20em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border-radius: $big-radius;
+  overflow: hidden;
+}
 
+input[type='file']{
+  border-radius: $big-radius;
+  color: transparent;
+}
 
+.mod-file-input::-webkit-file-upload-button {
+  background-color: transparent;
+  color: white;
+  border: 0px solid transparent;
+}
+.mod-file-input:after{
+  content: ":";
+}
+// .mod-file-input::before {
+//   content: 'Import CSV';
+//   display: inline-block;
+//   // background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+//   border: 1px solid #999;
+//   border-radius: $big-radius;
+//   padding: 5px 8px;
+//   outline: none;
+//   white-space: nowrap;
+//   -webkit-user-select: none;
+//   cursor: pointer;
+//   // text-shadow: 1px 1px #fff;
+//   // font-weight: 700;
+//   // font-size: 10pt;
+// }
+// .mod-file-input:hover::before {
+//   border-color: transparent;
+// }
+// .mod-file-input:active::before {
+//   background: transparent;
+// }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJfYnV0dG9ucy5zY3NzIn0= */
+// .mod-file-input:after{
+//   visibility: hidden;
+// }
+
+// .mod-file-input::-webkit-file-upload-button {
+//   visibility: hidden;
+// }
+// .mod-file-input::before {
+//   content: 'Select some files';
+//   display: inline-block;
+//   background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+//   border: 1px solid #999;
+//   border-radius: 3px;
+//   padding: 5px 8px;
+//   outline: none;
+//   white-space: nowrap;
+//   -webkit-user-select: none;
+//   cursor: pointer;
+//   text-shadow: 1px 1px #fff;
+//   font-weight: 700;
+//   font-size: 10pt;
+// }
+// .mod-file-input:hover::before {
+//   border-color: black;
+// }
+// .mod-file-input:active::before {
+//   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+// }
+

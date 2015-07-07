@@ -1,0 +1,84 @@
+<controller class="edit edit-html">
+
+  <div class="edit-data">
+    <div class="edit-data-left">
+      <div class="edit-data-left-title">DATA</div>
+        <div>NAME: <input ng-model="tempName" placeholder="{{lists[pOrS].currentSelection.name}}"/></div>
+        <div>OWNER: <input ng-model="tempOwner" placeholder="{{lists[pOrS].currentSelection.owner.name}}"}}/></div>
+        <span class="edit-data-save">SAVE</span>
+        <span class="edit-data-cancel">CANCEL</span>
+    </div><div class="edit-data-right">
+      <div class="edit-import-title">Import </div><file-input con-sec="conSec" current="lists[pOrS].currentList"></file-input>
+    </div>
+  </div>
+
+
+
+  <div class="edit-import guests round-all">
+
+    <div class="section-above-table">
+
+      <div class="add-section">
+        <div class="add-icon"></div><div class="add-title">Save Selected</div>
+      </div>
+
+      <div class="add-section">
+        <div class="add-icon"></div><div class="add-title">Clear All</div>
+      </div>
+
+      <!-- <icon-button ng-click="addImportTable(pOrS)"><div class="add-icon"></div><div>Import Guests</div></icon-button>
+      <icon-button ng-click="clearImportTable(pOrS)"><div class="add-icon"></div><div>Clear Guests</div></icon-button> -->
+    </div>
+    <div class="section-for-table">
+        <table-fixed-edit-dir class="fill-parent"></table-fixed-edit-dir>
+    </div>
+    <div class="section-after-table">
+      <div ng-show="conSec.fileInput.err" class="edit-import-err">ERROR: {{conSec.fileInput.err}}</div>
+    </div>
+ </div>
+
+</controller>
+
+
+<!-- <div class="make-new">
+  <div class="make-new-name"><input ng-model="makeNewName"/ placeholder="{{dispatch[pOrs].currentTab}} Name"></div>
+  <div class="make-new-attach">Will be created in: {{$scope[dispatch[pOrs].currentTab][pOrS].currentSelection.name}}</div>
+
+</div> -->
+<!--
+ -->
+
+
+
+
+<!-- <div>CONSECNAME: {{conSec.name}}</div>
+<div>LISTS pOrS : {{pOrS}}</div> -->
+
+<!-- <div ng-show="conSec.fileInput.data">THERE IS A FILE LOADED</div>
+<div ng-show="lists[pOrS].currentList">THERE IS A LIST SELECTED</div>
+
+
+<file-input con-sec="conSec" current="lists[pOrS].currentList"></file-input>
+<div ng-show="conSec.fileInput.data">
+<div ng-show="conSec.fileInput.err">CSV IMPORT HAD ERRORS</div>
+
+  <input type="search" ng-model="listFilterFile" placeholder="filter..." aria-label="filter..." />
+  <table class="list-table">
+    <tr>
+      <th>.\/.</th>
+      <th ng-click="listTableOrder('name')">Guest Name<span ng-show="listTableSort ==='name'">^^</span></th>
+      <th ng-click="listTableOrder('location')">Location<span ng-show="listTableSort ==='location'">^^</span></th>
+      <th ng-click="listTableOrder('standing')">SCALE<span ng-show="listTableSort ==='standing'">^^</span></th>
+      <th ng-click="listTableOrder('isawesome')">OTHER<span ng-show="listTableSort ==='isawesome'">^^</span></th>
+    </tr>
+    <tr ng-repeat="guest in conSec.fileInput.data | orderBy: listTableSort:listTableSortReverse | filter:listFilterFile as results">
+    <td><button ng-click="lists[pOrS].currentGuest = guest.name" ng-show="lists[pOrS].currentGuest !== guest.name">SELECT</button><span ng-show="lists[pOrS].currentGuest === guest.name">ACTIVE</span></td>
+      <td>{{guest.name}}</td>
+      <td>{{guest.location}}</td>
+      <td>{{guest.standing}}</td>
+      <td>{{guest.isawesome}}</td>
+    </tr>
+  </table>
+
+
+</div> -->

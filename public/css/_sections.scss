@@ -35,6 +35,18 @@
   background-color: $edit-color;
 }
 
+.round-top{
+  @include border-radius-simple($big-radius, 0, $big-radius, 0);
+}
+
+.round-bottom{
+  @include border-radius-simple(0, $big-radius, 0, $big-radius);
+}
+
+.round-all{
+  @include border-radius-simple($big-radius, $big-radius, $big-radius, $big-radius);
+}
+
 
 //darkened
 
