@@ -41,6 +41,12 @@
     r.messages = messages;
     r.middle = middle;
 
+    r.tableCopyClicked = function(pOrS){
+      //TODO: this is the whole shebang
+      //get all from active toolbar copy into other active toolbar
+      //might want to do a confirm click in template first
+    }
+
     r.pOrSOpposite = function(pOrS){
       return pOrS === "primary" ? "secondary" : "primary";
     };
@@ -50,6 +56,13 @@
       console.log(pOrS + " selectedTab: " + selectedTab);
       console.log("current toolbar: " + r[selectedTab][pOrS].currentToolbarButton);
       return r[selectedTab][pOrS].currentToolbarButton;
+    };
+
+    r.bothToolbarsTheSameType = function(){
+      var prim = r.currentSelectedToolbar("primary");
+      var sec = r.currentSelectedToolbar("secondary");
+
+      return (prim === sec) ? "toolbars-same-type" : "toolbars-not-same-type" ;
     }
 
     r.currentSelectedTabName = function(pOrS, useOpp){
@@ -68,7 +81,7 @@
         return null;
         console.log("WARNING: no current selection");
       }
-    }
+    };
 
     r.primary = {currentTab: null};
     r.secondary = {currentTab: null};

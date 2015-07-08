@@ -18,7 +18,6 @@ $copy-button-height:  2.5em;
 
 
 .table-copy-button{
-  color: black;
   display: inline-flex;
   position: absolute;
   //bottom: $section-after-table-height;
@@ -27,7 +26,7 @@ $copy-button-height:  2.5em;
   left: -1 * ( ($copy-button-width / 2) - ($middle-width / 2) );
   height: $copy-button-height;
   @include button-top-border-radius($big-button-radius);
-  background-color: black;
+  background-color: transparent;
   z-index: 100;
   // overflow: hidden;
   // border-left: 1em solid rgba(0,0,0,0.3);
@@ -36,38 +35,55 @@ $copy-button-height:  2.5em;
 
 }
 
-.table-copy-slider-primary{
-  display: inline-block;
+@mixin table-copy-slider{
+  display: inline-flex;
+  flex-direction: row;
   position: relative;
+  align-items: center;
+  align-content: center;
   // top: $section-after-table-height;
   width: $copy-button-width / 2;
-  height: $copy-button-height;
+  //height: $copy-button-height;
+}
+
+.table-copy-slider-primary{
+  @include table-copy-slider;
+  justify-content: flex-end;
   border-right: 1px solid white;
   @include border-radius-simple($big-button-radius, 0, 0 , 0  );
 }
 
 .table-copy-slider-secondary{
-  display: inline-block;
-  position: relative;
-  // top: $section-after-table-height;
-  width: $copy-button-width / 2;
-  height: $copy-button-height;
+  @include table-copy-slider;
+  justify-content: flex-start;
   border-left: 1px solid transparent;
   @include border-radius-simple(0, $big-button-radius, 0 , 0  );
 }
 
-#table-copy-slider-hider{
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-}
+  .table-copy-show-portrait{
+    display: inline-block;
+
+  }
+
+  .table-copy-show-landscape{
+    display: none;
+  }
+
+  .table-copy-text{
+    color: inherit;
+  }
+
+  .toolbars-same-type{
+    color: white;
+  }
+
+  .toolbars-not-same-type{
+    color: gray;
+  }
 
 @mixin copy-button-landscape{
   #main-view-middle{
-    background-color: red;
+    background-color: transparent;
     position: absolute;
     width: 0;
     height: 50%;
@@ -93,42 +109,27 @@ $copy-button-height:  2.5em;
     width: 0;
     height: 100%;
     overflow: visible;
-    //top: -1 * ($copy-button-height);
-    // top: auto;
-
     bottom: auto;
     top: auto;
     right: 0;
     left: auto;
-    // z-index: -100;
-    // right: auto;
-    // bottom: auto;
-    // left: auto;
-    // right: auto;
-    // height:  $copy-button-width;
-    // @include border-radius-simple($big-button-radius, 0, 0, $big-button-radius );
-    // border-radius: $big-radius;
-    // border: 1px solid black;
-    // left: calc(50% - $copy-button-width);
-
-    // transform: rotate(-90deg);
 
   }
 
   .table-copy-slider-primary{
-    display: inline-block;
+
     position: relative;
     width: $copy-button-width/2;
     height: $copy-button-height;
     @include border-radius-simple($big-button-radius, 0, 0 , 0  );
-
+    justify-content: flex-start;
     top: -1 * $copy-button-height;
     right: $copy-button-width/2;
     z-index: 999;
   }
 
   .table-copy-slider-secondary{
-    display: inline-block;
+
     position: fixed;
     width: $copy-button-width /2;
     height: $copy-button-height;
@@ -136,12 +137,15 @@ $copy-button-height:  2.5em;
     right: 0;
     z-index: 999;
     @include border-radius-simple($big-button-radius, 0, 0 , 0  );
-    // position: relative;
-    // bottom: -50vh;
-    // right: -50vw;
   }
 
+  .table-copy-show-portrait{
+    display: none;
+  }
 
+  .table-copy-show-landscape{
+    display: inline-block;
+  }
 
 
 }

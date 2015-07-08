@@ -1,9 +1,27 @@
 <controller class="middle" ng-controller="MiddleController">
 
   <div class="table-copy-button">
-    <div class="table-copy-slider-primary" ng-class="dispatch.currentSelectedToolbar('primary')"></div>
-    <div class="table-copy-slider-middle"></div>
-    <div class="table-copy-slider-secondary" ng-class="dispatch.currentSelectedToolbar('secondary')"></div>
+    <div ng-click="dispatch.tableCopyClicked('primary')" class="table-copy-slider-primary {{bothToolbarsTheSameType()}}" ng-class="dispatch.currentSelectedToolbar('primary')">
+
+        <div class="table-copy-text table-copy-show-portrait">Add Right</div>
+        <div class="add-icon table-copy-show-portrait"></div>
+
+
+        <div class="add-icon table-copy-show-landscape"></div>
+        <div class="table-copy-text table-copy-show-landscape">Add Down</div>
+
+    </div>
+    <!-- <div class="table-copy-slider-middle"></div> -->
+    <div ng-click="dispatch.tableCopyClicked('secondary')"  class="table-copy-slider-secondary {{bothToolbarsTheSameType()}}" ng-class="dispatch.currentSelectedToolbar('secondary')">
+
+        <div class="add-icon table-copy-show-portrait"></div>
+        <div class="table-copy-text table-copy-show-portrait">Add Left</div>
+
+
+        <div class="add-icon table-copy-show-landscape"></div>
+        <div class="table-copy-text table-copy-show-landscape">Add Up</div>
+
+    </div>
   </div>
 
 </controller>
