@@ -26,5 +26,6 @@ services
                     {id: "id789", name: "GROUP EVENTS 3", group:{id: "id789", name: "USERGROUP 3"}, owner: "ken", date: "12/12/12", listCount: 11, guestCount: 789}
                   ];
 
+
     return r;
   });

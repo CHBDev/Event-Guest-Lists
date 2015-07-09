@@ -1,25 +1,24 @@
 <controller class="middle" ng-controller="MiddleController">
-
   <div class="table-copy-button">
-    <div ng-click="dispatch.tableCopyClicked('primary')" class="table-copy-slider-primary {{bothToolbarsTheSameType()}}" ng-class="dispatch.currentSelectedToolbar('primary')">
+    <div ng-click="dispatch.tableCopyClicked('primary')" class="table-copy-slider-primary {{dispatch.bothToolbarsTheSameType()}}" ng-class="dispatch.getToolbarNotEdit('primary')">
 
-        <div class="table-copy-text table-copy-show-portrait">Add Right</div>
-        <div class="add-icon table-copy-show-portrait"></div>
+        <div ng-hide="dispatch.eitherNotesOrEdit('primary')" class="table-copy-text table-copy-show-portrait">Import Left</div>
+        <div ng-hide="dispatch.eitherNotesOrEdit('primary')" class="add-icon table-copy-show-portrait"></div>
 
 
-        <div class="add-icon table-copy-show-landscape"></div>
-        <div class="table-copy-text table-copy-show-landscape">Add Down</div>
+        <div ng-hide="dispatch.eitherNotesOrEdit('primary')" class="add-icon table-copy-show-landscape"></div>
+        <div ng-hide="dispatch.eitherNotesOrEdit('primary')" class="table-copy-text table-copy-show-landscape">Import Up</div>
 
     </div>
     <!-- <div class="table-copy-slider-middle"></div> -->
-    <div ng-click="dispatch.tableCopyClicked('secondary')"  class="table-copy-slider-secondary {{bothToolbarsTheSameType()}}" ng-class="dispatch.currentSelectedToolbar('secondary')">
+    <div ng-click="dispatch.tableCopyClicked('secondary')"  class="table-copy-slider-secondary {{dispatch.bothToolbarsTheSameType()}}" ng-class="dispatch.getToolbarNotEdit('secondary')">
 
-        <div class="add-icon table-copy-show-portrait"></div>
-        <div class="table-copy-text table-copy-show-portrait">Add Left</div>
+        <div ng-hide="dispatch.eitherNotesOrEdit('secondary')" class="add-icon table-copy-show-portrait"></div>
+        <div ng-hide="dispatch.eitherNotesOrEdit('secondary')" class="table-copy-text table-copy-show-portrait">Import Right</div>
 
 
-        <div class="add-icon table-copy-show-landscape"></div>
-        <div class="table-copy-text table-copy-show-landscape">Add Up</div>
+        <div ng-hide="dispatch.eitherNotesOrEdit('secondary')" class="add-icon table-copy-show-landscape"></div>
+        <div ng-hide="dispatch.eitherNotesOrEdit('secondary')" class="table-copy-text table-copy-show-landscape">Import Down</div>
 
     </div>
   </div>

@@ -1,12 +1,24 @@
 //TODO
-1. Readd csv import to list tab
-2. add notes system - with a "do this suggested action button option"
-3. add info section for selected tabs (maybe this is in the tab title again I don't know)
-4. add modding a tab via its edit command
-4. add modding a tab contents via another tab
-5. create generic "new system"
+Major Tasks:
+v1
+Connect client edits to server functions
+remove things from things, in edit panel, or in main panel?
 
-maybe in view tab the rows of the table all have options to update other view
-but in edit mode they only have option to update the tab itself?
+v1.5
+add session and authentication
+
+
+v2:
+add notes system
+  -action buttons for confirm to do this
+add ownership and permissions for users on specific objects
+
+
+
+Current Bugs & Tweaks
+fix icons in tabs with selected names shrinking
+add edit tabs for all other tabs
+sort not working in guests toolbar
+
 
 //TEST

@@ -6,23 +6,23 @@
   </div>
 
   <div id="{{pOrS === 'primary' ? 'selectedUserPrimary' : 'selectedUserSecondary'}}" class="selected-tab selected-user-tab users" ng-click="dispatch[pOrS].currentTab = 'users'" ng-class="{active: dispatch[pOrS].currentTab === 'users'}">
-    <div class="users-icon selected-icon"></div><div class="selected-title">{{dispatch.names.user}}</div>
+    <div class="users-icon selected-icon"></div><div ng-hide="dispatch[pOrS].currentTab === 'users'" class="selected-title">{{dispatch.names.user}}</div><div ng-show="dispatch[pOrS].currentTab === 'users'">{{dispatch.currentSelectedTabName(pOrS)}}</div>
   </div>
 
   <div id="{{pOrS === 'primary' ? 'selectedGroupPrimary' : 'selectedGroupSecondary'}}" class="selected-tab selected-group-tab groups" ng-show="groups[pOrS].currentSelection.id" ng-click="dispatch[pOrS].currentTab = 'groups'" ng-class="{active: dispatch[pOrS].currentTab === 'groups'}">
-    <div class="groups-icon selected-icon"></div><div class="selected-title">{{dispatch.names.group}}</div>
+    <div class="groups-icon selected-icon"></div><div  ng-hide="dispatch[pOrS].currentTab === 'groups'" class="selected-title">{{dispatch.names.group}}</div><div ng-show="dispatch[pOrS].currentTab === 'groups'">{{dispatch.currentSelectedTabName(pOrS)}}</div>
   </div>
 
   <div id="{{pOrS === 'primary' ? 'selectedEventPrimary' : 'selectedEventSecondary'}}" class="selected-tab selected-event-tab events"  ng-show="events[pOrS].currentSelection.id" ng-click="dispatch[pOrS].currentTab = 'events'"  ng-class="{active: dispatch[pOrS].currentTab === 'events'}">
-    <div class="events-icon selected-icon"></div><div class="selected-title">{{dispatch.names.event}}</div>
+    <div class="events-icon selected-icon"></div><div  ng-hide="dispatch[pOrS].currentTab === 'events'" class="selected-title">{{dispatch.names.event}}</div><div ng-show="dispatch[pOrS].currentTab === 'events'">{{dispatch.currentSelectedTabName(pOrS)}}</div>
   </div>
 
   <div id="{{pOrS === 'primary' ? 'selectedListPrimary' : 'selectedListSecondary'}}" class="selected-tab selected-list-tab lists" ng-show="lists[pOrS].currentSelection.id" ng-click="dispatch[pOrS].currentTab = 'lists'"  ng-class="{active: dispatch[pOrS].currentTab === 'lists'}">
-    <div class="lists-icon selected-icon"></div><div class="selected-title">{{dispatch.names.list}}</div>
+    <div class="lists-icon selected-icon"></div><div  ng-hide="dispatch[pOrS].currentTab === 'lists'" class="selected-title">{{dispatch.names.list}}</div><div ng-show="dispatch[pOrS].currentTab === 'lists'">{{dispatch.currentSelectedTabName(pOrS)}}</div>
   </div>
 
   <div id="{{pOrS === 'primary' ? 'selectedListPrimary' : 'selectedListSecondary'}}" class="selected-tab selected-guest-tab guests" ng-show="guests[pOrS].currentSelection.id" ng-click="dispatch[pOrS].currentTab = 'guests'" ng-class="{active: dispatch[pOrS].currentTab === 'guests'}">
-    <div class="guests-icon selected-icon"></div><div class="selected-title">{{dispatch.names.guest}}</div>
+    <div class="guests-icon selected-icon"></div><div ng-hide="dispatch[pOrS].currentTab === 'guests'" class="selected-title">{{dispatch.names.guest}}</div><div ng-show="dispatch[pOrS].currentTab === 'guests'">{{dispatch.currentSelectedTabName(pOrS)}}</div>
   </div>
 
 

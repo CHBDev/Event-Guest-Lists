@@ -1,6 +1,6 @@
 $middle-width: 2em;
 $middle-width-stacked: 0.5em;
-$copy-button-width: 16em;
+$copy-button-width: 20em;
 $copy-button-height:  2.5em;
 
 
@@ -36,6 +36,8 @@ $copy-button-height:  2.5em;
 }
 
 @mixin table-copy-slider{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   display: inline-flex;
   flex-direction: row;
   position: relative;
@@ -70,6 +72,8 @@ $copy-button-height:  2.5em;
   }
 
   .table-copy-text{
+    padding-left: 0.25em;
+    padding-right: 0.25em;
     color: inherit;
   }
 

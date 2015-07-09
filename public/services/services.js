@@ -41,11 +41,53 @@
     r.messages = messages;
     r.middle = middle;
 
+    r.getToolbarNotEdit = function(pOrS){
+      var toolbar = r.currentSelectedToolbar(pOrS);
+      if(toolbar === 'edit'){
+        return r[pOrS].currentTab;
+      }
+
+      return toolbar;
+    }
+
+    r.eitherNotesOrEdit = function(pOrS){
+      var tab = r.currentSelectedToolbar(pOrS);
+      if(tab === "messages" || tab === "edit"){
+        return true;
+      }
+
+      return false;
+    }
+
     r.tableCopyClicked = function(pOrS){
+      if(bothToolbarsTheSameType === "toolbars-not-same-type"){
+        return;
+      }
+
+      //just do this in the data base in one move
+
       //TODO: this is the whole shebang
       //get all from active toolbar copy into other active toolbar
       //might want to do a confirm click in template first
-    }
+
+      var inTab = r[pOrS].currentTab;
+      var other = r.pOrSOpposite(pOrS);
+      var outTab = r[other].currentTab;
+      var tool = r.currentSelectedToolbar(pOrS);
+      var outObject = r[outTab][other].currentSelection;
+      var inObject = r[inTab][pOrS].currentSelection;
+      r.importDataFor(inObject, tool, outTab, outObject );
+
+    };
+
+
+     r.importDataFor = function(destTab, destObj, toolbar, incTab, incObj){
+      //this needs to tell the database to import
+      //all of the "toolbar" from incObj into "toolbar" on myObj
+
+    };
+
+
 
     r.pOrSOpposite = function(pOrS){
       return pOrS === "primary" ? "secondary" : "primary";
@@ -53,8 +95,6 @@
 
     r.currentSelectedToolbar = function(pOrS){
       var selectedTab = r[pOrS].currentTab;
-      console.log(pOrS + " selectedTab: " + selectedTab);
-      console.log("current toolbar: " + r[selectedTab][pOrS].currentToolbarButton);
       return r[selectedTab][pOrS].currentToolbarButton;
     };
 
@@ -69,10 +109,10 @@
       if(useOpp === true){
         pOrS = r.pOrSOpposite(pOrS);
       }
-      var name = r[pOrS].currentTab;
-      if(r[name].currentSelection){
-        if(r[name].currentSelection.name){
-          return r[name].currentSelection.name;
+      var tab = r[pOrS].currentTab;
+      if(r[tab][pOrS].currentSelection){
+        if(r[tab][pOrS].currentSelection.name){
+          return r[tab][pOrS].currentSelection.name;
         }else{
           console.log("ERROR: selection has no name");
           return null;
@@ -98,6 +138,7 @@
 
     r.primary.currentTab = 'users'; //sets default tabs
     r.secondary.currentTab = 'users'; //sets default tabs
+
 
     r.setServicesToLocalScope = function(aScope){
       aScope.socket = this.socket;
