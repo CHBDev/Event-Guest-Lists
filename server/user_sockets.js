@@ -1,4 +1,4 @@
-var query = require("../app.js").query;
+var query = require("../server.js").query;
 
 module.exports = function(io, socket){
 

@@ -41,7 +41,7 @@ services
 
 
     return r;
-  })
+  });
 
  // .factory('List', function(lists){
  //    var List = function()

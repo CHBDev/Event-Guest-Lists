@@ -48,7 +48,7 @@
       }
 
       return toolbar;
-    }
+    };
 
     r.eitherNotesOrEdit = function(pOrS){
       var tab = r.currentSelectedToolbar(pOrS);
@@ -57,7 +57,7 @@
       }
 
       return false;
-    }
+    };
 
     r.tableCopyClicked = function(pOrS){
       if(bothToolbarsTheSameType === "toolbars-not-same-type"){
@@ -103,7 +103,7 @@
       var sec = r.currentSelectedToolbar("secondary");
 
       return (prim === sec) ? "toolbars-same-type" : "toolbars-not-same-type" ;
-    }
+    };
 
     r.currentSelectedTabName = function(pOrS, useOpp){
       if(useOpp === true){
@@ -118,8 +118,8 @@
           return null;
         }
       }else{
-        return null;
         console.log("WARNING: no current selection");
+        return null;
       }
     };
 

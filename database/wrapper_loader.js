@@ -2,22 +2,34 @@ var ex = {};
 
 var config;
 
-try {
-  config = require('./database_config.js');
-} catch (e) {
-  console.log("NO DB CONFIG",e);
+if(process.env.NODE_ENV === 'production'){
+  var env = process.env.NODE_ENV;
+  config = {
+    host: env._H_BD,
+    port: env._P_BD,
+    user: env._U_BD,
+    pw: env._WP_BD
+  };
+}else{
+  try {
+    config = require('./database_config.js' );
+  } catch (e) {
+    console.log("NO DB CONFIG",e);
+  }
+
+  if(!config){
+    console.log("MISSING CONFIG");
+  }
+
+  config = {
+    host: config.host || 'localhost',
+    port: config.port || null,
+    user: config.user || 'root',
+    password: config.pw || null
+  };
 }
 
-if(!config){
-  console.log("MISSING CONFIG");
-}
 
-config = {
-  host: config.host || 'localhost',
-  port: config.port || null,
-  user: config.user || 'root',
-  password: config.pw || null
-};
 
 
 var mysql = require('mysql');

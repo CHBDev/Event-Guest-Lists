@@ -6,7 +6,7 @@ module.exports = function(grunt){
   init.pkg = grunt.file.readJSON('package.json');
   init.nodemon = {
                   dev: {
-                    script: 'app.js'
+                    script: 'server.js'
                   }
                 };
 
@@ -89,6 +89,17 @@ module.exports = function(grunt){
   grunt.registerTask('serve', ['jshint','sass:step1', 'final-post-css', 'sass:step2','concurrent:target']);
   grunt.registerTask('watchcssandjs', ['watch:css','watch:js']);
 
+  grunt.registerTask('_git-push-azure', function(){
+    grunt.util.spawn({
+      cmd: ['git push azure master'],
+      args: [''],
+      opts: {stdio: 'inherit'}
+    }, function done() {
+      grunt.log.ok('Push Azure Done');
+    });
+  });
+
+  grunt.registerTask('build', ['jshint','sass:step1', 'final-post-css', 'sass:step2']);
 
   //TODO add grunt publish
 

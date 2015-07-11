@@ -72,7 +72,7 @@ controllers
     };
 
     s.newList = function(pOrS){
-        var aList = {}
+        var aList = {};
         aList.id = "NEW";
         aList.name = "NEW LIST";
         aList.owner = s.users.primary.currentSelection.id;
@@ -82,7 +82,7 @@ controllers
 
         s.dispatch[pOrS].currentTab = "lists";
         s.lists[pOrS].currentSelection = aList;
-        s.lists[pOrS].currentToolbarButton = 'edit'
+        s.lists[pOrS].currentToolbarButton = 'edit';
 
     };
 
@@ -107,5 +107,5 @@ controllers
     return {
       restrict: 'E',
       templateUrl: "../templates/listEdit.html"
-    }
-  })
+    };
+  });
