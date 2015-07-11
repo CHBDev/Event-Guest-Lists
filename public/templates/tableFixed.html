@@ -4,23 +4,23 @@
 
       <tf-top class="{{conSec.name}}">
         <tfr class="{{conSec.name}} tf-header-row">
-          <tfh class="tfh-1">Active</tfh>
+          <tfh class="tfh-1">{{dispatch.names.select}}</tfh>
           <tfh ng-repeat="header in getService(conSec.name).cache.headers" class="{{'tfh-' + header[2]}}"
             ng-click="tableOrder(header[1])">{{header[0]}}<span class=" sort-icon {{sortIcon}}" ng-show="tableSort === header[1] "></span></tfh>
-          <tfh class="tfh-1">Remove</tfh>
+          <tfh class="tfh-1">{{dispatch.names.remove}}</tfh>
         </tfr>
 
       </tf-top><tf-middle>
 
         <tfr>
-          <tfh class="tfh-2">Active</tfh>
+          <tfh class="tfh-2">{{dispatch.names.select}}</tfh>
           <tfh ng-repeat="header in getService(conSec.name).cache.headers" class="{{'tfh-' + header[2]}}">{{header[0]}}</tfh>
-          <tfh class="tfh-1">Remove</tfh>
+          <tfh class="tfh-1">{{dispatch.names.remove}}</tfh>
         </tfr>
 
 
         <tfr ng-class-odd="'odd-table-row'" ng-repeat="thing in getArray(pOrS) | orderBy: tableSort:tableSortReverse | filter:tableFilter as results">
-          <tfd class="tfh-1"><button class="table-btn" ng-click="selectButtonClicked ? selectButtonClicked(pOrS, thing) : defaultSelectButton(pOrS, thing, conSec.name)" ng-show="getService(conSec.name)[pOrS].currentSelection.id !== thing.id">SEL</button><span ng-show="getService(conSec.name)[pOrS].currentSelection.id === thing.id">ACT</span></tfd>
+          <tfd class="tfh-1"><div class="select-btn-wrapper" ng-click="selectButtonClicked ? selectButtonClicked(pOrS, thing) : defaultSelectButton(pOrS, thing, conSec.name)" ng-show="getService(conSec.name)[pOrS].currentSelection.id !== thing.id"><div class="select-btn unchecked-icon"></div></div><div class="select-btn-wrapper" ng-show="getService(conSec.name)[pOrS].currentSelection.id === thing.id"><div class="select-btn checked-icon"></div></div></tfd>
           <tfd ng-repeat="tuple in getService(conSec.name).cache.headers" class="{{'tfd-' + tuple[2]}}">{{thing[tuple[1]]}}</tfd>
           <tfd class="tfh-1"><button class="table-btn" ng-click="deleteButtonClicked(pOrS, thing, conSec.name)" ng-show="userHasPermissionToDelete()">REM</button><span ng-hide="userHasPermissionToDelete()">NA</span></tfd>
         </tfr>

@@ -11,6 +11,7 @@ if(process.env.NODE_ENV === 'production'){
     pw: env._WP_BD
   };
 }else{
+  console.log("NODE_ENV is dev");
   try {
     config = require('./database_config.js' );
   } catch (e) {

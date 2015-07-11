@@ -151,7 +151,7 @@
       aScope.dispatch = this;
     }.bind(r);
 
-    r.names = {user: "User", users: "Users", group: "Group", groups: "Groups", event: "Events", events: "Events", list: "List", lists: "Lists", guest: "Guest", guests: "Guests", message: "Note", messages: "Notes", edit: "Edit", "new": "New"};
+    r.names = {user: "User", users: "Users", group: "Group", groups: "Groups", event: "Events", events: "Events", list: "List", lists: "Lists", guest: "Guest", guests: "Guests", message: "Note", messages: "Notes", edit: "Edit", "new": "New", select: "Select", remove: "Remove"};
 
     return r;
   });

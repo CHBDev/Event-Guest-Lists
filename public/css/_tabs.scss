@@ -153,6 +153,16 @@ tabs-view{
   @include bg-img-center-contain("gear_white_shadow");
 }
 
+.circle-icon{
+  @include bg-img-center-contain("circle_thick_white_shadow");
+}
+
+.check-icon{
+  @include bg-img-center-contain("check_white_shadow");
+}
+
+
+
 
 
 .selected-icon{

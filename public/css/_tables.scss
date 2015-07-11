@@ -148,6 +148,25 @@ tf-bottom tfr:last-child{
   font-size: 0.6em;
 }
 
+.checked-icon{
+  //@include bg-img-center-contain("circle_thick_white_shadow", "check_white_shadow");
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: $big-radius;
+  background-color: $light-font-color;
+  border: 0.18em solid $light-font-color;
+  @include drop-shadow;
+}
+
+.unchecked-icon{
+  @extend .checked-icon;
+  background-color: transparent;
+  @include inner-shadow;
+
+
+}
+
 
 
 //flex size classes

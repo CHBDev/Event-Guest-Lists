@@ -2,11 +2,17 @@
   @return url("../img/" + $name + ".png");
 }
 
-@mixin bg-img-center-contain($name){
+@mixin bg-img-center-contain($name, $name2:"_null"){
   display: inline-block;
   width: 100%;
   height: 100%;
-  background-image: img-loc($name);
+  @if $name2 !="_null"{
+    background-image: img-loc($name), img-loc($name2);
+  }@else{
+    background-image: img-loc($name);
+  }
+
+
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
