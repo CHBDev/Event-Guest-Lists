@@ -34,6 +34,7 @@ a {
 }
 
 html {
+  // position: relative;
   margin: 0;
   padding: 0;
   font-family: "Helvetica", Helvetica;
@@ -42,7 +43,7 @@ html {
   font-size: 16px;
   @include text-shadow;
   box-sizing: border-box;
-  background-color: yellow;
+  background-color: white;
   height: 100%;
   overflow: hidden;
 
@@ -50,7 +51,7 @@ html {
 
 body{
   // display: inline-block;
-  position: absolute;
+  position: relative;
   margin: 0;
   padding: 0;
   width: 100%;

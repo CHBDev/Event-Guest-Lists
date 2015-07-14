@@ -12,9 +12,9 @@
 
       </tf-top><tf-middle>
 
-        <tfr>
-          <tfh class="tfh-2">{{dispatch.names.select}}</tfh>
-          <tfh ng-repeat="header in getService(conSec.name).cache.headers" class="{{'tfh-' + header[2]}}">{{header[0]}}</tfh>
+        <tfr class="{{conSec.name}} tf-header-row">
+          <tfh class="tfh-1">{{dispatch.names.select}}</tfh>
+          <tfh ng-repeat="header in getService(conSec.name).cache.headers" class="{{'tfh-' + header[2]}}">{{header[0]}}<span class=" sort-icon {{sortIcon}}" ng-show="tableSort === header[1] "></span></tfh>
           <tfh class="tfh-1">{{dispatch.names.remove}}</tfh>
         </tfr>
 
