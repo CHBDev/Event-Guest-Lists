@@ -30,9 +30,6 @@ if(process.env.NODE_ENV === 'production'){
   };
 }
 
-console.log("CONFIG", config);
-
-
 var mysql = require('mysql');
 
 var db;
@@ -54,8 +51,7 @@ var connectionLoop = function(){
         }
         return del.call(this, err, sequence);
       };
-
-      ex.currDB =  process.env.NODE_ENV || 'dev';
+      ex.currDB = "inviteagain_" + process.env.NODE_ENV;
       console.log("==============CONNECTED as ID ", db.threadId);
       ex.isLive = true;
 
