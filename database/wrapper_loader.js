@@ -3,7 +3,7 @@ var ex = {};
 var config;
 
 if(process.env.NODE_ENV === 'production'){
-  var env = process.env.NODE_ENV;
+  var env = process.env;
   config = {
     host: env._H_BD,
     port: env._P_BD,
@@ -30,7 +30,7 @@ if(process.env.NODE_ENV === 'production'){
   };
 }
 
-
+console.log("CONFIG", config);
 
 
 var mysql = require('mysql');
@@ -42,6 +42,7 @@ var connectionLoop = function(){
   db.connect(function(err){
     if(err){
       console.log("==============ERROR connecting mysql ", err.stack);
+      console.log(err);
       setTimeout(connectionLoop, 1000);
     }else{
       var del = db._protocol._delegateError;
@@ -71,9 +72,6 @@ var connectionLoop = function(){
         });
 
       });
-
-
-
 
       db.on('close', function(err) {
         if(err) {
