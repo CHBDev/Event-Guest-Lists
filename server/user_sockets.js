@@ -1,4 +1,6 @@
-var query = require("../server.js").query;
+var server = require("../server.js");
+var query = server.query;
+var auth = server.auth;
 
 module.exports = function(io, socket){
 

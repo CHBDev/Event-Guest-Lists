@@ -1,3 +1,7 @@
+var server = require("../server.js");
+var query = server.query;
+var auth = server.auth;
+
 module.exports = function(io, socket){
   socket.on("event:create", function(data){
     query.event.create(data);

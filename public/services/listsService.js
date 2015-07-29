@@ -9,8 +9,8 @@ services
     r.primary.currentSelection = {};
     r.secondary.currentSelection = {};
 
-    r.primary = {currentToolbarButton: "guests"};
-    r.secondary = {currentToolbarButton: "guests"};
+    r.primary.currentToolbarButton = "guests";
+    r.secondary.currentToolbarButton = "guests";
 
     r.cache = {};
     r.tellServerDirty = {};

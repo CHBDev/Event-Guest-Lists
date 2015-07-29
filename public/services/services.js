@@ -30,7 +30,7 @@
       return r;
   })
 
-  .factory('controllerDispatch', function($rootScope, socket, users, groups, events, lists, guests, messages, middle){
+  .factory('controllerDispatch', function($rootScope, socket, users, groups, events, lists, guests, messages, middle, home){
     var r = {};
     r.socket = socket;
     r.users = users;
@@ -40,6 +40,7 @@
     r.guests = guests;
     r.messages = messages;
     r.middle = middle;
+    r.home = home;
 
     r.getToolbarNotEdit = function(pOrS){
       var toolbar = r.currentSelectedToolbar(pOrS);
@@ -123,8 +124,11 @@
       }
     };
 
-    r.primary = {currentTab: null};
-    r.secondary = {currentTab: null};
+    r.primary = {};
+    r.secondary = {};
+    r.primary.currentTab = 'users'; //sets default tabs
+    r.secondary.currentTab = 'users'; //sets default tabs
+
 
     r.changePrimaryTab = function(name){
       $rootScope.$broadcast("primary", {name:name});
@@ -136,8 +140,6 @@
       r.secondary.currentTab = name;
     };
 
-    r.primary.currentTab = 'users'; //sets default tabs
-    r.secondary.currentTab = 'users'; //sets default tabs
 
 
     r.setServicesToLocalScope = function(aScope){
@@ -149,9 +151,10 @@
       aScope.guests = this.guests;
       aScope.messages = this.messages;
       aScope.dispatch = this;
+      aScope.home = this.home;
     }.bind(r);
 
-    r.names = {user: "User", users: "Users", group: "Group", groups: "Groups", event: "Events", events: "Events", list: "List", lists: "Lists", guest: "Guest", guests: "Guests", message: "Note", messages: "Notes", edit: "Edit", "new": "New", select: "Select", remove: "Remove"};
+    r.names = {user: "User", users: "Users", group: "Group", groups: "Groups", event: "Events", events: "Events", list: "List", lists: "Lists", guest: "Guest", guests: "Guests", message: "Note", messages: "Notes", edit: "Edit", "new": "New", select: "Select", remove: "Remove", home: "Home", login: "Login", logout: "logout"};
 
     return r;
   });

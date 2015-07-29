@@ -47,52 +47,29 @@
 
 
 
-      <controller ng-controller="UsersController">
+  <controller ng-controller="UsersController">
 
-          <div class="login-bar" ng-if="users.primary.currentSelection.name === null">
+      <!-- <div ng-show="users.primary.currentSelection.name" id="main-view"> -->
+      <div id="main-view">
+        <div id="main-view-primary" ng-controller="PrimaryController">
+          <tabs-view class="fill-parent"></tabs-view>
 
-              <form name="loginFormHere" novalidate class="css-form" ng-submit="loginFormHere.$valid && (createUserOpen ? passwordsMatch() && create(loginFormHere) : login(loginFormHere))">
-                Email: <input type="email" name="email" ng-model="loginFormData.email" required/>
-                Password: <input type="password" name="password" ng-model="loginFormData.password" ng-pattern="/^(?=.*\d)(?=.*[a-zA-Z]).{6,36}$/" required/>
-                <div class="login-bar-confirm" ng-show="createUserOpen === true">
-                Confirm: <input type="password" name="confirm" ng-model="loginFormData.confirm" ng-required="{{createUserOpen ? 'true'  : 'false' }}" login-password="{{loginFormData.password}}" login-confirm="{{loginFormData.confirm}}" login-open="{{createUserOpen}}" />
-                </div>
+        </div><div id="main-view-middle" ng-controller="MiddleController">
+          <middle-view></middle-view>
 
-                <input type="button" ng-click="toggleLoginCreate()" value="{{createUserOpen ? 'already have account' : 'create new account' }}" />
-
-                <input class="{{loginFormHere.$valid ? 'enabled' : 'disabled'}}" type="submit" value="{{createUserOpen ? 'create' : 'login'}}"/>
-
-                <div id="login-bar-error">
-
-                   <span class="error" ng-show="loginFormHere.email.$error['email']">- Not a valid email address! - </span>
-                   <span class="error" ng-show="loginFormHere.password.$error.pattern && !loginFormHere.email.$error['email']">
-                   - Password must be > 6 characters and contain a letter and a number - </span>
-                   <span class="error" ng-show="(loginFormData.password != loginFormData.confirm) && createUserOpen && !loginFormHere.password.$error.pattern && !loginFormHere.email.$error['email']">
-                     - Passwords do not match - </span>
-
-              </div>
-              </form>
-          </div>
-
-          <div ng-show="users.primary.currentSelection.name" id="main-view">
-            <div id="main-view-primary" ng-controller="PrimaryController">
-              <tabs-view class="fill-parent"></tabs-view>
-
-            </div><div id="main-view-middle" ng-controller="MiddleController">
-              <middle-view></middle-view>
-
-            </div><div id="main-view-secondary" ng-controller="SecondaryController">
-              <tabs-view class="fill-parent"></tabs-view>
-
-            </div>
-          </div>
+        </div><div id="main-view-secondary" ng-controller="SecondaryController">
+          <tabs-view class="fill-parent"></tabs-view>
 
         </div>
+      </div>
+
+    </div>
   </body>
 
   <script src="./scripts/touches.js"></script>
 
   <script src="./services/services.js"></script>
+  <script src="./services/homeService.js"></script>
   <script src="./services/usersService.js"></script>
   <script src="./services/groupsService.js"></script>
   <script src="./services/eventsService.js"></script>
@@ -105,6 +82,7 @@
 
   <script src="./controllers/controllers.js"></script>
   <script src="./controllers/tableController.js"></script>
+  <script src="./controllers/homeController.js"></script>
   <script src="./controllers/usersController.js"></script>
   <script src="./controllers/groupsController.js"></script>
   <script src="./controllers/eventsController.js"></script>

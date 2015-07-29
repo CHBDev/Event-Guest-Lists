@@ -1,5 +1,6 @@
 
-<div class="selection-bar" ng-show="users.primary.currentSelection.id">
+<!-- <div class="selection-bar" ng-show="users.primary.currentSelection.id">
+ --><div class="selection-bar">
 
   <div ng-if="pOrS === 'primary'" id="{{pOrS === 'primary' ? 'selectedUserPrimary' : 'selectedUserSecondary'}}" class="selected-tab selected-home-tab home" ng-click="dispatch[pOrS].currentTab = 'home'"  ng-class="{active: dispatch[pOrS].currentTab === 'home'}">
     <div class="home-icon selected-icon"></div><!-- <div class="selected-title">Invite Again</div> -->
@@ -43,6 +44,7 @@
   </div> -->
 
   <div ng-switch="dispatch[pOrS].currentTab" class="fill-parent">
+    <home-dir class="fill-parent" ng-switch-when="home"></home-dir>
     <group-dir class="fill-parent" ng-switch-when="groups"></group-dir>
     <event-dir class="fill-parent" ng-switch-when="events"></event-dir>
     <list-dir class="fill-parent" ng-switch-when="lists"></list-dir>

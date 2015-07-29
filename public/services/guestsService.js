@@ -3,14 +3,11 @@ services
  .factory('guests', function(){
     var r = {};
 
-    r.primary = {};
-    r.secondary = {};
-
+    r.primary = {currentToolbarButton: "messages"};
+    r.secondary = {currentToolbarButton: "messages"};
     r.primary.currentSelection = {};
     r.secondary.currentSelection = {};
 
-    r.primary = {currentToolbarButton: "messages"};
-    r.secondary = {currentToolbarButton: "messages"};
 
     r.cache = {};
 

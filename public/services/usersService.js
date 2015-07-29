@@ -8,11 +8,13 @@ services
     // r.currentUser.name = "FAKE.USERNAME@FAKE.COM";
     // r.currentUser.id = "123";
 
+    r.isAuthenticated = false;
+
     r.primary = {currentToolbarButton: "groups"};
     r.secondary = {currentToolbarButton: "groups"};
 
-    r.primary.currentSelection = {id: "123", name: "FAKE.USERNAME@FAKE.COM" };
-    r.secondary.currentSelection = {id: "123", name: "FAKE.USERNAME@FAKE.COM" };
+    r.primary.currentSelection = {id: "1234", name: "FAKE" };
+    r.secondary.currentSelection = {id: "1234", name: "FAKE" };
 
     r.cache = {};
 

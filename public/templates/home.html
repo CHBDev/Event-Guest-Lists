@@ -1,0 +1,42 @@
+<controller ng-controller="HomeController" class="home home-html">
+
+<!-- INSIDE HOME
+<login-dir></login-dir>
+YAY FOR THIs -->
+
+<div class="toolbar home">
+
+  <div ng-class="{'active-toolbar-button': home[pOrS].currentToolbarButton === 'login'}" class="users home-toolbar-button toolbar-button" ng-click="home[pOrS].currentToolbarButton = 'login'">
+    <div class="home-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.login}}</div>
+  </div>
+
+     <!--  <div ng-class="{'active-toolbar-button': home[pOrS].currentToolbarButton === 'groups'}" class="groups home-toolbar-button toolbar-button" ng-click="home[pOrS].currentToolbarButton = 'groups'">
+        <div class="groups-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.groups}}</div>
+      </div>
+
+      <div ng-class="{'active-toolbar-button': home[pOrS].currentToolbarButton === 'events'}" class="events events-toolbar-button toolbar-button" ng-click="home[pOrS].currentToolbarButton = 'events'">
+        <div class="events-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.events}}</div>
+      </div>
+       <div ng-class="{'active-toolbar-button': home[pOrS].currentToolbarButton === 'lists'}" class="lists lists-toolbar-button toolbar-button" ng-click="home[pOrS].currentToolbarButton = 'lists'">
+        <div class="lists-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.lists}}</div>
+      </div>
+      <div ng-class="{'active-toolbar-button': home[pOrS].currentToolbarButton === 'messages'}" class="messages messages-toolbar-button toolbar-button" ng-click="home[pOrS].currentToolbarButton = 'messages'">
+        <div class="messages-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.messages}}</div>
+      </div>
+      <div ng-class="{'active-toolbar-button': home[pOrS].currentToolbarButton === 'edit'}" class="edit edit-toolbar-button toolbar-button" ng-click="home[pOrS].currentToolbarButton = 'edit'">
+        <div class="edit-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.edit}}</div>
+      </div> -->
+    </div>
+
+<div ng-switch="home[pOrS].currentToolbarButton" class="fill-parent-reducer">
+    <login-dir ng-switch-when="login"></events-dir>
+    <organization-dir ng-switch-when="org"></organization-dir>
+    <messages-dir ng-switch-when="messages"></messages-dir>
+    <groups-dir ng-switch-when="groups"></groups-dir>
+  </div>
+
+
+
+
+
+</controller>

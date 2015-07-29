@@ -6,11 +6,12 @@ services
     r.primary = {};
     r.secondary = {};
 
-    r.primary.currentSelection = {};
-    r.secondary.currentSelection = {};
 
     r.primary = {currentToolbarButton: "events"};
     r.secondary = {currentToolbarButton: "events"};
+    r.primary.currentSelection = {};
+    r.secondary.currentSelection = {};
+
 
     r.cache = {};
     r.cache.headers = [["Group Name","name",5],["User Count", "userCount",1], ["List Count","listCount",1],["Guest Count","guestCount",1]];
