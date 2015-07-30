@@ -122,7 +122,7 @@ tabs-view{
 }
 
 .users-icon{
-  @include bg-img-center-contain("folders_white_shadow");
+  @include bg-img-center-contain("group_white_shadow");
 }
 
 .menu-icon{
@@ -130,7 +130,7 @@ tabs-view{
 }
 
 .groups-icon{
-  @include bg-img-center-contain("group_white_shadow");
+  @include bg-img-center-contain("folders_white_shadow");
 }
 
 .events-icon{
@@ -161,7 +161,25 @@ tabs-view{
   @include bg-img-center-contain("check_white_shadow");
 }
 
+.add-icon{
+  @include bg-img-center-contain("add_filled_white_shadow");
+}
 
+.building-icon{
+  @include bg-img-center-contain("building_white_shadow");
+}
+
+.target-icon{
+  @include bg-img-center-contain("target_white_shadow");
+}
+
+.info-icon{
+  @include bg-img-center-contain("question_white_shadow");
+}
+
+.paperclip-icon{
+  @include bg-img-center-contain("paperclip_white_shadow");
+}
 
 
 

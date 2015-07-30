@@ -35,6 +35,16 @@
   background-color: $edit-color;
 }
 
+.org{
+  background-color: $org-color;
+}
+
+.start{
+  background-color: $start-color;
+}
+
+
+
 .round-top{
   @include border-radius-simple($big-radius, 0, $big-radius, 0);
 }

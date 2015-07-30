@@ -46,9 +46,25 @@ controllers
    };
  })
 
-.directive('loginDir', function(){
+.directive('accountDir', function(){
   return {
     restrict: 'E',
-    templateUrl: '../templates/login.html'
+    templateUrl: '../templates/account.html'
+  };
+})
+
+.directive('startDir', function(){
+  return {
+    restrict: 'E',
+    templateUrl: '../templates/start.html'
+  };
+})
+
+.directive('orgDir', function(){
+  return {
+    restrict: 'E',
+    templateUrl: '../templates/org.html'
   };
 });
+
+

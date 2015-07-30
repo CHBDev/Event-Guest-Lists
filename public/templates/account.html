@@ -1,0 +1,30 @@
+
+
+<controller class="users users-html">
+  ACCOUNT
+  <div class="login-container">
+
+    <div class="username-box">
+      <div><input type="email" name="email" ng-model="loginFormData.email" required/></div>
+      <div class="username-name">Email</div>
+    </div>
+    <div class="password-box">
+      <div><input type="password" name="password" ng-model="loginFormData.password" ng-pattern="/^(?=.*\d)(?=.*[a-zA-Z]).{6,36}$/" required/></div>
+      <div class="password-name">Password</div>
+    </div>
+    <div class="login-button-box">
+
+    </div>
+    <div class="login-error-box">
+
+    </div>
+
+  </div>
+
+
+</controller>
+
+
+
+
+

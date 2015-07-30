@@ -3,10 +3,6 @@ services
  .factory('groups', function(){
     var r = {};
 
-    r.primary = {};
-    r.secondary = {};
-
-
     r.primary = {currentToolbarButton: "events"};
     r.secondary = {currentToolbarButton: "events"};
     r.primary.currentSelection = {};
@@ -14,7 +10,7 @@ services
 
 
     r.cache = {};
-    r.cache.headers = [["Group Name","name",5],["User Count", "userCount",1], ["List Count","listCount",1],["Guest Count","guestCount",1]];
+    r.cache.headers = [["Folder Name","name",5],["User Count", "userCount",1], ["List Count","listCount",1],["Guest Count","guestCount",1]];
     r.cache.usersGroups = [
 
                     {id: "id123", name: "USERGROUP 1", userCount: 7, listCount: 24, guestCount: 345},

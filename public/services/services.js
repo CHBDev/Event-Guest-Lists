@@ -53,7 +53,13 @@
 
     r.eitherNotesOrEdit = function(pOrS){
       var tab = r.currentSelectedToolbar(pOrS);
+
       if(tab === "messages" || tab === "edit"){
+        return true;
+      }
+
+      //Added this in, yeah, the method name now doesn't make much sense
+      if(r.primary.currentTab === "home"){
         return true;
       }
 
@@ -126,7 +132,7 @@
 
     r.primary = {};
     r.secondary = {};
-    r.primary.currentTab = 'users'; //sets default tabs
+    r.primary.currentTab = 'home'; //sets default tabs
     r.secondary.currentTab = 'users'; //sets default tabs
 
 
@@ -154,7 +160,15 @@
       aScope.home = this.home;
     }.bind(r);
 
-    r.names = {user: "User", users: "Users", group: "Group", groups: "Groups", event: "Events", events: "Events", list: "List", lists: "Lists", guest: "Guest", guests: "Guests", message: "Note", messages: "Notes", edit: "Edit", "new": "New", select: "Select", remove: "Remove", home: "Home", login: "Login", logout: "logout"};
+    r.names = {
+      user: "User", users: "Users", group: "Folder", groups: "Folders", "event": "Event",
+      events: "Events", list: "List", lists: "Lists", guest: "Guest", guests: "Guests",
+      message: "Note", messages: "Notes", edit: "Edit", "new": "New", select: "Select",
+      remove: "Remove", home: "Home", login: "Login", logout: "Logout", start: "Start",
+      account: "Account", accounts: "Accounts",
+      org: "Group", orgs: "Groups", help: "Help",
+      appTitle: "✴︎Invite Again", appSubTitle: "events ∙ guests ∙ lists ∙ groups"
+    };
 
     return r;
   });

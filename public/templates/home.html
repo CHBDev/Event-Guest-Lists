@@ -6,8 +6,24 @@ YAY FOR THIs -->
 
 <div class="toolbar home">
 
-  <div ng-class="{'active-toolbar-button': home[pOrS].currentToolbarButton === 'login'}" class="users home-toolbar-button toolbar-button" ng-click="home[pOrS].currentToolbarButton = 'login'">
-    <div class="home-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.login}}</div>
+  <div ng-class="{'active-toolbar-button': home[pOrS].currentToolbarButton === 'start'}" class="start home-toolbar-button toolbar-button" ng-click="home[pOrS].currentToolbarButton = 'start'">
+    <div class="paperclip-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.start}}</div>
+  </div>
+
+  <div ng-class="{'active-toolbar-button': home[pOrS].currentToolbarButton === 'users'}" class="users home-toolbar-button toolbar-button" ng-click="home[pOrS].currentToolbarButton = 'users'">
+    <div class="users-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.account}}</div>
+  </div>
+
+ <!--  <div ng-class="{'active-toolbar-button': home[pOrS].currentToolbarButton === 'createUser'}" class="users home-toolbar-button toolbar-button" ng-click="home[pOrS].currentToolbarButton = 'createUser'">
+    <div class="add-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.createUser}}</div>
+  </div> -->
+
+  <div ng-class="{'active-toolbar-button': home[pOrS].currentToolbarButton === 'org'}" class="org home-toolbar-button toolbar-button" ng-click="home[pOrS].currentToolbarButton = 'org'">
+    <div class="building-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.org}}</div>
+  </div>
+
+  <div ng-class="{'active-toolbar-button': home[pOrS].currentToolbarButton === 'edit'}" class="edit home-toolbar-button toolbar-button" ng-click="home[pOrS].currentToolbarButton = 'edit'">
+    <div class="info-icon toolbar-icon"></div><div class="toolbar-title">{{dispatch.names.help}}</div>
   </div>
 
      <!--  <div ng-class="{'active-toolbar-button': home[pOrS].currentToolbarButton === 'groups'}" class="groups home-toolbar-button toolbar-button" ng-click="home[pOrS].currentToolbarButton = 'groups'">
@@ -28,15 +44,11 @@ YAY FOR THIs -->
       </div> -->
     </div>
 
-<div ng-switch="home[pOrS].currentToolbarButton" class="fill-parent-reducer">
-    <login-dir ng-switch-when="login"></events-dir>
-    <organization-dir ng-switch-when="org"></organization-dir>
-    <messages-dir ng-switch-when="messages"></messages-dir>
-    <groups-dir ng-switch-when="groups"></groups-dir>
+  <div ng-switch="home[pOrS].currentToolbarButton" class="fill-parent-reducer">
+    <org-dir ng-switch-when="org"></org-dir>
+    <start-dir ng-switch-when="start"></start-dir>
+    <account-dir ng-switch-when="users"></account-dir>
+    <help-dir ng-switch-when="edit"></help-dir>
   </div>
-
-
-
-
 
 </controller>

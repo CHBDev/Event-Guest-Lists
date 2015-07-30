@@ -3,8 +3,8 @@ services
  .factory('home', function(){
      var r = {};
 
-    r.primary = {currentToolbarButton: "login"};
-    r.secondary = {currentToolbarButton: "login"};
+    r.primary = {currentToolbarButton: "start"};
+    r.secondary = {currentToolbarButton: "start"};
 
     r.primary.currentSelection = {id:"Invite Again", name: "Invite Again"};
     r.secondary.currentSelection = {};
@@ -35,8 +35,6 @@ services
                         {id: "iii", name: "Shmoe", title: "Cdo this2", message: "hi there", time:9889689594, sentTo:{groups:["123","456","789"]}},
                         {id: "jjj", name: "Grow", title: "Cdo this3", message: "hi there", time:9889689595, sentTo:{groups:["123","456","789"]}}
                         ];
-
-    return r;
 
     return r;
   });

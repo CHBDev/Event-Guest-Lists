@@ -10,11 +10,11 @@ services
 
     r.isAuthenticated = false;
 
-    r.primary = {currentToolbarButton: "groups"};
-    r.secondary = {currentToolbarButton: "groups"};
+    r.primary = {currentToolbarButton: "events"};
+    r.secondary = {currentToolbarButton: "events"};
 
-    r.primary.currentSelection = {id: "1234", name: "FAKE" };
-    r.secondary.currentSelection = {id: "1234", name: "FAKE" };
+    r.primary.currentSelection = {id: "0", name: "Demo User" };
+    r.secondary.currentSelection = {id: "0", name: "Demo User" };
 
     r.cache = {};
 

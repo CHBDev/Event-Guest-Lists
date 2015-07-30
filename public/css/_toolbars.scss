@@ -23,6 +23,12 @@
   // background-color: $shade-white;
   // color: white;
   color: $text-gray;
+  border-radius: $big-radius;
+  appearance: none;
+  box-shadow: none;
+  outline: none;
+  border: 0px solid transparent;
+  padding-left: 1em;
 
 }
 

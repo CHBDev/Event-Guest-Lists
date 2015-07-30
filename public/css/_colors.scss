@@ -51,6 +51,10 @@ $dusk-cyan-r: 101; $dusk-cyan-g:199; $dusk-cyan-b: 199; $dusk-cyan: rgba($dusk-c
 $dusk-purple-r: 101; $dusk-purple-g:101; $dusk-purple-b: 199; $dusk-purple: rgba($dusk-purple-r, $dusk-purple-g, $dusk-purple-b, 1);
 $dusk-dark-gray-r: 101; $dusk-dark-gray-g:101; $dusk-dark-gray-b: 101; $dusk-dark-gray: rgba($dusk-dark-gray-r, $dusk-dark-gray-g, $dusk-dark-gray-b, 1);
 $dusk-light-gray-r: 199; $dusk-light-gray-g:199; $dusk-light-gray-b: 199; $dusk-light-gray: rgba($dusk-light-gray-r, $dusk-light-gray-g, $dusk-light-gray-b, 1);
+$dusk-aqua-r: 101; $dusk-aqua-g:142; $dusk-aqua-b: 142; $dusk-aqua: rgba($dusk-aqua-r, $dusk-aqua-g, $dusk-aqua-b, 1);
+$dusk-hmm-r: 142; $dusk-hmm-g:101; $dusk-hmm-b: 142; $dusk-hmm: rgba($dusk-hmm-r, $dusk-hmm-g, $dusk-hmm-b, 1);
+
+
 
 $users-color: $dusk-orange;
 $groups-color: $dusk-blue;
@@ -62,6 +66,8 @@ $title-color: $dusk-dark-gray;
 $menu-color: $title-color;
 $edit-color: rgba(0,0,0,0.16);
 $home-color: $title-color;
+$start-color: $dusk-blue;
+$org-color: $dusk-pink;
 
 .darken{
   background-color: rgba(0,0,0,0.3);
