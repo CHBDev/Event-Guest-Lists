@@ -1,22 +1,33 @@
 
 
 <controller class="users users-html">
-  ACCOUNT
+
   <div class="login-container">
 
     <div class="username-box">
-      <div><input type="email" name="email" ng-model="loginFormData.email" required/></div>
+      <div><input type="email" size="36" ng-model="loginFormData.email"/></div>
       <div class="username-name">Email</div>
     </div>
     <div class="password-box">
-      <div><input type="password" name="password" ng-model="loginFormData.password" ng-pattern="/^(?=.*\d)(?=.*[a-zA-Z]).{6,36}$/" required/></div>
+      <div><input type="password" size="36" ng-model="loginFormData.password"/></div>
       <div class="password-name">Password</div>
     </div>
+    <div ng-show="createUserOpen" class="password-confirm-box">
+      <div><input type="password" size="36" ng-model="loginFormData.confirm"/></div>
+      <div class="password-confirm-name">Confirm Password</div>
+    </div>
+    <div ng-class="{phHide: createUserOpen}" class="ph-fill password-confirm-box">
+      <div><input type="password" size="36"></div>
+      <div class="password-confirm-name">_</div>
+    </div>
     <div class="login-button-box">
-
+      <div class="login-button">{{loginButtonTitle}}</div>
     </div>
     <div class="login-error-box">
-
+      <div class="login-error"></div>
+    </div>
+    <div class="create-toggle-box" ng-click="toggleLoginCreate()">
+      <div class="create-toggle">{{createUserButtonTitle}}</div>
     </div>
 
   </div>

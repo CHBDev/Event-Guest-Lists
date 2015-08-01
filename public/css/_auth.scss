@@ -1,9 +1,16 @@
 .login-container{
-
+  padding: 1em;
+  margin-top: 1em;
+  // text-align: center;
+  width: 28em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0,0,0,0.14);
+  border-radius: $big-radius;
 }
 
 .username-box{
-  margin-top: 3em;
+  margin-top: 2em;
   margin-bottom: 1em;
 
 }
@@ -12,11 +19,73 @@
   margin: 0.5em;
 }
 
-.password-box{
+
+
+.password-box, .password-confirm-box, .password-confirm-box-ph{
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
-.password-name{
+.password-name, .password-confirm-name, .password-confirm-name-ph{
   margin: 0.5em;
 }
+
+.ph-fill{
+  visibility: hidden;
+}
+
+div.phHide{
+  display: none;
+}
+
+.login-button-box{
+
+}
+
+.login-container input{
+  color: black;
+}
+
+@mixin auth-button{
+  margin-left: auto;
+  margin-right: auto;
+  width: 12em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0.26em;
+  background-color: rgba(255,255,255,0.18);
+  border-radius: $big-radius;
+  // border: 1px solid white;
+}
+
+.login-button{
+  @include auth-button;
+}
+
+.create-toggle{
+  @include auth-button;
+}
+
+
+
+
+
+
+// <div class="login-container">
+
+//     <div class="username-box">
+//       <div><input type="email" name="email" ng-model="loginFormData.email" required/></div>
+//       <div class="username-name">Email</div>
+//     </div>
+//     <div class="password-box">
+//       <div><input type="password" name="password" ng-pattern="/^(?=.*\d)(?=.*[a-zA-Z]).{6,36}$/" required/></div>
+//       <div class="password-name">Password</div>
+//     </div>
+//     <div class="login-button-box">
+//       <div class="login-button">Login</div>
+//     </div>
+//     <div class="login-error-box">
+//       <div class="login-error"></div>
+//     </div>
+//     <div class="create-toggle-box">
+//       <div class="create-toggle">{{createUserButtonTitle}}</div>

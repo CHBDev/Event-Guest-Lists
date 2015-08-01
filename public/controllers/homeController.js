@@ -9,9 +9,21 @@ controllers
 
     s.loginFormData = {email: null, password: null, confirm: null};
     s.createUserOpen = false;
+    s.createUserButtonTitle = "New Account";
+    s.loginButtonTitle = "Login";
 
     s.toggleLoginCreate = function(){
-      s.createUserOpen = (s.createUserOpen === false) ? true : false;
+
+      if(s.createUserOpen === true){
+        s.createUserOpen = false;
+        s.createUserButtonTitle = "New Account";
+        s.loginButtonTitle = "Login";
+      }else{
+        s.createUserOpen = true;
+        s.createUserButtonTitle = "Cancel";
+        s.loginButtonTitle = "Create";
+      }
+
     };
 
     s.passwordsMatch = function(){
@@ -64,6 +76,27 @@ controllers
   return {
     restrict: 'E',
     templateUrl: '../templates/org.html'
+  };
+})
+
+.directive('helpDir', function(){
+  return {
+    restrict: 'E',
+    templateUrl: '../templates/help.html'
+  };
+})
+
+.directive('titleDir', function(){
+  return {
+    restrict: 'E',
+    templateUrl: '../templates/title.html'
+  };
+})
+
+.directive('titlewithsubDir', function(){
+  return {
+    restrict: 'E',
+    templateUrl: '../templates/titlewithsub.html'
   };
 });
 
