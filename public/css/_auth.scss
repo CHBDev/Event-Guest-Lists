@@ -44,6 +44,10 @@ div.phHide{
 
 .login-container input{
   color: black;
+  padding-left: 1em;
+  border-radius: $big-radius;
+  border: 0px solid transparent;
+  outline: none;
 }
 
 @mixin auth-button{
@@ -64,6 +68,19 @@ div.phHide{
 
 .create-toggle{
   @include auth-button;
+}
+
+.login-error-box{
+  padding: 0.26em;
+  margin-top: 1em;
+  width: 28em;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: $big-radius;
+}
+
+.login-error{
+  color: rgba(255,255,255,1);
 }
 
 

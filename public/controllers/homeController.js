@@ -7,10 +7,11 @@ controllers
 
     s.conSec = {name: "home", fileInput: {} };
 
-    s.loginFormData = {email: null, password: null, confirm: null};
+    s.loginFormData = {};
     s.createUserOpen = false;
     s.createUserButtonTitle = "New Account";
     s.loginButtonTitle = "Login";
+    s.errorBoxText = "";
 
     s.toggleLoginCreate = function(){
 
@@ -25,9 +26,64 @@ controllers
       }
 
     };
+    s.reg = {};
+    s.reg.emailLength = /^[^ ]{5,}$/;
+    s.reg.emailChars1 = /[@]/;
+    s.reg.emailChars2 = /[\.]/;
+    s.reg.passwordLength = /^.{7,36}$/;
+    s.reg.passwordSpecial = /[\W]{1}/;
+    s.reg.passwordLetter = /[a-zA-Z]/;
+    s.reg.passwordNumber = /[0-9]/;
 
-    s.passwordsMatch = function(){
-      return s.loginFormData.password == s.loginFormData.confirm;
+    s.updateErrorBox = function(){
+      s.errorBoxText = s.errorBoxTextEmail || s.errorBoxTextPassword || s.errorBoxTextPasswordConfirm;
+    };
+
+    s.usernameUpdate = function(){
+      if(!s.loginFormData.email){
+        return;
+      }
+
+      if(!s.reg.emailLength.test(s.loginFormData.email)) {
+        s.errorBoxTextEmail = "Not a Valid Email";
+      }else if(!s.loginFormData.email.match(s.reg.emailChars1)){
+        s.errorBoxTextEmail = "Not a Valid Email";
+      }else if(!s.loginFormData.email.match(s.reg.emailChars2)){
+        s.errorBoxTextEmail = "Not a Valid Email";
+      }else{
+        s.errorBoxTextEmail = "";
+      }
+      s.updateErrorBox();
+    };
+
+    s.passwordUpdate = function(){
+      if(!s.loginFormData.password){
+        return;
+      }
+      if(!s.loginFormData.password.match(s.reg.passwordLength)){
+        s.errorBoxTextPassword = "Password must be between 8 and 36";
+      }else if(!s.loginFormData.password.match(s.reg.passwordSpecial)){
+        s.errorBoxTextPassword = "Password must contain a special char";
+      }else if(!s.loginFormData.password.match(s.reg.passwordLetter)){
+        s.errorBoxTextPassword = "Password must contain a letter";
+      }else if(!s.loginFormData.password.match(s.reg.passwordNumber)){
+        s.errorBoxTextPassword = "Password must contain a number";
+      }else{
+        s.errorBoxTextPassword = "";
+      }
+      s.updateErrorBox();
+    }
+
+    s.passwordConfirmUpdate = function(){
+      if(!s.loginFormData.confirm){
+        return;
+      }
+      if(s.loginFormData.password != s.loginFormData.confirm){
+        s.errorBoxTextPasswordConfirm = "Passwords do not match";
+      }else{
+        s.errorBoxTextPasswordConfirm = "";
+      }
+      s.updateErrorBox();
     };
 
     s.login = function(form){

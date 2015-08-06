@@ -10,8 +10,8 @@ services
 
     r.isAuthenticated = false;
 
-    r.primary = {currentToolbarButton: "events"};
-    r.secondary = {currentToolbarButton: "events"};
+    r.primary = {currentToolbarButton: "groups"};
+    r.secondary = {currentToolbarButton: "groups"};
 
     r.primary.currentSelection = {id: "0", name: "Demo User" };
     r.secondary.currentSelection = {id: "0", name: "Demo User" };

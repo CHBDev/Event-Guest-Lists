@@ -5,15 +5,15 @@
   <div class="login-container">
 
     <div class="username-box">
-      <div><input type="email" size="36" ng-model="loginFormData.email"/></div>
+      <div><input type="text" size="36" ng-change="usernameUpdate()" ng-model="loginFormData.email"/></div>
       <div class="username-name">Email</div>
     </div>
     <div class="password-box">
-      <div><input type="password" size="36" ng-model="loginFormData.password"/></div>
+      <div><input type="password" size="36" ng-change="passwordUpdate()" ng-model="loginFormData.password"/></div>
       <div class="password-name">Password</div>
     </div>
     <div ng-show="createUserOpen" class="password-confirm-box">
-      <div><input type="password" size="36" ng-model="loginFormData.confirm"/></div>
+      <div><input type="password" ng-change="passwordConfirmUpdate()" size="36" ng-model="loginFormData.confirm"/></div>
       <div class="password-confirm-name">Confirm Password</div>
     </div>
     <div ng-class="{phHide: createUserOpen}" class="ph-fill password-confirm-box">
@@ -23,14 +23,14 @@
     <div class="login-button-box">
       <div class="login-button">{{loginButtonTitle}}</div>
     </div>
-    <div class="login-error-box">
-      <div class="login-error"></div>
-    </div>
     <div class="create-toggle-box" ng-click="toggleLoginCreate()">
       <div class="create-toggle">{{createUserButtonTitle}}</div>
     </div>
 
   </div>
+    <div class="login-error-box">
+      <div class="login-error">{{errorBoxText}}</div>
+    </div>
 
 
 </controller>
